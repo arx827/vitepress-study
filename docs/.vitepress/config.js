@@ -3,7 +3,7 @@ import { head, nav, sidebar } from './configs'
 // 主題 配置
 const themeConfig = {
   logo: '/apple-touch-icon.png',
-  siteTitle: 'Vitepress-study 學習筆記',
+  siteTitle: 'Study 學習筆記',
   
   nav,
   sidebar,
@@ -24,7 +24,7 @@ const markdown = {
 export default {
   base: '/vitepress-study/',   // 站點將部署在這個 base URL路徑
   lang: 'zh-TW',
-  title: 'Vitepress-study',
+  title: 'Study',
   description: '學習筆記',
   head,
   themeConfig,
