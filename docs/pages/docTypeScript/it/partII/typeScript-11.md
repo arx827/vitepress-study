@@ -9,3 +9,5 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
 ## 11.2 ES6 Promise 物件
 
 ## 11.3 ES7 非同步函式 Asynchronous Functions
+
+## [本章練習](../A/typeScript-A.html#第八章-typescript-模組系統)

@@ -610,8 +610,253 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
     而宣告出的函式，若命名規則較直覺性等原因 (用人腦從命名原則就可以輕易猜出函式輸出之型別)，可以考慮拔除函式之註記型別的可能性，畢竟到最後 `TypeScript` 編譯器依然可以從輸出結果值 (也就是從 `return` 敘述式) 推論出函式的輸出型別。
 
 ### 3.4.3 選用參數 Optional Function noUnusedParameters
+  如果想要宣告一個函式，其 `參數不一定需要用到` 時，使用 `?` 來註記：
+  ```ts
+  /* increment: 回傳累加的結果，若無輸入，則固定累加數字為 1 */
+  function increment(input1: number, input2?: number) {
+    return input1 + (input2 ? input2 : 1);
+  }
+  ```
+  其中，第一個參數 `input1` 非選用參數，因此在函式內必定是判定為 `數字型別`；而第二個參數在宣告時，參數 `input2` 後面有標上 `?`，代表 `input2` 為選用參數。
+  > 與選用屬性類似，選用參數會對 `該參數對應之型別` 與 `undefined` 進行聯集複合。
 
+  選用參數有使用限制：只能 `宣告在函式參數的尾端，不能斷斷續續地使用選用參數宣告`，如果有宣告選用參數時，後面不能有任何必要參數。
+  ```ts
+  /* OK：可以宣告兩個選用參數，並且是連續性宣告在尾端 */
+  function sumFrom3Nums(input1: number, input2?: number, input3?: number) {
+    return input1 + (input2 ? input2 : 0) + (input3 ? input3 : 0);
+  }
+  ```
+
+  - #### 函式宣告時使用選用參數 Optional noUnusedParameters
+    函式的輸入部分宣告時，可以宣告出選用參數，代表該函式被呼叫時，選用參數部分不一定需要代入值。
+
+    選用參數宣告時，`只能連續性地宣告在函式參數尾端`。
+
+    假設宣告某一函式 `F`，擁有參數 `P1`、`P2`、...`PN`，且各自對應型別為 `T1`、`T2`、...`TN`；以及選用參數 `POption1`、`POption2`、...`POptionN`，且各自對應型別為 `TOption1`、`TOption2`、...`TOptionN`，則寫法如下：
+    ```ts
+    function F(P1: T1, P2: T2, ..., PN: TN, POption1?: TOption1, POption2?: TOption2, ..., POption3?: TOption3) {
+      /* 函式內容 */
+    }
+    ```
+
+### 3.4.4 預設參數 Default Function noUnusedParameters
+  選用參數的情形有時會搭配對應的 `預設值 (Default Value)`。
+
+  當然，另一種更常見的寫法是採用 `短路 (Short-Circuiting)` 寫法才處理預設值：
+  ```ts
+  function increment(input1: number, input2?: number) {
+    /* 若 input2 為 Falsey 相關的值，則指派數字 1 */
+    const value = input2 || 1;
+    return input1 + value;
+  }
+  ```
+
+  `TypeScript` 於 `3.7` 版推出了新的、也是更安全的 `空值連結操作符 (Nullish Coalescing Operator)` 的寫法：
+  ```ts
+  function increment(input1: number, input2?: number) {
+    /* 若 input2 為 null 或 undefined，則指派數字 1 */
+    const value = input2 ?? 1;
+    return input1 + value;
+  }
+  ```
+
+  而 `ECMAScript` 標準規範下，可以改寫成：
+  ```ts
+  function increment(input1: number, input2?: number = 1) {
+    return input1 + input2;
+  }
+  ```
+
+  - #### 函式宣告時提供預設值給參數 Default Function noUnusedParameters
+    - 1. 函式的輸入部分宣告時，可以宣告出預設參數值，代表該函式被呼叫時，預設參數部分不一定需要代入值。
+    - 2. 預設參數由於已提供`預設值`，因此在函式內該參數被使用時，並不會出現與 `undefined` 進行聯集複合的情形。
+    - 3. 預設參數宣告時，`建議` 連續性地宣告在函式參數尾端 -- 要是想要在呼叫函式時，某些參數使用預設值，則必須填入 `undefined`。
 
 ## 3.5 陣列型別 Array Object Type
+### 3.5.1 型別推論機制
+  - 通常只有存 『單個型別』的陣列，被稱為 `同質性陣列 (Homogeneous Array)`；
+    ```ts
+    /* 推論為 number[] */
+    const fibSeq = [1, 1, 2, 3, 5, 8, 11];
+    ```
+  - 如果陣列存放『多種不同型別』的陣列，稱它為 `異質性陣列 (Heterogeneous Array)`。
+    ```ts
+    /* 推論為 (string | number | boolean | number[] | {a: number; b: number})[] */
+    const arr = [123, 'Hello', false, {a: 123, b: 456}, 1, [4, 5, 6]];
+    ```
+
+  另外，有時候會使用到 `多維陣列 (Multi-dimensional Array)`
+  ```ts
+  /* 二維陣列 */
+  /* 推論為 number[][]*/
+  const points = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ]
+  ```
+
+  最後，需注意的地方，`空陣列`：
+  ```ts
+  /* 推論為 any[] */
+  const emptyArr = []
+  ```
+
+### 3.5.2 型別註記機制
+  ```ts
+  /* 一般陣列註記方式 */
+  const fibSeq: number[] = [1, 1, 2, 3, 5, 8, 11];
+  ```
+
+  ```ts
+  /* 異質性陣列註記方式 */
+  const ex: (number | string)[] = [123, 'Hello'];
+  ```
+
+  - #### 陣列型別的推論與註記之注意事項
+    - 陣列型別註記時，後面會尾隨 `中括號符號 []`，假設宣告陣列除存型別為 `T`，寫法為：
+      ```ts
+      let <variable>: T[] = [ ... ]
+      ```
+    - 其中，空陣列由於沒有任何值可以參考，因此推論型別必為 `any[]`；為了避免 `any 型別` 的出現，`主動註記空陣列是必要的行為`。
 
 ## 3.6 明文型別 Literal Type
+### 3.6.1 型別推論機制
+  `明文 (Literal)`：顧名思義就是直接將值表現出來。
+
+  所以在程式中看到的，`任何值皆可自成一種型別`。
+  ```ts
+  // 名為數字 123 的明文數字，但也可以自成一種型別
+  123;
+
+  // 名為字串 'Maxwell' 的明文字串，但也可以自成一種型別
+  'Maxwell';
+  ```
+
+  如果遇到指派隸屬於原始資料型態的明文到變數中，分成兩種情形：
+  - 如果直接將明文值，指派到 `使用 let 關鍵字宣告的變數` 裡，通常該 `變數不是明文值型別`，而是 `以該明文本身代表的型別而定`。
+  - `使用 const 關鍵字宣告的變數` (又名 `常數`，Constant)，會 `直接被推論為明文值型別`，畢竟常數的值不能改。
+  
+  如果是指派物件的明文到變數時，不管是用 `let` 或 `const` 關鍵字，都只會 `描述該物件的結構` (JSON 物件、陣列與函式物件皆是)，而非物件本身的明文值。
+  ```ts
+  /**
+   * 不管是使用 let 或 const 宣告變數並指派 `物件值`，被推論都是明文的 "結構";
+   * 以下推論結果 皆為 { foo: number; bar: string}
+   */
+  let   jsonObj      = {foo: 123, bar: 'Hello'};
+  const constJsonObj = {foo: 123, bar: 'Hello'};
+  ```
+
+### 3.6.2 型別註記機制
+  明文型別的註記方式：
+  ```ts
+  let devilNumber: 666 = 666;
+  ```
+  可以直接用 `const` 簡寫
+  ```ts
+  const devilNumber = 666;
+  ```
+
+  然而，如果是物件，明文值若是這樣指派下去：
+  ```ts
+  let jsonObj: {foo: 123, bar: 'Hello'} = {foo: 123, bar: 'Hello'};
+  ```
+  其實等效於，將物件凍結的效果
+  ```ts
+  // 會推論成 const jsonObj: Readonly<{foo: number; bar: string;}> 唯讀狀態，不可變更
+  const jsonObj = Object.freeze({foo: 123, bar: 'Hello'});
+  ```
+
+  > 結論：
+  > - 明文型別值，基本上不需要註記，直接宣告成 `常數` 就好了。
+  > - 如果遇到 `JSON` 物件或其他種類物件，也可以使用 `Object.freeze` 將其凍結。
+
+  有一種情況，會使用明文值，但會搭配 `聯集複合` 的技巧。
+  ```ts
+  let something: 123 | 456 = 123
+  ```
+
+  - #### 明文型別的推論與註記之注意事項
+    - 1. 每一個 `明文值` 都可以 `自成一個型別`。
+    - 2. 通常只要將原始型別值宣告成 `常數 (Constant)`，該常數的推論結果就是原始型別的明文值。
+    - 3. 物件明文值，雖然也可以宣告成常數，但由於傳遞的方式是以 `參照(Reference)` 傳遞，因此內部的屬性對應的值還是有被篡改的可能，因此推論結果會是物件型別而非物件的明文型別。
+    - 4. 若想要實實在在地封住物件被篡改的權限，使用 `Object.freeze` 是一種方式。
+    - 5. 明文型別 `除非搭配 聯集複合 (Union)` 的方式，否則是相對沒必要註記的。
+
+### 3.6.3 互斥聯集 Discriminated Unions
+  `FLUX` 架構重點：
+  - 1. 統一管理資料狀態
+    ```ts
+    let state = {
+      items: [
+        { id: 1, title: 'Have Lunch',       done: true},
+        { id: 2, title: 'Learn TypeScript', done: false},
+      ],
+      trackID: 3, // 隨時紀錄下一個 item 被新增時需要指派的 ID 值
+    }
+    ```
+
+  - 2. 限制可以採取的資料更新行為
+    
+    使用 `型別化名` 方式宣告四種不同的行為，
+    ```ts
+    // 新增代辦事項
+    type NewItemAction = {
+      type: 'NEW_ITEM',
+      payload: { title: string };
+    };
+
+    // 刪除代辦事項
+    type RemoveItemAction = {
+      type: 'REMOVE_ITEM',
+      payload: { id: number };
+    };
+
+    // 完成代辦事項
+    type CompleteItemAction = {
+      type: 'COMPLETE_ITEM',
+      payload: { id: number };
+    };
+
+    // 將代辦事項重設為未完成狀態
+    type UndoneItemAction = {
+      type: 'UNDONE_ITEM',
+      payload: { id: number };
+    };
+    ```
+
+    可以用屬性 `type` 作為辨識基準，從單一屬性互相排除其他型別的可能性，使用一個 `Action` 對這四種不同的型別進行聯集：
+    ```ts
+    type Action = (
+      NewItemAction |
+      RemoveItemAction |
+      CompleteItemAction |
+      UndoneItemAction
+    )
+    ```
+
+    而當確認互斥聯集中的其中一種型別的話，後續就會出現該型別化名的規格方面的提示。
+
+    藉由此特性，可以設計出統一更新資料的函式 `dispatch`，其結構大致上如下：
+    ```ts
+    /* 簡易版本 dispatch 函式 */
+    function dispatch(action: Action) {
+      switch( action.type) {
+        case 'NEW_ITEM':
+          newItem(action.payload.title);
+          break;
+        case 'REMOVE_ITEM':
+          removeItem(action.payload.id);
+          break;
+        case 'COMPLETE_ITEM':
+          completeItem(action.payload.id);
+          break;
+        case 'NEW_ITEM':
+          undoneItem(action.payload.id);
+          break;
+      }
+    }
+    ```
+
+## [本章練習](../A/typeScript-A.html#第三章-深入型別系統i-基礎篇)

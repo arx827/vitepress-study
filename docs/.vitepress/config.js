@@ -4,7 +4,7 @@ import { head, nav, sidebar } from './configs'
 const themeConfig = {
   logo: '/apple-touch-icon.png',
   siteTitle: 'Study 學習筆記',
-  
+  outline: [2, 3],
   nav,
   sidebar,
 
