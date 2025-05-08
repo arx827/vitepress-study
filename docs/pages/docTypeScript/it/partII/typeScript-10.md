@@ -294,6 +294,67 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
 ### 10.3.2 泛用類別 Set
+  以下是 `Set` 的實體與建構子函式的介面宣告，為 `Set` 的型別定義。
+  ```ts
+  interface Set<T> {
+    add(value: T): this;
+    clear(): void;
+    delete(value: T): boolean;
+    foreach(
+      callbackfn: (value: T, value2: T, set: Set<T>) => void;
+      thisArg?: any
+    ): void;
+    has(value: T): boolean;
+    readonly size: number;
+  }
+
+  /**
+   * 此為 Set 建構子函式的介面，此為類別型別 Class Types 的設計手法
+   */
+  interface SetConstructor {
+    new <T = any>(values?: readonly T[] | null): Set<T>;
+    readonly prototype: Set<any>;
+  }
+
+  declare var Set: SetConstructor;
+  ```
+
+### 10.3.3 泛用類別 Map
+  以下是 ES6 Map 的型別定義宣告
+  ```ts
+  interface Map<K, V> {
+    clear(): void;
+    delete(key: K): boolean;
+    forEach(
+      callbackfn: (value: V, key: K, map: Map<K, V>) => void,
+      thisArg?: any
+    ): void;
+    get(key: K): V | undefined;
+    has(key: K): boolean;
+    set(key: K, value: V): this;
+    readonly size: number;
+  }
+
+  /**
+   * Map 的建構子函式本身的介面
+   */
+  interface MapConstructor {
+    new(): Map<any, any>;
+    new<K, V>(entries?: readonly (readonly [K, V])[] | null): Map<K, V>;
+    readonly prototype: Map<any, any>;
+  }
+
+  declare var Map: MapConstructor;
+  ```
+
+  使用 `Map` 時與 `Set` 有類似的概念，不過它有兩個型別參數，第一個代表 `Map` 的鍵之型別，第二個則是值的型別。
+  ```ts
+  /* 以下的 numMapObject 之鍵，必須為字串，值必須為數字型別 */
+  const numMapObject = new Map<string, number>([
+    ['lubky number', 14],
+    ['unlucky number', 13]
+  ]);
+  ```
 
 ## 10.4 ES10 非強制串接操作符 Optional Chaining Operator
 
