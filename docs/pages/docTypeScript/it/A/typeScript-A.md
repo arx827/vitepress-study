@@ -1580,5 +1580,242 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   :::
 
 ## 第十章 常用 ECMAScript 標準語法
+### 1. 請問 JSON 物件若含有多層，也可以使用解構式解構嗎？註記方式又為何？例如以下的程式碼，`maxwell.socialLinks.personalWebsite` 可以被解構出來嗎？
+  ```ts
+  let maxwell = {
+    name: 'Maxwell',
+    age: 18,
+    socialLinks: { personalWebsite: 'example.com' },
+  };
+  ```
+  :::details 解答
+  ```ts
+  /* 淺層解構碼 */
+  let {
+    personalWebsite: ex1
+  }: { personalWebsite: string} = maxwell.socialLinks
+
+  /* 深層解構法 */
+  let {
+    socialLinks: { personalWebsite: ex2 }
+  }: {
+    socialLinks: { personalWebsite: string}
+  } = maxwell;
+
+  console.log(ex1); // => 'example.com'
+  ```
+  :::
+
+### 2. 請問以下的程式碼效果為何？
+  ```ts
+  let arr = [1, 2];
+  [arr[1], arr[0]] = [arr[0], arr[1]];
+  ```
+  :::details 解答
+  本題的程式碼可以被看作成：
+  ```ts
+  let arr = [1, 2];
+  [arr[1], arr[0]] = [1, 2];
+  ```
+  經過解構式的解讀，`arr` 的，第 `0` 個元素，被指派數值 `2`、第 `1` 個元素被指派數值 `1`，因此結果為：
+  ```ts
+  console.log(arr);
+  // => [2, 1]
+  ```
+
+  因此推論結果為交換該陣列裡的兩個元素；本題程式碼等效於：
+  ```ts
+  let arr = [1, 2];
+
+  /* 交換兩個元素 */
+  let temp = arr[1];
+  arr[1] = arr[0];
+  arr[0] = temp;
+  ```
+  :::
+
+### 3. 承上題，如果換成以下的程式碼，會有什麼結果？
+  ```ts
+  let arr = [1, 2];
+  [arr[1], arr[0]] = arr;
+  ```
+  :::details 解答
+  本題為陷阱題，答案結果是 `[1, 1]`，因為本題的等效程式碼為：
+  ```ts
+  let arr = [1, 2];
+  arr[1] = arr[0];  // 此時 arr[0] 為 1，被指派到 arr[1]
+  arr[0] = arr[1];  // 此時 arr[1] 為 1，被指派到 arr[0]
+  ```
+
+  與前一題差別在於，解構過程中是新建一個物件後解構：
+  ```ts
+  [arr[1], arr[0]] = [arr[0], arr[1]];
+  ```
+
+  然而，本題卻是直接用同一個物件參照進行解構，而後再塞到同一個物件參照對應的值，因此才會造成不同結果。
+  ```ts
+  [arr[1], arr[0]] = arr;   // 用同一個物件參照解構，並指派到同一個物件參照。
+  ```
+  :::
+
+### 4. 匯集 - 展開操作符，可以對 `JSON` 物件進行展開的操作同時，將屬性再匯集到另一個 `JSON` 物件裡，因此你可能會看到利用匯集 - 展開操作符重新建構物件的語法：
+  ```ts
+  let obj1 = { foo: 'Hello', bar: 123, baz: { message: 'world' }};
+  let obj2 = { ...obj1 };
+
+  console.log(obj1 === obj2); // => false
+  ```
+
+  然而，此語法實際上只會進行淺層的物件複製 (英文為 `Shallow Copy`)，內層的屬性如果對到的也是物件時 (比如 `obj1.bar`)，複製出的物件之內層仍然會指向同一個物件：
+  ```ts
+  console.log(obj1.baz === obj2.baz); // => true
+  ```
+
+  因此如果對內層物件進行竄改時，原先被複製的物件對照的內層物件資料也會被篡改：
+  ```ts
+  obj2.baz.message = 'goodbye';
+  console.log(obj1.baz); // => { message: 'goodbye' }
+  ```
+
+  試寫出一個簡單的函式 `deepCopy`，深度複製 (`Deep Copy`) 輸入的物件，使得輸出物件的內層物件不會與複製前的物件有任何 `參照 (Reference)` 上的關聯：
+  ```ts
+  type JSONObj = { [key: string]: any};
+  function deepCopy(obj: JSONObj): JSONObj {
+    // 實踐過程 ...
+  }
+
+  let obj1 = { foo: 'Hello', bar: 123, baz: { message: 'world' }};
+  let obj2 = deepCopy(obj1);
+
+  /* 對 obj2 進行竄改，obj1 不會受到影響 */
+  obj2.baz.message = 'goodbye';
+  console.log(obj1.baz); // => { message: 'world' }
+  console.log(obj2.baz); // => { message: 'goodbye' }
+
+  console.log(obj1 === obj2); // => false
+  ```
+
+  本題不考慮 `JSON` 物件以外的情形，例如陣列或者是函式等，因此讀者不需要管輸入到 `deepCopy` 函式裡的 `JSON` 物件裡的值有陣列或函式以外的情形。
+
+  :::details 解答
+  ```ts
+  function deepCopy(input: JSONObj): JSONObj {
+    // 淺層複製
+    let result = { ...input };
+
+    // 使用遞迴 Recursion：
+    // 如果複製的結果，裡面的值為物件時，再進行淺層複製，一直遞迴下去
+    for (let prop in input) {
+      if (typeof prop  === 'object') {
+        result[prop] = deepCopy(result[prop]);
+      }
+    }
+
+    return result;
+  }
+  ```
+  :::
+
+### 5. 請問陣列 `Array` 與 `ES6 Set` 有何差異？
+  :::details 解答
+  最大的差異在於，陣列的元素可以重複，而 `ES6 Set` 內的元素不一樣；二來是陣列與 `ES6 Set` 提供的 `API` 具有很大的差異，像是陣列元素順序有差異，因此會有 `Push` 或 `Unshift` 之類的方法新增元素，而 `ES6 Set` 的元素無關乎順序，因此新增元素才會只有 `Add` 方法。
+  :::
+
+### 6. 請問 `JSON` 物件 與 `ES6 Map` 有何差異？
+  :::details 解答
+  `JSON` 物件的鍵，只能為字串或數字型別的值，而 `ES6 Map` 物件則可以以任何物件值作為鍵。
+  :::
+
+### 7. 提供任一組數字陣列 (如：[2, 3, 6, 1, 3, 6, 5, 9])，請計算陣列的元素種類個數 (本範例中，元素種類有 6 種，分別為： 1, 2, 3, 5, 6, 9)
+  :::details 解答
+  使用 `ES6 Set` 即可：
+  ```ts
+  function distinctNumberCount(input: Array<number>): number {
+    return new Set(input).size;
+  }
+  ```
+  :::
 
 ## 第十一章 常用 ECMAScript 標準語法 非同步程式設計篇
+### 1. 試描述 `JavaScript` 裡同步 (Synchronous) 與 非同步 (Asynchronous) 概念與差異性。
+  :::details 解答
+  - 同步的程式運作過程，會按照程式碼順序一行一行地執行，也就是說，後面的程式碼必須得等到前面的程式碼執行完畢才會接續，因此遇到運算耗費量過大的程式碼，容易造成 `阻塞 (Blocking)` 問題；
+  - 非同步程式碼在運作上，順序則不一定，由於 `JavaScript` 引擎 (如：`V8`) 設計上只有 `單線程 (Single-Threaded)`，因此程式運作上是 `併發 (Concurrent)` 執行的，不太會遇到阻塞問題。
+  :::
+
+### 2. 試問以下的程式碼會以什麼樣的順序印出值？
+  ```ts
+  console.log('Log 1');
+
+  // 設定 3 秒計時後印出值
+  setTimeout(function() {
+    console.log('Log 2');
+  }, 3000);
+
+  console.log('Log 3');
+
+  // 設定 0 秒計時後印出值
+  setTimeout(function() {
+    console.log('Log 4');
+  }, 0);
+
+  console.log('Log 5');
+  ```
+  :::details 解答
+  印出訊息順序為：`Log 1` -> `Log 3` -> `Log 5` -> `Log 4` -> `Log 2`
+  :::
+
+### 3. Promise 物件初始化的過程中，會是如何執行程式碼？試分析下面的範例程式碼。
+  ```ts
+  new Promise<string>(function (resolve, reject) {
+    console.log('Log 1');
+    resolve('Hello world!');
+
+    console.log('Log 2');               // Resolve 過後，這東西會印出來嗎？
+    resolve('Hello world again!');      // 可以在度 Resolve 嗎？
+  }).then(function(result) {
+    console.log('Log 3');
+    console.log(result);
+  });
+
+  console.log('Log 4');     // 是 Promise 裡面的函式，還是這個先執行？
+  ```
+  :::details 解答
+  實現運行整段程式碼，其印出訊息順序為：`Log 1` -> `Log 2` -> `Log 4` -> `Log 3` -> `Hello world`；`Promise` 物件在一開始初始化時，就會執行函式的內容，因此最先印出 `Log 1` 訊息；然而，遇到 `resolve` (或 `reject`) 函式時，儘管看似應該要終止了，但 `Promise` 物件內的函式依然會繼續執行，於是印出 `Log 2`；由於 `Promise` 物件本身是非同步程式，根據 `事件迴圈 (Event Loop)` 的原理，程式碼會先執行到結束 -- 也就是印出 `Log 4` 後，`Promise` 中的 `then` 方法才會開始執行，而 `then` 方法裡依序印出 `Log 3` 以及 參數值，為 `Hello world!` 字串。
+  :::
+
+### 4. 在討論函式型別篇章時，通常函式在宣告時，參數必須要積極註記；然而宣告一個新的 `Promise` 物件時，為何本章節大部分的範例程式碼，`Promise` 物件的 `then` 方法裡的參數不太有註記的需要？
+  :::details 解答
+  `Promise` 物件本身為泛用型別，而 `Promise<T>` 中的型別參數 `T` 就代表了 `then` 方法裡回呼函式中的參數型別。
+  :::
+
+### 5. 假設今天宣告一個 `timeoutAfter` 函式如下：
+  ```ts
+  function timeoutAfter(milliseconds: number) {
+    return new Promise<string>(function (resolve, reject) {
+      setTimeout(function() {
+        reject('Timeout Error');
+      }, milliseconds);
+    })
+  }
+  ```
+  `Timeout` 通常代表著一段程式執行時間過長，必須要設一段時間進行中斷程式的動作。
+
+  運用 `timeoutAfter` 函式，搭配哪一種 `Promise API` 就可以達到當一個非同步程式運行時間過長，可以提前終止並拋出錯誤訊息的動作。
+  :::details 解答
+  使用 `Promise.race`，只要 `timeoutAfter` 回傳的 `Promise` 物件 `reject` 時，就會將整個 `Promise.race` 終結。
+  :::
+
+### 6. 非同步函式可以在內部 `await` 另一個非同步函式嗎？那麼就可以 `await Promise API` 之類的東西嗎？ (譬如：await Promise.all(...) 等東西)
+  :::details 解答
+  是，只要是任何回傳 `Promise` 物件相關的資源，都可以在非同步函式裡，用 `await` 關鍵字進行等待該非同步程式結束的情形。
+  :::
+
+### 7.【進階題】討論 `Promise` 物件的泛型特性時，提到註記 `Promise` 物件的型別參數 `T`，就代表 `resolve` 函式也必須要填入型別 `T` 的值，但也可以填入 `PromiseLike<T>` 這種型別的值。
+
+  `TypeScript` 事實上具有 `<Type>-Like` 相關的型別 (例如本書沒提到過的：`ArrayLike<T>`)，讀者可以想想看這類型型別的意義在哪嗎？
+  :::details 解答
+  `<Type>-Like` 類型的型別，可以避免輸入過於限制的情形，比如一個函式要求輸入型別為 `ArrayLike<T>` 以及另一個函式則是輸入型別為 `Array<T>`，兩者相比，前者只要有 `長得像陣列的資料結構`，譬如有 `length` 性質的物件等，就可以輸入，但後者強調 `一定要陣列型的資料結構` 輸入才行；
+  
+  [詳細可以參見](https://stackoverflow.com/questions/43712705/why-does-typescript-use-like-types)
+  :::

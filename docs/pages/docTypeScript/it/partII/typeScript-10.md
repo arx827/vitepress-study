@@ -357,7 +357,90 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
 ## 10.4 ES10 非強制串接操作符 Optional Chaining Operator
+  有時候 `JavaScript` 程式裡，物件的屬性不一定會存在值，如果要確認物件內部的狀態時，必須得這樣寫：
+  ```ts
+  if(obj && obj.propA && obj.propA.propB) {
+    console.log('obj.propA.propB exists!');
+  }
+  ```
+
+  以上的範例就是先確保 `obj` 的存在 (也就是 `obj` 不為 `null` 或 `undefined` 等偏向於 `False` 這一類的值)，然後在相繼確認 `obj.propA` 與 `obj.propA.propB` 的存在。
+
+  運用非強制串接操作符時，也就是 `?.` 的記號，等效結果如下：
+  ```ts
+  if(obj?.propA?.propB) { /* 略... */ }
+  ```
+
+  不過要注意的事情是，由於 `Flase` 這一類的值包含數字 0 或者是空字串，但這樣的說法是不精確的。以下是運用串接操作符以及實際的程式碼對照：
+  ```ts
+  /* 非強制串接操作符 */
+  if(obj?.propA?.propB) { /* 略... */ }
+
+  /* 以上的程式碼實際的編譯結果 */
+  if(
+    (obj       === null || obj       === undefined) ? undefined :
+    (obj.propA === null || obj.propA === undefined) ? undefined :
+    obj.propA.propB
+  ) { /* 略... */ }
+  ```
+
+  實際上，非強制串接操作符的效果，是會先檢測串接前的值是否為 `null` 或 `undefined`，如果不是的話就會繼續串接下去。
+
+  另外，非強制串接操作不一定只有操作屬性，它可以用來處理呼叫陣列索引的行為：
+  ```ts
+  /**
+   * 將非強制串接操作在陣列上，會變成先檢查陣列是否為 undefined 或 null;
+   * 若陣列存在，就可以直接串接並且呼叫該陣列的索引
+   */
+  let arr = [1, 2, 3, 4, 5];
+  arr?.[0];
+  ```
+
+  當然，字串由於也具備索引的特徵，因此改成以下的形式也可以：
+  ```ts
+  let message = 'Hello world';
+  message?.[0];
+  ```
+
+  函式的呼叫行為也可以改成非強制串接的方式呼叫：
+  ```ts
+  aFunction?.(/* 參數... */);
+  ```
+  等效於：
+  ```ts
+  aFunction === null || aFunction === undefined ? undefined : aFunction(/* 參數... */)
+  ```
 
 ## 10.5 ES10 空值結合操作符 Nullish Coalescing Operator
+  此操作符通常用在 `預設值 (Default Value)` 的設置。
 
-## [本章練習](../A/typeScript-A.html#第八章-typescript-模組系統)
+  `JavaScript` 裡有一種被稱作為 `短路語法 (Short-Circuiting)`，
+  ```ts
+  let selectedNumber = obj.value && 14;
+  ```
+
+  以上的程式碼會先確認如果 `obj.value` 不為偏向於 `False` 的值 (如：`null`、`undefined`、`數字0` 或 `空字串`)，就會將 `obj.value` 指派到變數 `selectedNumber` 裡，否則會將數值 `14` 指派到變數裡。
+
+  不過，假設變數 `selectedNumber` 是指任何數字皆可以被指派的話，那麼 `數字 0` 永遠不會被指派進去，因為 `數字 0` 在 `JavaScript` 隸屬於 `False` 值，因此必須改寫成以下格式：
+  ```ts
+  let selectedNumber = obj.value && (obj.value === 0 ? 0 : 14);
+  ```
+
+  以上的寫法就變成是多增加一層確認 `obj.value` 是否為 `數字 0` 的步驟。
+
+  但這種短路寫法寫久了，應該會希望有操作符是專門擋 `null` 或 `undefined` 這兩種值的短路語法，這就是 `ECMAScript` 出的 `空值結合操作符` 的主要功能。
+  ```ts
+  let selectedNumber = obj.value ?? 14;
+  ```
+
+  其中，符號 `??` 就是 `空值結合操作符`，以上的程式碼編譯結果等效於以下的形式：
+  ```ts
+  let selectedNumber = (obj.value === null || obj.value === undefined) ? 14 : obj.value;
+  ```
+
+  另外，假設連 `obj.value` 也不確定 `obj` 的存在與否時，也可以結合 `非強制串接操作符`，寫出以下形式的程式碼：
+  ```ts
+  let selectedNumber = obj?.value ?? 14;
+  ```
+
+## [本章練習](../A/typeScript-A.html#第十章-常用-ecmascript-標準語法)
