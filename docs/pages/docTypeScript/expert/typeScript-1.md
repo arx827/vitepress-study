@@ -51,7 +51,7 @@ title: TypeSctipt 邁向專家之路
   ```
 
   你會看到如下的回應：
-  ```txt
+  ```
   Wrote to todo\package.json:
 
   {
