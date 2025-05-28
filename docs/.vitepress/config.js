@@ -1,4 +1,3 @@
-import { defineConfig } from "vitepress";
 import { head, nav, sidebar } from './configs'
 
 // 主題 配置
@@ -22,7 +21,7 @@ const markdown = {
   lineNumbers: true
 }
 
-export default defineConfig({
+export default {
   base: '/vitepress-study/',   // 站點將部署在這個 base URL路徑
   lang: 'zh-TW',
   title: 'Study',
@@ -35,4 +34,4 @@ export default defineConfig({
       port: 8509
     }
   }
-})
+}
