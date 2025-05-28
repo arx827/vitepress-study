@@ -32,11 +32,11 @@ export const nav = [
     items: [
       {
         text: '[Hahow] 學會情緒智商與壓力管理，做自己情緒的主人',
-        link: '/pages/hahow/mood'
+        link: '/pages/Hahow/mood'
       },
       {
         text: '[Hahow] 軟體開發的利器：技術人要懂的 DevOps 通識課',
-        link: '/pages/hahow/devops/devops-0'
+        link: '/pages/Hahow/devops/devops-0'
       }
     ]
   },
