@@ -1,5 +1,54 @@
 export const sidebar = {
-  '/page/guide/': [
+  '/pages/docTypeScript/it': [
+    {
+      text: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !',
+      items: [
+        {
+          text: 'Part I TypeScript 基礎篇',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            { text: '1 TypeScript 的發展與概論', link: '/pages/docTypeScript/it/partI/typeScript-1' },
+            { text: '2 型別系統概論', link: '/pages/docTypeScript/it/partI/typeScript-2' },
+            { text: '3 深入型別系統 I 基礎篇', link: '/pages/docTypeScript/it/partI/typeScript-3' },
+            { text: '4 深入型別系統 II 進階篇', link: '/pages/docTypeScript/it/partI/typeScript-4' },
+            { text: '5 TypeScript 類別基礎', link: '/pages/docTypeScript/it/partI/typeScript-5' },
+            { text: '6 TypeScript 介面', link: '/pages/docTypeScript/it/partI/typeScript-6' },
+            { text: '7 深入型別系統 III 泛用型別', link: '/pages/docTypeScript/it/partI/typeScript-7' },
+            { text: '8 TypeScript 模組系統', link: '/pages/docTypeScript/it/partI/typeScript-8' },
+          ]
+        },
+        {
+          text: 'Part II TypeScript 應用篇',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            { text: '9 物件導向進階篇章', link: '/pages/docTypeScript/it/partII/typeScript-9' },
+            { text: '10 常用 ECMAScript 標準語法', link: '/pages/docTypeScript/it/partII/typeScript-10' },
+            { text: '11 常用 ECMAScript 標準語法 非同步程式設計篇', link: '/pages/docTypeScript/it/partII/typeScript-11' },
+            { text: '12 TypeScript 裝飾子', link: '/pages/docTypeScript/it/partII/typeScript-12' },
+          ]
+        },
+        {
+          text: 'A 解答篇',
+          link: '/pages/docTypeScript/it/A/typeScript-A'
+        }
+      ]
+    }
+  ],
+  '/pages/docVue/nuxt/nuxt3/': [
+    {
+      text: '[IT邦] - Nuxt3快速入門 - Ryan',
+      items: [
+        {
+          text: '1',
+        }
+      ]
+    }
+  ],
+
+
+  '/pages/guide/': [
     {
       text: '介紹',
       items: [
@@ -113,41 +162,38 @@ export const sidebar = {
       ]
     }
   ],
-  '/pages/docTypeScript/it': [
+  
+
+  // 其他
+  '/pages/hahow/devops': [
     {
-      text: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !',
+      text: '[Hahow] 軟體開發的利器：技術人要懂的 DevOps 通識課',
       items: [
         {
-          text: 'Part I TypeScript 基礎篇',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            { text: '1 TypeScript 的發展與概論', link: '/pages/docTypeScript/it/partI/typeScript-1' },
-            { text: '2 型別系統概論', link: '/pages/docTypeScript/it/partI/typeScript-2' },
-            { text: '3 深入型別系統 I 基礎篇', link: '/pages/docTypeScript/it/partI/typeScript-3' },
-            { text: '4 深入型別系統 II 進階篇', link: '/pages/docTypeScript/it/partI/typeScript-4' },
-            { text: '5 TypeScript 類別基礎', link: '/pages/docTypeScript/it/partI/typeScript-5' },
-            { text: '6 TypeScript 介面', link: '/pages/docTypeScript/it/partI/typeScript-6' },
-            { text: '7 深入型別系統 III 泛用型別', link: '/pages/docTypeScript/it/partI/typeScript-7' },
-            { text: '8 TypeScript 模組系統', link: '/pages/docTypeScript/it/partI/typeScript-8' },
-          ]
+          text: '前言',
+          link: '/pages/hahow/devops/devops-0'
         },
         {
-          text: 'Part II TypeScript 應用篇',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            { text: '9 物件導向進階篇章', link: '/pages/docTypeScript/it/partII/typeScript-9' },
-            { text: '10 常用 ECMAScript 標準語法', link: '/pages/docTypeScript/it/partII/typeScript-10' },
-            { text: '11 常用 ECMAScript 標準語法 非同步程式設計篇', link: '/pages/docTypeScript/it/partII/typeScript-11' },
-            { text: '12 TypeScript 裝飾子', link: '/pages/docTypeScript/it/partII/typeScript-12' },
-          ]
+          text: '1. DevOps 是什麼？',
+          link: '/pages/hahow/devops/devops-1'
         },
         {
-          text: 'A 解答篇',
-          link: '/pages/docTypeScript/it/A/typeScript-A'
+          text: '2. 三步工作法',
+          link: '/pages/hahow/devops/devops-2'
+        },
+        {
+          text: '3. 如何開始 DevOps ?',
+          link: '/pages/hahow/devops/devops-3'
+        },
+        {
+          text: '4. DevOps 的技術實踐',
+          link: '/pages/hahow/devops/devops-4'
+        },
+        {
+          text: '測驗題',
+          link: '/pages/hahow/devops/devops-exam'
         }
       ]
     }
-  ],
+  ]
 }
