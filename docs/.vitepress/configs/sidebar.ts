@@ -165,7 +165,7 @@ export const sidebar = {
   
 
   // 其他
-  '/pages/Hahow/devops': [
+  '/pages/hahow/devops': [
     {
       text: '[Hahow] 軟體開發的利器：技術人要懂的 DevOps 通識課',
       items: [
