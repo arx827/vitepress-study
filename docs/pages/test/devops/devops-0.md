@@ -3,7 +3,7 @@ title: 軟體開發的利器：技術人要懂的 DevOps 通識課
 ---
 
 # 前言
-  ![devops_0](/pages/hahow/devops/devops_0.png)
+  ![devops_0](./img/devops_0.png)
   講師：`柯仁傑` ( Odd-e Agile Coach )
 
   本課程讓對 `DevOps` 有興趣的朋友, 可以得到以下的好處：
