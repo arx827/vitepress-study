@@ -46,6 +46,162 @@ export const sidebar = {
       ]
     }
   ],
+  '/pages/f2e/docReact/react/': [
+    {
+      text: 'React 實戰影音課',
+      items: [
+        {
+          text: '前言',
+          link: '/pages/f2e/docReact/react/hexschoolReact0',
+        },
+        {
+          text: '1. 認識 React',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            {
+              text: '1. 認識 React',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  text: '1. 課程介紹',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-1',
+                },
+                {
+                  text: '2. 課程使用的文字編輯器',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-2',
+                },
+                {
+                  text: '3. 建立 React 環境',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-3',
+                },
+                {
+                  text: '4. 資料驅動 React - 建立版型',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-4',
+                },
+                {
+                  text: '5. 資料驅動 React - 資料抽離練習',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-5',
+                },
+                {
+                  text: '6. 什麼是 JavaScript 表達式 (運算式、expression)',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-6',
+                },
+                {
+                  text: '7. 表達式與 React 的關係',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-7',
+                },
+                {
+                  text: '8. JS型別與JSX',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-8',
+                },
+                {
+                  text: '9. JSX 是如何運作的',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-9',
+                },
+                {
+                  text: '10. JSX 與 HTML 的標籤屬性',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-10',
+                },
+                {
+                  text: '11. React 行內樣式',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-11',
+                },
+                {
+                  text: '12. JSX 開發中常見的錯誤',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-12',
+                },
+                {
+                  text: '13. JSX 章節回顧作業 (上)',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-13',
+                },
+                {
+                  text: '14. JSX 章節回顧作業 (下)',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-1-14',
+                },
+              ]
+            },
+            {
+              text: '2. JavaScript 必學觀念',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  text: '1. JavaScript 常見縮寫',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-1',
+                },
+                {
+                  text: '2. 解構',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-2',
+                },
+                {
+                  text: '3. 箭頭函式',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-3',
+                },
+                {
+                  text: '4. 陣列迴圈處理手法',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-4',
+                },
+                {
+                  text: '5. JSX 章節作業優化',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-5',
+                },
+                {
+                  text: '6. 物件傳參考特性',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-6',
+                },
+                {
+                  text: '7. 非同步與 Promise',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-7',
+                },
+                {
+                  text: '8. Promise 實戰運用',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-8',
+                },
+                {
+                  text: '9. Async function 與 await',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-9',
+                },
+                {
+                  text: '10. Async function 實戰運用',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-10',
+                },
+                {
+                  text: '11. 模組化 JavaScript：ESModule',
+                  link: '/pages/f2e/docReact/react/1/hexschoolReact1-2-11',
+                },
+              ]
+            }
+          ]
+        },
+        {
+          text: '2. React元件 與 Hooks入門',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            {
+              text: '1. 元件基礎',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  text: '1. 元件介紹',
+                  link: '/pages/f2e/docReact/react/2/hexschoolReact2-1-1',
+                },
+                {
+                  text: '2. 元件基礎練習',
+                  link: '/pages/f2e/docReact/react/2/hexschoolReact2-1-2',
+                },
+                
+              ]
+            },
+          ]
+        },
+        
+      ]
+    }
+  ],
 
 
   // '/pages/guide/': [

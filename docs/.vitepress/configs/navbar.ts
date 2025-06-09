@@ -3,15 +3,6 @@ export const nav = [
     text: '前端',
     items: [
       {
-        text: 'Nuxt',
-        items: [
-          {
-            text: '[IT邦] - Nuxt3快速入門 - Ryan',
-            link: '/pages/docVue/nuxt/nuxt3/nuxt3-1'
-          }
-        ]
-      },
-      {
         text: 'TypeScript',
         items: [
           {
@@ -24,6 +15,24 @@ export const nav = [
           }
         ]
       },
+      {
+        text: 'Nuxt',
+        items: [
+          {
+            text: '[IT邦] - Nuxt3快速入門 - Ryan',
+            link: '/pages/docVue/nuxt/nuxt3/nuxt3-1'
+          }
+        ]
+      },
+      {
+        text: 'React',
+        items: [
+          {
+            text: '[六角學院] React 實戰課',
+            link: '/pages/f2e/docReact/react/hexschoolReact0'
+          }
+        ]
+      }
     ]
   },
   
