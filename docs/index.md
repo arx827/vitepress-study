@@ -16,17 +16,21 @@
     #     text: View on GitHub
     #     link: https://github.com/vuejs/vitepress
   features:
-    - title: Hahow
-      details: 學會情緒智商與壓力管理，做自己情緒的主人
-      link: /pages/Hahow/mood
+    # - title: React 實戰課
+    #   details: '[六角學院]'
+    #   link: /pages/f2e/docReact/react/hexschoolReact0
 
-    - title: TypeScript
-      details: '[旗標] TypeScript 邁向專家之路'
-      link: /pages/docTypeScript/expert/typeScript-1
+    - title: Google 數位人才探索計畫
+      details: '數位行銷學程'
+      link: /pages/google/google_ads/google_ads_01-01.md
 
-    - title: TypeScript
-      details: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !'
-      link: /pages/docTypeScript/it/partI/typeScript-1
+    - title: Google 數位人才探索計畫
+      details: 'Google Cloud 學程'
+      link: /pages/google/google_cloud/google_cloud_01.md
+
+    # - title: TypeScript
+    #   details: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !'
+    #   link: /pages/docTypeScript/it/partI/typeScript-1
 
   #   - icon: 🖖
   #     title: vue的力量與Markdown相遇

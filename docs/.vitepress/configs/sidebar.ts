@@ -204,6 +204,7 @@ export const sidebar = {
   ],
 
 
+
   // '/pages/guide/': [
   //   {
   //     text: '介紹',
@@ -351,5 +352,57 @@ export const sidebar = {
         }
       ]
     }
-  ]
+  ],
+
+  '/pages/google/google_ads': [
+    {
+      text: 'Google - 數位行銷學程',
+      items: [
+        {
+          text: '1. Google Ads 搜尋廣告認證',
+          items: [
+            {
+              text: '1. 開始使用 AI 技術輔助搜尋廣告活動',
+              link: '/pages/google/google_ads/google_ads_01-01',
+            },
+            {
+              text: '2. 瞭解 Google Ads 競價',
+              link: '/pages/google/google_ads/google_ads_01-02',
+            },
+            {
+              text: '3. 以 AI 技術輔助搜尋廣告吸引使用者',
+              link: '/pages/google/google_ads/google_ads_01-03',
+            },
+            {
+              text: '4. 透過回應式搜尋廣告觸及使用者',
+              link: '/pages/google/google_ads/google_ads_01-04',
+            },
+            {
+              text: '5. 探索 AI 技術輔助搜尋廣告出價策略',
+              link: '/pages/google/google_ads/google_ads_01-05',
+            },
+            {
+              text: '6. 運用工具拓展業務',
+              link: '/pages/google/google_ads/google_ads_01-06',
+            },
+            {
+              text: '7. 依據業務目標改進 AI 技術輔助搜尋廣告活動',
+              link: '/pages/google/google_ads/google_ads_01-07',
+            },
+          ]
+        },
+      ],
+    }
+  ],
+  '/pages/google/google_cloud': [
+    {
+      text: 'Google - Google Cloud 學程',
+      items: [
+        {
+          text: '1. 課程介紹',
+          link: '/pages/google/google_cloud/google_cloud_01',
+        },
+      ],
+    }
+  ],
 }

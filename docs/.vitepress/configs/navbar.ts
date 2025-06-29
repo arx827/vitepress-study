@@ -46,6 +46,19 @@ export const nav = [
       {
         text: '[Hahow] 軟體開發的利器：技術人要懂的 DevOps 通識課',
         link: '/pages/hahow/devops/devops-0'
+      },
+      {
+        text: 'Google 數位人才探索計畫',
+        items: [
+          {
+            text: '數位行銷學程',
+            link: '/pages/google/google_ads/google_ads_01-01'
+          },
+          {
+            text: 'Google Cloud 學程',
+            link: '/pages/google/google_cloud/google_cloud_01'
+          }
+        ]
       }
     ]
   },
