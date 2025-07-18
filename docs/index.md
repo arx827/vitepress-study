@@ -32,13 +32,9 @@
     #   details: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !'
     #   link: /pages/docTypeScript/it/partI/typeScript-1
 
-  #   - icon: 🖖
-  #     title: vue的力量與Markdown相遇
-  #     details: Lorem ipsum...
-      
-  #   - icon: 🛠️
-  #     title: 始終簡單、最少
-  #     details: Lorem ipsum...
+    - title: Nuxt3 學習筆記
+      details: 'Ryan'
+      link: /pages/docVue/nuxt/nuxt3/nuxt3-01
 ---
 <style>
 :root {

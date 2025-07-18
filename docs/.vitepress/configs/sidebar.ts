@@ -38,11 +38,132 @@ export const sidebar = {
   ],
   '/pages/docVue/nuxt/nuxt3/': [
     {
-      text: '[IT邦] - Nuxt3快速入門 - Ryan',
+      text: '[IT邦] - Nuxt3 學習筆記 - Ryan',
       items: [
         {
-          text: '1',
-        }
+          text: '來源 - IT邦 - Ryan',
+          link: 'https://ithelp.ithome.com.tw/users/20152617/ironman/5934',
+        },
+        {
+          text: '1. 淺談 CSR、SSR 與 SSG',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-01',
+        },
+        {
+          text: '2. Nuxt 3 介紹',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-02',
+        },
+        {
+          text: '3. 使用 nuxi 建立第一個專案',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-03',
+        },
+        {
+          text: '4. Nuxt 3 + TypeScript + ESLint + Prettier 環境建置',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-04',
+        },
+        {
+          text: '5. 如何使用 Tailwind CSS',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-05',
+        },
+        {
+          text: '6. 目錄結構與自動載入 (Auto Imports)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-06',
+        },
+        {
+          text: '7. 頁面 (Pages) 與路由 (Routing)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-07',
+        },
+        {
+          text: '8. 布局模板 (Layouts)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-08',
+        },
+        {
+          text: '9. 元件 (Components)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-09',
+        },
+        {
+          text: '10. 組合式函式',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-10',
+        },
+        {
+          text: '11. 插件 (Plugins)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-11',
+        },
+        {
+          text: '12. 模組 (Modules)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-12',
+        },
+        {
+          text: '13. 中間件目錄 (Middleware Directory)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-13',
+        },
+        {
+          text: '14. Server API 與 Nitro Engine',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-14',
+        },
+        {
+          text: '15. 資料獲取 (Data Fetching)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-15',
+        },
+        {
+          text: '16. 狀態管理 (State Management)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-16',
+        },
+        {
+          text: '17. 狀態管理 - Store & Pinia',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-17',
+        },
+        {
+          text: '18. Runtime Config & App Config',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-18',
+        },
+        {
+          text: '19. 串接 Google OAuth 登入',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-19',
+        },
+        {
+          text: '20. Cookie 的設置與 JWT 的搭配',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-20',
+        },
+        {
+          text: '21. 實作部落格 - 資料庫與會員系統',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-21',
+        },
+        {
+          text: '22. 實作部落格 - 導覽列模板與新增文章',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-22',
+        },
+        {
+          text: '23. 實作部落格 - 頁面的導航守衛與切換效果',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-23',
+        },
+        {
+          text: '24. 搜尋引擎最佳化 (SEO) 與 HTML Meta Tag',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-24',
+        },
+        {
+          text: '25. 邁向國際化 - 使用 Nuxt I18n 實作多國語系',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-25',
+        },
+        {
+          text: '26. Public 與 Assets 資源目錄',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-26',
+        },
+        {
+          text: '27. 測試 (Testing) 與錯誤處理 (Error handling)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-27',
+        },
+        {
+          text: '28. 渲染模式 (Rendering modes) 與網站使用體驗核心指標 (Core Web Vitals)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-28',
+        },
+        {
+          text: '29. 發布網站前的建構打包 (Build) 與靜態網站生成 (Static Site Generation)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-29',
+        },
+        {
+          text: '30. 就剩最後一步了 - 部署 (Deployment)',
+          link: '/pages/docVue/nuxt/nuxt3/nuxt3-30',
+        },
       ]
     }
   ],
