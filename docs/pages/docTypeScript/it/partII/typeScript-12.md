@@ -58,7 +58,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
   以上宣告一個貓咪類別 `Cat` 以及一個普通函式 `decorate`，而類別 `Cat` 的成員方法 `makeNoise` 被安裝了 `decorate` 裝飾子；如果你將其編譯並且執行時，就會出現以下的訊息：
-  ```
+  ```sh
   Hello world!
   Cat { info: [Getter], makeNoise: [Function]}
   makeNoise
@@ -177,7 +177,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   但如果認為是 `From decorator 1` 這個訊息先印出來的話，那就錯了！
 
   以上範例運作結果為：
-  ```
+  ```sh
   From decorator 2
   From decorator 1
   ```
@@ -235,7 +235,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
   印出的結果如下：
-  ```
+  ```sh
   Cat { info: [Getter], makeNoise: [Function]}
   info
   {
@@ -248,7 +248,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
 
 ### 12.2.3 成員變數裝飾子
   前面的條目中，裝飾子函式的第一個參數 `target` 指涉到的類別原型物件裡，似乎 `只有顯示成員方法但沒有成員變數`？
-  ```
+  ```sh
   Cat { info: [Getter], makeNoise: [Function]}
   ```
 
@@ -289,7 +289,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
   印出：
-  ```
+  ```sh
   Cat { info: [Getter], makeNoise: [Function]}
   name
   ```
@@ -332,7 +332,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
   以上的範例印出的結果如下：
-  ```
+  ```sh
   [Function: Circle] { area: [Function], PI: 3.141592653589793}
   PI
   [Function: Circle] { area: [Function], PI: 3.141592653589793}
@@ -376,7 +376,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   第二個參數 `key`，實際上 `參數裝飾子函式之第二個參數的值，是該參數所宣告在的方法名稱`，所以結果是 `makeNoise`。
 
   因此，為了區隔參數的種類，就出現了第三個參數 `index`，也就是代表參數的位置，跟陣列的索引邏輯一樣，參數位置由數字0開始計數。
-  ```
+  ```sh
   Cat { info: [Getter], makeNoise: [Function]}
   makeNoise   // 注意：並非參數名稱 noise，而是參數所在的方法名稱 makeNoise
   0           // noise 為 makeNoise 方法裡的第一個參數，所以 0
@@ -663,7 +663,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
   以上的程式碼簡單測試常見的裝飾子，其印出結果為：
-  ```text
+  ```sh
   Property Decorator Invoked: name            // 屬性裝飾子
   Member Method Decorator Invoked: info       // 成員方法裝飾子 (存取方法 info)
   Member Method Decorator Invoked: makeNoise  // 成員方法裝飾子 (方法 makeNoise)
@@ -696,7 +696,7 @@ title: IT邦 - 讓 TypeScript 成為你全端開發的 ACE !
   ```
 
   這時候，裝飾子的執行順序是 `內層優先於外層`；也就是說，儘管 `@decorateMethod1` 先於 `@decorateMethod2` 裝飾在 `makeNoise` 方法上，但是執行順序反而是相反的：
-  ```
+  ```sh
   Member Method Decorator 2 Invoked: makeNoise
   Member Method Decorator 1 Invoked: makeNoise
   ```
