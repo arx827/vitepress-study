@@ -6,7 +6,7 @@ title: React 實戰影音課 1
 ## 打開檔案 `/intro/commonintroFinalProblem.html`
   
 ## 加上 `<script>`
-  ```html
+  ```xml
   <div id="root"></div>
   <script type="text/babel">
     ...

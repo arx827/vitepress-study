@@ -9,7 +9,7 @@ title: React 實戰影音課 1
 ## 開啟 template 連結
   - [Bootstrap Card](https://getbootstrap.com/docs/5.2/components/card/)
   - 複製範例程式：
-    ```html
+    ```xml
     <div class="card" style="width: 18rem;">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">

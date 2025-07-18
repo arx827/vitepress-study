@@ -17,7 +17,7 @@ title: React 實戰影音課 2
         ```
 
       - ##### 匯入
-        ```html
+        ```xml
         <script type="module">
           import fn from './fnModule.js';
           fn();

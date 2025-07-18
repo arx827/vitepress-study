@@ -7,7 +7,7 @@ title: React 實戰影音課 1
 
 ## 嘗試將 HTML 結構轉為 JSX
   - HTML
-    ```html
+    ```xml
     <div>
       <div><button type="button" class="btn btn-primary">Primary</button></div>
       <div><input type="checkbox" checked /></div>

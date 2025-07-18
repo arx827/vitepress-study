@@ -7,7 +7,7 @@ title: React 實戰影音課 2
   - ### 3. 實戰取得遠端資料
     - #### 3-1
       [axios](https://github.com/axios/axios) `Promise based` Http工具
-      ```html
+      ```xml
       // 引入 CDN
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script>
