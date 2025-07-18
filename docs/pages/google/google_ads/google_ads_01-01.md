@@ -44,17 +44,17 @@ title: Google 數位人才探索計畫 - 數位行銷學程
 
 ## 2. 瞭解 AI 技術輔助搜尋廣告的價值
   - ### 瞭解 Google 搜尋廣告的價值
-    ![google_ads_01_01_01](./img/01/01/google_ads_01_01_01.png)
-    ![google_ads_01_01_02](./img/01/01/google_ads_01_01_02.png)
+    ![google_ads_01_01_01](./imgs/01/01/google_ads_01_01_01.png)
+    ![google_ads_01_01_02](./imgs/01/01/google_ads_01_01_02.png)
 
     - #### 將使用者意圖化為業務成果
       有了 `Google` 搜尋廣告活動，就能在使用者搜尋產品或服務時，在搜尋結果旁顯示自家廣告。
 
     - #### `Google` 搜尋廣告如何拉近你和客戶的距離？
       讓我們看看潛在買家小路的購物歷程，藉此瞭解 Google 搜尋廣告的運作方式。住在市區一段時間後，小路決定要騎單車上班，不過該買哪一輛腳踏車呢？
-      ![google_ads_01_01_03](./img/01/01/google_ads_01_01_03.png)
-      ![google_ads_01_01_04](./img/01/01/google_ads_01_01_04.png)
-      ![google_ads_01_01_05](./img/01/01/google_ads_01_01_05.png)
+      ![google_ads_01_01_03](./imgs/01/01/google_ads_01_01_03.png)
+      ![google_ads_01_01_04](./imgs/01/01/google_ads_01_01_04.png)
+      ![google_ads_01_01_05](./imgs/01/01/google_ads_01_01_05.png)
 
     - #### 隨堂測驗
       - 1. 吸引小路購買單車的原因是什麼？
@@ -90,10 +90,10 @@ title: Google 數位人才探索計畫 - 數位行銷學程
     - 有了 `Google` 搜尋廣告活動，就能在使用者搜尋產品或服務時，在搜尋結果旁顯示自家廣告。
 
 ## 3. 建立 AI 技術輔助的搜尋廣告活動
-  ![google_ads_01_01_06](./img/01/01/google_ads_01_01_06.png)
+  ![google_ads_01_01_06](./imgs/01/01/google_ads_01_01_06.png)
 
   - ### Google Ads 帳戶的架構
-    ![google_ads_01_01_07](./img/01/01/google_ads_01_01_07.png)
+    ![google_ads_01_01_07](./imgs/01/01/google_ads_01_01_07.png)
     - #### 管理員帳戶
       部分廣告主會管理多個 Google Ads 帳戶。為了從單一位置輕鬆查看及管理 Google Ads 帳戶，廣告主可以選擇建立管理員帳戶，進而節省在報表、存取權控管與合併帳單方面花費的時間。如要瞭解詳情，包括如何建立管理員帳戶，請參閱這篇[說明中心文章](https://support.google.com/google-ads/answer/7459399)。
 
@@ -120,7 +120,7 @@ title: Google 數位人才探索計畫 - 數位行銷學程
       根據行銷目標使用最合適的出價策略。為爭取更高的轉換量或轉換價值，`Google AI` 會採用「`智慧出價`」這套出價策略。
 
   - ### 我們和小艾一起來建立 AI 技術輔助的搜尋廣告活動
-    ![google_ads_01_01_08](./img/01/01/google_ads_01_01_08.png)
+    ![google_ads_01_01_08](./imgs/01/01/google_ads_01_01_08.png)
 
   - ### 首先考量小艾的行銷目標
     AI 技術輔助的搜尋廣告有多種方法可協助你達成行銷目標，但首先你需要確定想達成的業務成果，這樣才能針對目標最佳化及評估廣告活動成效。
@@ -150,19 +150,19 @@ title: Google 數位人才探索計畫 - 數位行銷學程
     注意：螢幕截圖中的範例資料僅供參考。
 
     - #### 步驟 1：新增廣告活動
-      ![google_ads_01_01_09](./img/01/01/google_ads_01_01_09.png)
+      ![google_ads_01_01_09](./imgs/01/01/google_ads_01_01_09.png)
     
     - #### 步驟 2：選擇廣告活動目標
-      ![google_ads_01_01_10](./img/01/01/google_ads_01_01_10.png)
+      ![google_ads_01_01_10](./imgs/01/01/google_ads_01_01_10.png)
 
     - #### 步驟 3：選擇廣告活動類型
-      ![google_ads_01_01_11](./img/01/01/google_ads_01_01_11.png)
+      ![google_ads_01_01_11](./imgs/01/01/google_ads_01_01_11.png)
 
     - #### 步驟 4：選擇目標達成方式
-      ![google_ads_01_01_12](./img/01/01/google_ads_01_01_12.png)
+      ![google_ads_01_01_12](./imgs/01/01/google_ads_01_01_12.png)
 
     - #### 步驟 5：設定廣告活動名稱
-      ![google_ads_01_01_13](./img/01/01/google_ads_01_01_13.png)
+      ![google_ads_01_01_13](./imgs/01/01/google_ads_01_01_13.png)
 
   - ### 分門別類
     你或許記得小艾店家的宣傳活動包括鞋子和手提包。他們希望為各項產品提供特定訊息並最佳化投資報酬率，因此小艾應該為每個產品系列建立單獨的廣告活動。在這個範例中，他們先從夾克著手。
@@ -171,19 +171,19 @@ title: Google 數位人才探索計畫 - 數位行銷學程
     現在來為小艾的廣告活動選取最適合的設定。過程中，你可以使用畫面左側的選單前後瀏覽設定。
 
     - #### 步驟 6：出價
-      ![google_ads_01_01_14](./img/01/01/google_ads_01_01_14.png)
+      ![google_ads_01_01_14](./imgs/01/01/google_ads_01_01_14.png)
 
     - #### 步驟 7：選擇聯播網
-      ![google_ads_01_01_15](./img/01/01/google_ads_01_01_15.png)
+      ![google_ads_01_01_15](./imgs/01/01/google_ads_01_01_15.png)
 
     - #### 步驟 8：選擇地區和語言
-      ![google_ads_01_01_16](./img/01/01/google_ads_01_01_16.png)
+      ![google_ads_01_01_16](./imgs/01/01/google_ads_01_01_16.png)
 
     - #### 步驟 9：建立廣告群組
-      ![google_ads_01_01_17](./img/01/01/google_ads_01_01_17.png)
+      ![google_ads_01_01_17](./imgs/01/01/google_ads_01_01_17.png)
 
     - #### 步驟 10：設定預算
-      ![google_ads_01_01_18](./img/01/01/google_ads_01_01_18.png)
+      ![google_ads_01_01_18](./imgs/01/01/google_ads_01_01_18.png)
 
   > 當廣告活動類型設為「搜尋」時，你會發現最高成效廣告活動出現。採用 AI 技術輔助的搜尋廣告活動與最高成效廣告活動，兩者相輔相成，可進一步發揮 `Google Ads` 的強大威力，在所有 `Google` 平台上盡量爭取轉換。首先以廣泛比對和以價值為準的出價，強化 AI 技術輔助的搜尋廣告。再來瞭解如何運用 `Google AI` 擴張你的影響力。
 
