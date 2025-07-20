@@ -16,25 +16,9 @@
     #     text: View on GitHub
     #     link: https://github.com/vuejs/vitepress
   features:
-    # - title: React 實戰課
-    #   details: '[六角學院]'
-    #   link: /pages/f2e/docReact/react/hexschoolReact0
-
-    - title: Google 數位人才探索計畫
-      details: '數位行銷學程'
-      link: /pages/google/google_ads/google_ads_01-01.md
-
-    - title: Google 數位人才探索計畫
-      details: 'Google Cloud 學程'
-      link: /pages/google/google_cloud/google_cloud_01.md
-
-    # - title: TypeScript
-    #   details: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !'
-    #   link: /pages/docTypeScript/it/partI/typeScript-1
-
     - title: Nuxt3 學習筆記
       details: 'Ryan'
-      link: /pages/docVue/nuxt/nuxt3/nuxt3-01
+      link: /pages/f2e/docVue/nuxt/nuxt3/nuxt3-01
 ---
 <style>
 :root {
