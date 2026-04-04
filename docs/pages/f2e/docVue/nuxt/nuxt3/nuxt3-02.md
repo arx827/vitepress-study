@@ -31,7 +31,8 @@ title: Nuxt3 學習筆記 - Ryan
     是 `Nuxt 3` 預設的渲染模式，等於 `SSR + SPA`。
 
   - ### Hybrid Rendering 混合渲染
-    可以為每個路由設置不同的渲染與緩存規則，讓部分頁面是 `CSR`，另一部份是 `SSR`。
+    - 每個路由可設定不同渲染策略
+    - 使用 `routeRules`。
 
   - ### Edge-Side Rendering 邊緣渲染
     `Nitro` 為 `Nuxt 3` 提供支持的全新伺服器端渲染引擎，能為 `Node.js`、`Deno`、`Worker` 等提供跨平台的支持，
@@ -40,7 +41,7 @@ title: Nuxt3 學習筆記 - Ryan
     > 能有效分擔在伺服器端渲染時的資源負荷，將其提升到另一個層次，從而減少網路延遲及成本。
 
 ## Nuxt 3 的建構工具
-  - [Vite](https://vitejs.dev/) (預設) / [webpack](https://webpack.js.org/)
+  - 預設使用 [Vite](https://vitejs.dev/) / 也可以切換成 [webpack](https://webpack.js.org/)
   - [Rollup](https://rollupjs.org/)
   - [PostCSS](https://postcss.org/)
   - [esbuild](https://esbuild.github.io/)

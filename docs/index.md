@@ -19,10 +19,6 @@
     - title: Nuxt3 學習筆記
       details: 'Ryan'
       link: /pages/f2e/docVue/nuxt/nuxt3/nuxt3-01
+    - title: CSS 學習筆記
+      link: /pages/f2e/docCSS/css_01
 ---
-<style>
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
-}
-</style>

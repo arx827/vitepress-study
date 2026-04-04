@@ -4,11 +4,12 @@ title: Nuxt3 學習筆記 - Ryan
 
 # 5. 如何使用 Tailwind CSS
   有兩種配置的方法：
-  - 使用 Nuxt Tailwind 模組
-  - Tailwind CSS 官方指引步驟
+  - 使用 `Nuxt Tailwind` 模組
+  - `Tailwind CSS` 官方指引步驟
 
 ## 使用 Nuxt Tailwind 模組
   - ### 1. 安裝相關套件
+    首先安裝 `@nuxtjs/tailwindcss`
     ```sh
     npm install -D @nuxtjs/tailwindcss
     ```
@@ -28,7 +29,7 @@ title: Nuxt3 學習筆記 - Ryan
     ```
   
   - ### 擴充或覆寫@nuxtjs/tailwindcss配置
-    專案內若使用 `@nuxtjs/tailwindcss` 模組，這兩個 `tailwind.css` 與 `tailwind.config.js` 檔案其實模組已經有預設，不需要手動建立，`tailwind.css` 對應模組內的 `tailwind.css` 可以參考專案檔案內容 [tailwind.css](https://github.com/nuxt-modules/tailwindcss/blob/main/src/runtime/tailwind.css)，tailwind.config.js 則是透過模組動態新增配置。
+    專案內若使用 `@nuxtjs/tailwindcss` 模組，這兩個 `tailwind.css` 與 `tailwind.config.js` 檔案其實模組已經有預設，不需要手動建立，`tailwind.css` 對應模組內的 `tailwind.css` 可以參考專案檔案內容 [tailwind.css](https://github.com/nuxt-modules/tailwindcss/blob/main/src/runtime/tailwind.css)，`tailwind.config.js` 則是透過模組動態新增配置。
 
     - #### tailwind.css
       專案目錄下若存在路徑檔名一致的 `./assets/css/tailwind.css` 檔案，`@nuxtjs/tailwindcss` 就會以這個檔案取代模組內預設的 `tailwind.css` 檔案。
@@ -43,7 +44,7 @@ title: Nuxt3 學習筆記 - Ryan
       - ##### `tailwind.config.js`
         專案目錄下若存在 `tailwind.config.js` 檔案就會以新的配置拓展或覆寫 `@nuxtjs/tailwindcss` 預設的 `tailwind.config`。
 
-        例如，我們想拓展或覆寫 content 的配置
+        例如，我們想拓展或覆寫 `content` 的配置
         ```js
         /** @type {import('tailwindcss').Config} */
         module.exports = {
@@ -150,7 +151,7 @@ title: Nuxt3 學習筆記 - Ryan
     ```
 
   - ### 2. 配置設定檔
-    開啟 `.prettierrc.js` 檔案，添加 `'prettier-plugin-tailwindcss'` 至 `plugins` 陣列中：
+    開啟 `.prettierrc.cjs` 檔案，添加 `'prettier-plugin-tailwindcss'` 至 `plugins` 陣列中：
     ```ts
     module.exports = {
       plugins: [

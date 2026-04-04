@@ -3,6 +3,15 @@ export const nav = [
     text: '前端',
     items: [
       {
+        text: 'CSS',
+        items: [
+          {
+            text: 'CSS 學習筆記',
+            link: '/pages/f2e/docCSS/css_01'
+          },
+        ]
+      },
+      {
         text: 'TypeScript',
         items: [
           {

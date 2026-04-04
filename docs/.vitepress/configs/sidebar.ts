@@ -1,5 +1,26 @@
 export const sidebar = {
   // 前端
+  '/pages/f2e/docCSS': [
+    {
+      text: 'CSS 學習筆記',
+      items: [
+        {
+          text: 'CSS',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            { text: '第一階段：CSS 基礎（語法、選擇器、排版）', link: '/pages/f2e/docCSS/css_01' },
+            { text: '第二階段：進階排版與布局', link: '/pages/f2e/docCSS/css_02' },
+            { text: '第三階段：美化與互動', link: '/pages/f2e/docCSS/css_03' },
+            { text: '第四階段：CSS 架構與實戰', link: '/pages/f2e/docCSS/css_04' },
+            { text: '第五階段：Tailwind CSS 與 Utility-First 思維', link: '/pages/f2e/docCSS/css_05' },
+            { text: '第六階段：高階實戰與架構優化', link: '/pages/f2e/docCSS/css_06' },
+            { text: '實作建議', link: '/pages/f2e/docCSS/css_07' },
+          ]
+        }
+      ]
+    }
+  ],
   '/pages/f2e/docTypeScript/expert': [
     {
       text: '[旗標] TypeScript 邁向專家之路',

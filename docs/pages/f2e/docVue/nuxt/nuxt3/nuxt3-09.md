@@ -3,10 +3,19 @@ title: Nuxt3 學習筆記 - Ryan
 ---
 
 # 9. 元件 (Components)
-  在建立 `Vue` 的網站開發過程中，我們可能會自己封裝 `元件 (Component)` 讓程式碼可以被重複使用，也方便開發者維護，這些一個個的元件，可以透過`全域註冊 (Global Registration)` 讓整個 `Vue` 應用程式中都可以使用這個元件，也可以透過 `區域註冊 (Local Registration)` 於特定的元件再載入使用。
+  - 元件是 `Vue` / `Nuxt` 開發的核心概念
+  - 可將 UI 拆分為多個可重用區塊
+  - 提升：
+    - 開發效率
+    - 可維護性
+  - `Nuxt` 在元件使用上提供更多自動化功能
 
 ## 元件自動載入
-  在 `Vue` 中，雖然區域註冊使得元件間的依賴關係更加明確也對於 [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) 更加友好，但我們在使用元件時，就得在需要的地方個別載入及註冊。而 `Nuxt 3` 提供在 `components` 目錄下專門放至這些元件，並具有自動載入及延遲載入等功能特色。
+  - `Nuxt` 會自動載入 `components/` 目錄下的元件
+  - 不需手動 `import`
+  - 可直接在 `template` 使用
+  - 支援巢狀資料夾
+  - 減少重複設定
 
   - ### 建立與使用元件
     - 新增 `./components/IronManWelcome.vue`，內容如下：
@@ -33,6 +42,12 @@ title: Nuxt3 學習筆記 - Ryan
       當我們建立了 `./components/IronManWelcome.vue` 檔案後，`Nuxt` 會自動載入 `./components` 目錄中的任何元件，在使用時的元件名稱也對應著檔案名稱，所以我們只需直接添加 `<IronManWelcome />` 就可以直些使用這個元件。
 
 ## 元件名稱
+  - 使用 `PascalCase` 命名
+  - 名稱由：
+    - 檔名
+    - 資料夾結構
+    - 組合而成
+
   `Nuxt` 所自動載入 `./components` 目錄下的元件，在使用時的元件名稱也對應著檔案名稱，而當你在巢狀的目錄結構下的元件，元件的名稱將會基於目錄的路徑與檔案名稱，並刪除重複的字段。
 
   舉例來說，如果 `./components` 目錄結構如下：
@@ -65,7 +80,12 @@ title: Nuxt3 學習筆記 - Ryan
     兩種方式 `Nuxt` 都支援，可以根據自己的習慣做選擇，而我個人是以`大駝峰式命名法 (Pascal Case)` 為主，以此區別為自己建立的元件。
 
 ## 動態元件 (Dynamic Components)
-  如果想要使用像 `Vue` 中的 `<component :is="someComputedComponent">` 來動態的切換不同的元件，則需要使用 `Vue` 提供的 `resolveComponentVue` 方法來進行輔助。
+  - 使用 `<component :is="...">`
+
+  - ### 特性
+    - 元件在需要時才載入
+    - 減少初始載入資源
+    - 提升效能
 
   例如：
   ```xml
@@ -132,9 +152,12 @@ title: Nuxt3 學習筆記 - Ryan
       ```
 
 ## 動態載入 (Dynamic Imports)
-  `動態載入 (Dynamic Imports)` 元件也稱之為 `延遲載入 (lazy-loading)`，如果頁面中不需要立刻使用或顯示某個元件，透過動態載入的方式可以 `延遲元件載入的時間點`，有助於優化 `JavaScript` 首次載入時的檔案大小。
+  - 使用 `Lazy` 前綴
 
-  使用的方式也非常簡單，只需要在使用元件時，加上前綴 `Lazy` 就可以有延遲載入的效果。
+  - ### 特性
+    - 元件在需要時才載入
+    - 減少初始載入資源
+    - 提升效能
 
   - ### 建立一個動態載入的按鈕
     - #### Step 1. 建立按鈕元件
@@ -298,8 +321,3 @@ title: Nuxt3 學習筆記 - Ryan
     ```
 
     我們重新瀏覽網頁，可以發現到由伺服器渲染的插槽元素 `[IronManWelcome] 載入中...` 文字與 `ClientAndServer.server.vue` 元件，率先被顯示了出來。接著當 JS 載入完畢後，被 包裹的元件 `<IronManWelcome>` 也接手並覆蓋了「`[IronManWelcome] 載入中...`」文字，`ClientAndServer.client.vue` 與 `JustClient.client.vue` 僅在客戶端渲染的元件，也分別的覆蓋與顯示出來。
-
-## 小結
-  透過元件我們能更好的整理可重複使用的程式碼，也提升了可維護性，而 `Nuxt` 中的動態載入，更是能將非必要使用的元件延遲載入，
-  大大提升了首次進入網頁所需要下載的檔案大小，最後我們也介紹了如何控制伺服器端或客戶端渲染元件，
-  熟悉了之後就能針對網站需求設定元件的載入及渲染方式囉！

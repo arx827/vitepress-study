@@ -1,0 +1,22 @@
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+  --vp-code-color: #f66; /* 可選：改變整體 code 顏色 */
+}
+
+/* code 顏色 */
+.vp-doc code {
+  color: #f66; /* 例如：亮紅色 */
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.vp-doc a {
+  color: #1e90ff; /* 修改超連結顏色，例如亮藍色 */
+  text-decoration: underline;
+}
+
+.vp-doc a:hover {
+  color: #ff6600; /* 滑過時變色 */
+}

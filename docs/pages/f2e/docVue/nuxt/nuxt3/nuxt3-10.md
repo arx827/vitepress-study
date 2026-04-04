@@ -3,11 +3,13 @@ title: Nuxt3 學習筆記 - Ryan
 ---
 
 # 10. 組合式函式
-  `組合式函式 (Composables)` 是一種利用 `Vue 3` 的 `Composition API` 來封裝和複用 `有狀態邏輯` 的函式，在 `Nuxt` 我們可以將一些通用的商業邏輯放置在 `composables` 來建立組合式函式，這樣一來就可以在各個頁面共用這個組合式函式。
+  - `組合式函式 (Composables)` 為基於 `Vue 3 Composition API`，用來封裝、複用「`有狀態邏輯`」的函式
+  - 將通用商業邏輯放在 `composables` 目錄，讓多個頁面共用
+  - `Nuxt` 會自動載入 `composables` 裡的函式 (自動匯入)
 
 ## `Options API` 與 `Composition API`
   - ### 選項式 API (Options API)
-    下列這段是 `Vue` 依據 `Options API` 撰寫出來的程式碼，也是 `Vue 2` 處理邏輯的寫法，所謂 Options (選項、可選的) 指的就是以程式碼的性質來分割程式碼，所有設定資料初始值的都會在 `data` 這邊處理，這個元件所需要的方法則會在 `methods` 這裡建立，`data` 及 `methods` 也就是使用者需要的 `選項`。
+    以 `data`、`methods` 等選項分類程式碼（Vue 2 常用），範例展示 `data()`、`methods` 使用與更新狀態的寫法。
 
     ```xml
     <script>
@@ -31,22 +33,23 @@ title: Nuxt3 學習筆記 - Ryan
     ```
 
   - ### 組合式 API (Composition API)
-    目前在 `Vue 3` 你仍可以繼續使用 `Vue 2` 的 `Options API`，但隨著程式碼邏輯的增加，看似有條理的分類，其實對於理解及維護上沒有想像中便利。`Vue 3` 提出的 `組合式 API (Composition API)` 則是以邏輯功能來進行分類，你可以將所有與某個功能的 `data`、`computed`、`methods` 與 `watch` 等，寫在同一個段落形成一個區塊。
+    以功能邏輯分組（把相關的 `data`、`computed`、`methods`、`watch` 集中在同一區塊），提高複雜元件的可讀性與維護性，並適合重構大型邏輯。
 
-    下圖中每種邏輯問題所需要得程式碼使用相同顏色表示，當使用 `Composition API` 重構後，同一個邏輯功能將會集中在同一個區塊，也使得複雜的元件能有更好的可讀性。
+  - ### 比較視覺說明
+    範例圖示說明用顏色把同一邏輯的程式碼集中，改善 `Options API` 分散問題。
+    
+    當使用 `Composition API` 重構後，同一個邏輯功能將會集中在同一個區塊，也使得複雜的元件能有更好的可讀性。
 
     ![nuxt3_10_01](./imgs/10/nuxt3_10_01.png)
 
   - ### Mixins 與 Composables
-    在 `Options API` 可以使用 `mixin` 來引入可以重複使用的程式碼，讓不同的元件可以共用函式方法，但隨著專案變大，同一個元件可能使用 `mixin` 同時來引用許多的共用函式，這將導致容易產生命名衝突、元件間的耦合與來源不夠清晰等問題。
-
-    `Vue 3` 為我們帶來了 `組合式 API`，實現了更乾淨的程式碼編排與高效的邏輯重用，`組合式函式 (Composables)` 也基於 `組合式 API` 來進行封裝這些可複用的邏輯，更解決了使用 `mixin` 實現共用函式的缺點。
+    `Mixins` 在大型專案易產生命名衝突與耦合，`Composables` 基於 `Composition API` 提供更乾淨的重用方式，解決 `mixin` 的缺點。
 
 ## 組合式函式 (Composables)
-  在 `Nuxt 3` 中要建立一個 `組合式函式 (Composables)` 我們可以在 `composables` 目錄下編寫，這些常用的函式，將會被 `Nuxt 3` 自動載入做使用，實現在各個元件使用這些函式方法。
+  - ### 建立範例
+    - 內容包含 `const count = ref(0)`、`increment()`，並回傳 `{ count, increment }`。
 
-  - ### 建立組合式函式
-    首先，我們新增 `./composables/useCounter.js`，內容如下：
+    首先，在 `./composables/useCounter.js` 建立預設函式，內容如下：
     
     ```js
     export default function () {
@@ -63,8 +66,10 @@ title: Nuxt3 學習筆記 - Ryan
     }
     ```
 
-    `Nuxt` 自動導入的特性，現在我們就能在其他元件中使用 `useCounter` 組合式函式。
-    
+
+  - ### 使用範例
+    - 在頁面 `./pages/count.vue` 使用：於 `<script setup>` 中呼叫 `const { count, increment } = useCounter()`，並在 `template` 綁定顯示與按鈕觸發。
+
     新增 `./pages/count.vue`，內容如下：
     ```xml
     <template>
@@ -84,11 +89,12 @@ title: Nuxt3 學習筆記 - Ryan
     </script>
     ```
 
-## Composables 組合式函式的名稱
-  前面範例使用的 `useCounter()` 是 `Nuxt 3` 從 `./composables/useCounter.js` 自動載入的，而且 `Nuxt 3` 的組合式函式的名稱，有兩種方式會影響使用時的函式名稱，不過也建議在建立組合式函式可以使用 `use` 作為開頭來加以識別。
+  - ### Nuxt 行為
+    放在 `composables` 目錄下的常用函式會被 `Nuxt` 自動載入以供元件直接使用（免手動 `import`）。
 
-  - ### 1. 使用預設匯出 (Default export)
-    如果在檔案內使用的是預設匯出，那麼這個組合式函式在使用時，即對應檔案名稱，檔案名稱可以是 `小寫駝峰式 (Camel case)` 或 `烤肉串 (Kebab case)`，例如建立 `./composables/useCounter.js` 或 `./composables/use-counter.js` 檔案內容如下，使用時組合式函式為 `小寫駝峰式(Camel case)` 名為 `useCounter`。
+## Composables 組合式函式的名稱
+  - ### 1. 使用預設匯出 (Default export):
+    若檔案採預設匯出，函式名稱由檔案名稱對應（可用 `camelCase` 或 `kebab-case`），例如 `useCounter.js` 或 `use-counter.js` → 使用時為 `useCounter()`。
 
     ```js
     export default function () {
@@ -105,12 +111,10 @@ title: Nuxt3 學習筆記 - Ryan
     }
     ```
 
-  - ### 2. 使用具名匯出 (Named export)
-    如果建立組合式函式時，使用的是有具名的匯出，那麼 `組合式函式對應的名稱，就不是檔案名稱，而是檔案內 export 出來的名稱`。
+  - ### 2. 使用具名匯出 (Named export):
+    若使用具名匯出，組合式函式名稱以匯出的名稱為準（即非由檔名決定）。例如在 `count.js` 中 `export const useCounter = () => { ... }`，使用時為 `useCounter()`。
 
-    例如，建立 `./composables/count.js`，檔案內容如下，組合式函式名稱就不會是檔案名稱 `count`，而是具名導出的名稱 `useCounter`。
-
-    ```js
+     ```js
     export const useCounter = () => {
       const count = ref(0)
 
@@ -125,45 +129,51 @@ title: Nuxt3 學習筆記 - Ryan
     }
     ```
 
+  - ### 建議
+    建立 `composables` 時以 `use` 為前綴以便識別。
+
 ## Composables 自動載入的規則
-  `composables` 目錄下，`Nuxt 3` 會自動掃描 `.js`, `.ts` 與 `.vue` 副檔名的檔案，但只有 `最上層的檔案`，才會自動的被載入為組合式函式，以下面這個目錄結構為例，只有 `./composables/useCounter.js` 才會被正確的自動載入。
+  - ### 預設行為
+    `Nuxt` 會自動掃描 `composables` 目錄下的 `.js`、`.ts`、`.vue` 檔案，但僅「`最上層的檔案`」會自動成為可用的組合式函式。
 
-  ```sh
-  composables/
-  ├── time/
-  │   └── useDateFormat.js
-  └── useCounter.js
-  ```
+    - #### 範例
+      若目錄是 `composables/time/useDateFormat.js` 與 `composables/useCounter.js`，只有 `useCounter.js`（最上層）會自動載入。
 
-  下列這種形式，`./composables/time/index.js` 也能正確的自動載入：
-  ```sh
-  composables/
-  ├── time/
-  │   └── index.js
-  └── useCounter.js
-  ```
+      ```sh
+      composables/
+      ├── time/
+      │   └── useDateFormat.js
+      └── useCounter.js
+      ```
 
-  如果你想讓巢狀的目錄結構下也能被 `Nuxt` 自動掃描載入，那麼你可以使用下面兩種方法：
+      下列這種形式，`./composables/time/index.js` 也能正確的自動載入：
+      ```sh
+      composables/
+      ├── time/
+      │   └── index.js
+      └── useCounter.js
+      ```
 
-  - ### A. 重新匯出 `[推薦]`
-    配置 `./composables/index.js` 將目錄下的函式於這裡整理並匯出你需要的作為組合式函式。
+  - ### 巢狀目錄載入
+    - #### A. 重新匯出（推薦）
+      在 `./composables/index.js` 中統一 `re-export`（將巢狀目錄函式匯出），使 `Nuxt` 可使用。
+    
+    - #### B. 配置掃描巢狀目錄
+      在 `nuxt.config.ts` 調整 `imports.dirs`，例如：
+      - `dirs: ['composables', 'composables/*/index.{ts,js,mjs,mts}', 'composables/**']`
+      - 此配置可擴展自動掃描深層檔案與目錄模式。
 
-  - ### B. 配置掃描巢狀目錄
-    修改 `nuxt.config.ts` 檔案，配置自動載入額外掃描 `composables` 下的巢狀目錄。
-    ```ts
-    export default defineNuxtConfig({
-      imports: {
-        dirs: [
-          // 掃描 composables 目錄頂層
-          'composables',
-          // 掃描深度一層的特定檔案
-          'composables/*/index.{ts,js,mjs,mts}',
-          // 掃描整個 composables 目錄下的檔案
-          'composables/**'
-        ]
-      }
-    })
-    ```
-
-## 小結
-  不論在 `Nuxt 3` 或是 `Vue 3`，`組合式函式 (Composables)` 都是能幫助你在整個網站可以共用函式的方法，目前也有專案 `VueUse` 提供了常用與實用的組合式函式集合，能幫我們省去不少開發時間與提升重複使用性。
+      ```ts
+      export default defineNuxtConfig({
+        imports: {
+          dirs: [
+            // 掃描 composables 目錄頂層
+            'composables',
+            // 掃描深度一層的特定檔案
+            'composables/*/index.{ts,js,mjs,mts}',
+            // 掃描整個 composables 目錄下的檔案
+            'composables/**'
+          ]
+        }
+      })
+      ```
