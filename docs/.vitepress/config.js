@@ -33,5 +33,6 @@ export default {
     server: {
       port: 8509
     }
-  }
+  },
+  ignoreDeadLinks: true
 }
