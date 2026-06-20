@@ -3,18 +3,18 @@ title: Nuxt3 學習筆記 - Ryan
 ---
 
 # 12. 模組 (Modules)
-  在使用 `Nuxt` 開發過程中，我們可以透過配置 `模組 (Modules)` 或 `插件 (Plugin)` 來進行擴充，在 [插件 (Plugins)](./nuxt3-11.html) 一文中，也提到插件可以用來擴充功能；那麼插件與模組又有什麼樣子的差異呢，在這一篇文章中我將與大家分享。
+  - #### 目的
+    比較 Nuxt `模組（Modules）`與 `插件（Plugins）`，說明模組的使用情境與延伸能力。
+  - #### 情境
+    當需簡化跨專案、繁瑣或需在啟動/建構時改寫環境的整合時，建議使用模組。
 
 ## 模組 (Modules)
-  `Nuxt` 提供了一個模組系統來擴展自身框架的核心，也簡化了整合過程中需要的繁瑣配置。當你想擴展 `Nuxt` 或 `Vue` 的功能，雖然 `Nuxt` 可以通過安裝與配置插件進行功能擴展，但是在多個專案或使用上可能繁瑣耗時或重複性很高的，但如果套件已經有針對 `Nuxt` 模組做整合，我們就不必從頭開始開發或像安裝插件一樣需要建立與維護這些配置。
+  - #### 定義
+    `Nuxt` 模組通常為導出一個非同步函式的 JS 檔，可在 `Nuxt` 啟動階段執行，擴充框架行為。
 
-  - ### Nuxt 3 中插件與模組的差異
-    `Nuxt 模組` 與 `Nuxt 插件` 的差異在於，`模組載入執行的時間點更早`，意思是 `Nuxt` 在啟動伺服器後，首先會依序的載入模組並執行，接續建立 `Nuxt` 的環境 (Context) 與 `Vue` 的實例 (Instance)，最後才開始執行 `Nuxt` 的插件。
-
-    因此，`Nuxt 模組` 可以做更多的事情，包含在使用 `nuxi dev`、`nuxi build` 啟動或建構 `Nuxt` 時，可以透過模組來覆蓋模板、配置 `webpack` 及配置插件等許多任務。
-
-    - #### Nuxt 3 安裝使用模組
-      `Nuxt` 模組是一個導出異步函數的 `JavaScript` 檔案，當安裝使用模組時，通常會配置在 `nuxt.config.ts` 檔案的 `modules` 中，例如 [配置 Nuxt Tailwind 模組](https://ithelp.ithome.com.tw/articles/10294705) 會添加上` '@nuxtjs/tailwindcss'`。
+  - #### 安裝配置
+    在 `nuxt.config.ts` 的 `modules` 陣列加入模組名稱、相對路徑或 `[path, options]`
+    - 例如 [配置 Nuxt Tailwind 模組](https://ithelp.ithome.com.tw/articles/10294705) 會添加上` '@nuxtjs/tailwindcss'`。
 
       通常模組的開發人員會提供這些模組應該如何在 `modules` 屬性來做配置，甚至一些可選用的參數來配置這些模組。
 
@@ -35,102 +35,119 @@ title: Nuxt3 學習筆記 - Ryan
         ]
       })
       ```
+      
+  - #### 能力
+    模組載入時間早於 `plugin`，能在 `nuxi dev` / `nuxi build` 階段`修改模板`、`加入元件`、`設定 runtime`、`調整 bundler` 等。
+
+  - ### Nuxt 3 中插件與模組的差異
+    - ##### 載入順序
+      `模組` 在 `Nuxt` 啟動時最先載入並執行；`插件` 在模組與 `Nuxt` 環境建立之後才執行。
+
+    - ##### 使用情境
+      - ###### 模組
+        整合第三方工具、全域封裝、建立元件/runtime、在 build/dev 階段調整行為。
+      - ###### 插件
+        在已建立的 `NuxtApp` / `Vue instance` 上注入功能、註冊指令或安裝 Vue 插件。
+
+    - ##### 結論
+      `模組` 能做較重、需在啟動或建構時處理的工作；`插件` 適合在執行時操作 Vue/Nuxt 實例。
 
 ## Nuxt 3 模組列表
   你可以在 [Explore Nuxt Modules](https://modules.nuxtjs.org/) 上尋找由 `Nuxt` 官方或社群生態所發展建置的模組，`Nuxt` 的模組通常遵循著官方指南所製，使用時只需要安裝與添加至 `nuxt.config` 中，基本上就能完成配置。
 
   - ### 使用 Nuxt Icon 模組
-    `Nuxt Icon` 模組整合了 `Iconify` 提供多達 100,000 個以上的 Icon 圖示，只要在 `Nuxt` 中安裝後，我們就可以直接做使用。
-
-    - #### Step 1. 安裝套件
-      安裝 `Nuxt Icon` 模組套件。
+    - #### Step 1（安裝）
       ```sh
       npm install -D nuxt-icon
       ```
 
-    - #### Step 2. 配置使用模組
-      在 `nuxt.config.ts` 中的 `modules` 屬性，添加 `Nuxt Icon` 模組的名稱 `nuxt-icon`。
+    - #### Step 2（配置）
+      在 `nuxt.config.ts` 中加入：
       ```ts
       export default defineNuxtConfig({
         modules: ['nuxt-icon']
       })
       ```
 
-    - #### Step 3. 開始使用
-      依照說明，我們就可以使用 `Nuxt Icon` 模組，為我們所添加的元件 `<Icon>`，這個 Icon 元件可以傳入 `name` 屬性，以此來顯示不同的 Icon 圖示，`size` 則可以控制圖示的大小。
-      ```xml
-      <template>
-        <div class="flex justify-center">
-          <Icon name="logos:nuxt" size="360" />
-        </div>
-      </template>
-      ```
-      ![nuxt3_12_01](./imgs/12/nuxt3_12_01.png)
+    - #### Step 3（使用）
+      - 模組會提供全域元件 `Icon`，範例：
+        ```xml
+        <template>
+          <div class="flex justify-center">
+            <Icon name="logos:nuxt" size="360" />
+          </div>
+        </template>
+        ```
+        ![nuxt3_12_01](./imgs/12/nuxt3_12_01.png)
+    - #### 說明
+      `Nuxt Icon` 整合 `Iconify`，提供大量圖示，安裝後直接透過模組暴露的元件使用。
 
 ## 如何建立 Nuxt 模組
-  `Nuxt Kit` 是 `Nuxt` 官方提供的一個標準和方便的 `API` 來定義 `Nuxt` 模組。
+  - #### 建議工具
+    使用 `Nuxt Kit（@nuxt/kit`）來建立模組。
 
-  通常如下程式碼使用 `defineNuxtModule` 方法來建立一個模組：
-  ```js
-  import { defineNuxtModule } from '@nuxt/kit'
+  - #### 範例骨架
+    通常如下程式碼使用 `defineNuxtModule` 方法來建立一個模組：
+    ```js
+    import { defineNuxtModule } from '@nuxt/kit'
 
-  export default defineNuxtModule({
-    meta: {
-      // 模組的名稱，通常也會對應 NPM 發布的套件名稱
-      name: '@nuxtjs/example',
-      // 如果有配置這個模組的一些選項，會將其保存在這個設定鍵值下
-      configKey: 'sample',
-      // 相容性限制 `nuxt.config`
-      compatibility: {
-        // 為了控制模組的版本相容性，通常會在這裡配置 Nuxt 版本的需求
-        nuxt: '^3.0.0'
+    export default defineNuxtModule({
+      meta: {
+        // 模組的名稱，通常也會對應 NPM 發布的套件名稱
+        name: '@nuxtjs/example',
+        // 如果有配置這個模組的一些選項，會將其保存在這個設定鍵值下
+        configKey: 'sample',
+        // 相容性限制 `nuxt.config`
+        compatibility: {
+          // 為了控制模組的版本相容性，通常會在這裡配置 Nuxt 版本的需求
+          nuxt: '^3.0.0'
+        }
+      },
+      // 模組預設的選項
+      defaults: {},
+      hooks: {},
+      async setup(moduleOptions, nuxt) {
+        // Nuxt 啟動載入模組後，模組所執行的邏輯會在這裡實作
       }
-    },
-    // 模組預設的選項
-    defaults: {},
-    hooks: {},
-    async setup(moduleOptions, nuxt) {
-      // Nuxt 啟動載入模組後，模組所執行的邏輯會在這裡實作
-    }
-  })
-  ```
+    })
+    ```
+  - #### 要點
+    - `meta` 提供模組名稱、設定鍵與相容性；
+    - `setup` 為模組載入後的執行點，可呼叫 `addComponent`、`extendVite`、`addPlugin` 等 `Nuxt kit API`。
 
   更多 `Nuxt` 模組的建立指南可以參考 [Nuxt 3 - Module Author Guide](https://v3.nuxtjs.org/guide/going-further/modules)，這邊就不再贅述，畢竟我們比較常為模組的使用者。
 
 ## 模組的載入
-  前面我們使用了 `Nuxt Icon` 模組，我們也可以閱讀一下 [Nuxt Icon v0.1.6](https://github.com/nuxt-modules/icon/tree/v0.1.6) 模組套件的原始碼。
+  - #### 實作位置
+    模組會在 `module.ts` (或 `src/module.ts`) 定義 `defineNuxtModule`，並在 `setup` 中呼叫 `kit API`。
 
-  以下是 `Nuxt Icon` 模組的 [module.ts](https://github.com/nuxt-modules/icon/blob/v0.1.6/src/module.ts) 檔案。
+  - #### 範例片段（摘自 Nuxt Icon）
+     ```js
+    export default defineNuxtModule<ModuleOptions>({
+      meta: {
+        name: 'nuxt-icon',
+        configKey: 'icon',
+        compatibility: {
+          nuxt: '^3.0.0-rc.9'
+        }
+      },
+      defaults: {},
+      setup (_options, nuxt) {
+        const { resolve } = createResolver(import.meta.url)
 
-  ```js
-  export default defineNuxtModule<ModuleOptions>({
-    meta: {
-      name: 'nuxt-icon',
-      configKey: 'icon',
-      compatibility: {
-        nuxt: '^3.0.0-rc.9'
+        addComponent({
+          name: 'Icon',
+          global: true,
+          filePath: resolve('./runtime/Icon.vue')
+        })
       }
-    },
-    defaults: {},
-    setup (_options, nuxt) {
-      const { resolve } = createResolver(import.meta.url)
+    })
+    ```
 
-      addComponent({
-        name: 'Icon',
-        global: true,
-        filePath: resolve('./runtime/Icon.vue')
-      })
-    }
-  })
-  ```
-
-  `Nuxt` 的模組使用了一個 `defineNuxtModule` 方法來定義模組，也可以視為模組的入口點，`meta.name` 對應的就是模組的名稱，也是我們添加至 `modules` 屬性所需要的模組名稱。
-
-  `setup` 就是模組載入後執行的函數，可以看到模組使用 `addComponent` 為我們 `Nuxt` 添加了一個元件名稱為 `Icon`，使用的元件檔案來自 `./runtime/Icon.vue`。
-
-  模組中的 [runtime/Icon.vue](https://github.com/nuxt-modules/icon/blob/v0.1.6/src/runtime/Icon.vue) 為我們封裝了 `Iconify` 圖示的使用邏輯以及取得 `Nuxt` 配置的參數等。
-
-  透過模組我們可以省去這些繁瑣的封裝與配置，只需要專注在配置模組與開發上面。
+  - #### 效果
+    模組可自動註冊元件（如 Icon）、提供 runtime 檔案、並讀取模組設定。
 
 ## 小結
-  模組與插件其實還是存在著載入執行順序與使用情境上的差異性，以 `Nuxt` 來說，通常 `Nuxt 的插件` 會是用來封裝及使用 `Vue` 中會使用到的插件與或套件；而 `Nuxt 的模組`，會將需要繁瑣配置的套件或插件來與 `Nuxt` 進行整合與封裝，不論是透過第三方插件或模組，這都將使 `Nuxt` 在開發與擴充上擁有更多的可能性。
+  - #### 重點回顧
+    - 模組與插件在載入時間與能力上不同：`模組` 早期載入且能影響 build/run 流程；`插件` 於 `NuxtApp/Vue instance` 可用時注入功能。
+    - 若套件已有 `Nuxt` 模組，使用模組可省去繁瑣配置；否則可用插件在 `Nuxt` 中包裝第三方 Vue 插件。

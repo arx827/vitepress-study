@@ -3,34 +3,50 @@ title: Nuxt3 學習筆記 - Ryan
 ---
 
 # 15. 資料獲取 (Data Fetching)
-  現在的網站技術與前端框架的推進，使用 `AJAX (Asynchronous JavaScript and XML)` 技術發送 `API` 至後端進行資料獲取已經是常態，這個過程工程師們也稱 `敲 API` 或 `打 API`，`打 API` 還衍生了幾個問題，就是我們用什麼 `打 API`，打去哪裡，打的時候要夾東西嗎？這篇我們主要講述的就是用什麼打 API；
-  
-  在 `Vue` 的開發中，你可能會使用 `axios` 來串接 `後端 (Server)` 的 API 來獲取資料，再將這些資料於網頁渲染呈現，而在 `Nuxt` 你也可以額外安裝類似的 `HTTP Client` 套件來發送 HTTP 請求，不過呢，`Nuxt` 已經內建了幾個好用的組合式函數，讓我們可以方便的打 API 獲取資料。
+  - 現代前端常用 `AJAX`（打 `API`）取得後端資料。
+  - 在 `Vue` 專案常用 `axios`，但 `Nuxt` 內建了方便的組合式函數與 `$fetch`（基於 [ohmyfetch](https://github.com/unjs/ohmyfetch)），可用來發送 `HTTP` 請求，不需額外安裝 `HTTP client`。
+  - 介紹 `Nuxt` 提供的資料獲取方法與使用情境（`useAsyncData`、`useFetch`、`lazy 變體`、`$fetch` 等
 
 ## 資料獲取 (Data Fetching)
-  `Nuxt` 提供了 `$fetch` 及四種 `組合式函數 (Composables)`，來進行資料獲取，也就是說，我們不需要在額外安裝任何 `HTTP Client` ，如 `axios` 來發送 HTTP 請求，因為 `Nuxt` 本身就自帶了打 API 的方法，而且在頁面、元件或插件中都能直接呼叫做使用，非常方便。
-
-  首先，我們先介紹一下 `$fetch` 這個由 `Nuxt` 提供使用 `ohmyfetch` 套件所封裝的 `helper`，`$fetch` 可以在 `Nuxt` 中用於發送 HTTP 請求。
-
-  如果在伺服器端渲染的期間，呼叫 `$fetch` 打內部 API 路由，也就是打我們自己在 `./server` 下實作的後端 API，那麼因為使用 `$fetch` 的關係，`Nuxt` 會模擬請求，改由直接呼叫內部 API 的處理函數，這樣就能節省額外的 API 呼叫。
+  `Nuxt` 提供 `$fetch` 與四個主要 composables（`useAsyncData`、`useFetch`、`useLazyAsyncData`、`useLazyFetch`），可在頁面、元件、插件中直接使用，並支援 `SSR` 時呼叫內部 `server API` 的最佳化（直接呼叫函數避免額外 `HTTP` 請求）。
 
   使用的方法，如下：
   ```js
   $fetch(url, options)
   ```
 
-  我們可以使用 `$fetch('/api/count')` 建立一個 GET 請求，發送至 `/api/count` 後會返回一個 `Promise`，完成後我們就可以接收回傳的資料。
-
-  `$fetch` 的 `options` 的參數及建立攔截器等功能可以參考 [ohmyfetch](https://github.com/unjs/ohmyfetch)，不過呢，我們還會使用 `Nuxt` 提供的組合函數結合 `$fetch` 來打 API。
-
   接下來我們就來依序介紹，如何使用 `Nuxt` 提供的四種組合函數來從 API 獲取資料。
 
   - ### useAsyncData
-    這個 `useAsyncData()` 組合函數，其實不是傳入 URL 直接呼叫就會發出 API 請求，而是 `Nuxt` 可以透過這個函數來添加異步請求資料的邏輯。
+    - #### 函式簽名
+      有兩種呼法，一種帶 `key（string）`、一種不帶；
+      兩種皆接受 `handler`（回傳 `Promise` 的函數）與 `options`（`AsyncDataOptions`）。
 
-    `useAsyncData` 組合函數能接收 `key`、 `handler` 與 `options`，其中 `handler` 會來添加請求異步資料的邏輯。當我們在頁面、元件和插件中呼叫 `useAsyncData`，並等待回傳的 `Promise`，我們的頁面或元件的渲染將會阻塞路由載入至 `handler` 異步邏輯處理完畢後才會繼續執行，也就是說，整個頁面元件將會等待所有使用 `useAsyncData` 呼叫的 API 回傳完成後才會開始進行渲染。
+    - #### 常見 options（AsyncDataOptions）
+      - `server`（預設 true）：是否在伺服器端獲取資料。
+      - `lazy`（預設 false）：若 false，會在進入路由時執行並阻塞路由載入直到完成；若 true，延遲執行（不阻塞）。
+      - `default`：在資料回傳前給予預設值（對 lazy 情境特別有用）。
+      - `transform`：處理或轉換 handler 回傳結果的函數。
+      - `pick`：若 handler 回傳物件，從中挑選特定 key。
+      - `watch`：監聽 ref/reactive 變動後重新請求（適用分頁、搜尋等）。
+      - `initialCache`（預設 true）：首次請求會快取 payload，相同 key 的後續請求會回傳快取。
+      - `immediate`（預設 true）：是否立即觸發請求。
 
-    舉個例子
+    - #### 傳入參數說明
+      - `key`：唯一鍵，避免重複請求（相同 key 會重用快取，除非整頁重新 SSR 或呼叫 refresh()）。
+      - `handler`：放置異步請求或加工邏輯（通常在內部使用 $fetch）。
+      
+    - #### 回傳值：
+      - `data`: 傳入異步函數的回傳結果。
+      - `pending`: 以 `true` 或 `false` 表示是否正在獲取資料。
+      - `refresh` / `execute`: 一個函數，可以用來重新執行 `handler` 函數，回傳新的資料，類似重新整理、重打一次 API 的概念。預設情況下 `refresh()` 執行完並回傳後才能再次執行。
+      - `error`: 資料獲取失敗時回傳的物件。
+
+    - #### 行為說明
+      `useAsyncData` 本身不直接發出 HTTP，實際請求是在 `handler` 內以 `$fetch` 等完成；在等待 `await useAsyncData()` 時，頁面會被阻塞直到 `handler` 完成（示範：`/server/api/count.js` 模擬 2 秒延遲，頁面在 SSR 或客戶端導航時的阻塞差異）。
+
+    - #### 範例重點
+      在頁面中使用 `await useAsyncData('count', () => $fetch('/api/count'))`，SSR 時會在服務端完成並返回；客戶端導航時會看到路由變更但內容延遲渲染（因等待資料）。
 
     我們新增一個 `Server API`，並稍微添加一下延遲，模擬 API 約需要處理 2 秒才回傳資料，`./server/api/count.js` 內容如下：
     ```js
@@ -45,7 +61,7 @@ title: Nuxt3 學習筆記 - Ryan
     })
     ```
 
-    新增一個路由頁面，`./server/pages/count/useAsyncData.vue` 內容如下：
+    新增一個路由頁面，`./pages/count/useAsyncData.vue` 內容如下：
     ```xml
     <template>
       <div class="my-24 flex flex-col items-center">
@@ -105,41 +121,29 @@ title: Nuxt3 學習筆記 - Ryan
     }
     ```
 
-    - #### useAsyncData() 傳入的參數
-      - `key`: 唯一鍵，可以確保資料不會重複的獲取，也就是如果 `Key` 相同便不會再發送相同的請求，除非重新整理頁面由後端再次渲染獲取，或呼叫 `useAsyncData` 回傳的 `refresh()` 函數重新取得資料。
-      - `handler`: 回傳異步請求資料的處理函數，打 API 或加工的異步邏輯都可以在這裡處理。
-      - `options`:
-        - `server`: 是否在伺服器端獲取資料，預設為 `true` 。
-        - `lazy`: 是否於載入路由後才開始執行異步請求函數，預設為 `false`，所以會阻止路由載入直到請求完成後才開始渲染頁面元件。
-        - `default`: 當傳入這個 `factory function`，可以將異步請求發送與回傳解析前，設定資料的預設值，對於設定 `lazy: true` 選項特別有用處，至少有個預設值可以使用及渲染顯示。
-        - `transform`: 修改加工 `handler` 回傳結果的函數。
-        - `pick`: `handler` 若回傳一個物件，只從中依照需要的 `key` 取出資料，例如只從 `JSON` 物件中取得某幾個 `key` 組成新的物件。
-        - `watch`: 監聽 `ref` 或 `reactive` 響應式資料發生變化時，觸發重新請求資料，適用於資料分頁、過濾結果或搜尋等情境。
-        - `initialCache`: 預設為 `true`，當第一次請求資料時，將會把有效的 `payload` 快取，之後的請求只要是相同的 `key`，都會直接回傳快取的結果。
-        - `immediate`: 預設為 `true`，請求將會立即觸發。
-
-    - #### useAsyncData() 的回傳值
-      - `data`: 傳入異步函數的回傳結果。
-      - `pending`: 以 `true` 或 `false` 表示是否正在獲取資料。
-      - `refresh` / `execute`: 一個函數，可以用來重新執行 `handler` 函數，回傳新的資料，類似重新整理、重打一次 API 的概念。預設情況下 `refresh()` 執行完並回傳後才能再次執行。
-      - `error`: 資料獲取失敗時回傳的物件。
-
-    看到這裡，我們再重新閱讀與解釋 `useAsyncData()` 的範例
-    ```xml
-    <script setup>
-    const { data, pending, error, refresh } = await useAsyncData(
-      'count',
-      () => $fetch('/api/count')
-    )
-    </script>
-    ```
-
-    呼叫 `useAsyncData()` 並不是直接幫我們送出 `HTTP` 請求，而是在 `handler` 內使用 `$fetch` 來打 API，只是 `useAsyncData()` 組合式函數，封裝了更多打 API 時可以使用的方法與參數，來因應不同的使用情境。當然如果想要，你也可以使用其他套件來替換 `$fetch` 但可能就沒辦法享受它所帶來的好處。
-
   - ### useFetch
-    這個組合式函數將 `useAsyncData` 和 `$fetch` 進行包裝，當使用這個函數時它會根據 `URL` 和 `fetch` 的選項來自動產生 `useAsyncData` 需要的參數 `key`，如果呼叫的 API 是伺服器端所提供的，也會自動根據伺服器 API 路由來為請求提供類型提示，並推斷 API 的回傳類型。
+    - #### 函式簽名
+      `useFetch(url, options?)`，會回傳類似 `AsyncData` 的物件。
 
-    - #### useFetch() 所傳入參數的類型如下
+    - #### options (繼承自 [unjs/ohmyfetch](https://github.com/unjs/ohmyfetch) 選項與 [AsyncDataOptions](https://v3.nuxtjs.org/api/composables/use-async-data#params))
+      - `method`: 發送 HTTP 請求的方法，例如 GET、POST 或 DELETE 等。
+      - `params`: 查詢參數 (Query params)。
+      - `body`: 請求的 body，可以傳入一個物件，它將自動被轉化為字串。
+      - `headers`: 請求的標頭 (headers)。
+      - `baseURL`: 請求的 API 路徑，基於的 URL。
+
+    - #### options (繼承自 `useAsyncData` 的選項)
+      - `key`: 唯一鍵，可以確保資料不會重複的獲取，也就是如果 Key 相同便不會再發送相同的請求，除非重新整理頁面由後端再次渲染獲取，或呼叫 `useAsyncData` 回傳的 `refresh()` 函數重新取得資料。
+      - `server`: 是否在伺服器端獲取資料，預設為 true 。
+      - `lazy`: 是否於載入路由後才開始執行異步請求函數，預設為 false，所以會阻止路由載入直到請求完成後才開始渲染頁面元件。
+      - `immediate`: 預設為 true，請求將會立即觸發。
+      - `default`: 當傳入這個 factory function，可以將異步請求發送與回傳解析前，設定資料的預設值，對於設定 lazy: true 選項特別有用處，至少有個預設值可以使用及渲染顯示。
+      - `transform`: 修改加工 handler 回傳結果的函數。
+      - `pick`: handler 若回傳一個物件，只從中依照需要的 key 取出資料，例如只從 JSON 物件中取的某幾個 key 組成新的物件。
+      - `watch`: 監聽 ref 或 reactive 響應式資料發生變化時，觸發重新請求資料，適用於資料分頁、過濾結果或搜尋等情境。
+      - `initialCache`: 預設為 true，當第一次請求資料時，將會把有效的 payload 快取，之後的請求只要是相同的 key，都會直接回傳快取的結果。
+
+      `useFetch()` 所傳入參數的類型如下
       ```js
       function useFetch(
         url: string | Request | Ref<string | Request> | () => string | Request,
@@ -172,32 +176,42 @@ title: Nuxt3 學習筆記 - Ryan
       }
       ```
 
-    - #### useFetch() 傳入的參數
-      - `url`: 要獲取資料的 URL 或 API Endpoint。
-      - `options`: (繼承自 [unjs/ohmyfetch](https://github.com/unjs/ohmyfetch) 選項與 [AsyncDataOptions](https://v3.nuxtjs.org/api/composables/use-async-data#params))
-        - `method`: 發送 HTTP 請求的方法，例如 GET、POST 或 DELETE 等。
-        - `params`: 查詢參數 (Query params)。
-        - `body`: 請求的 body，可以傳入一個物件，它將自動被轉化為字串。
-        - `headers`: 請求的標頭 (headers)。
-        - `baseURL`: 請求的 API 路徑，基於的 URL。
-      - `options`: (繼承自 `useAsyncData` 的選項)
-        - `key`: 唯一鍵，可以確保資料不會重複的獲取，也就是如果 Key 相同便不會再發送相同的請求，除非重新整理頁面由後端再次渲染獲取，或呼叫 `useAsyncData` 回傳的 `refresh()` 函數重新取得資料。
-        - `server`: 是否在伺服器端獲取資料，預設為 true 。
-        - `lazy`: 是否於載入路由後才開始執行異步請求函數，預設為 false，所以會阻止路由載入直到請求完成後才開始渲染頁面元件。
-        - `immediate`: 預設為 true，請求將會立即觸發。
-        - `default`: 當傳入這個 factory function，可以將異步請求發送與回傳解析前，設定資料的預設值，對於設定 lazy: true 選項特別有用處，至少有個預設值可以使用及渲染顯示。
-        - `transform`: 修改加工 handler 回傳結果的函數。
-        - `pick`: handler 若回傳一個物件，只從中依照需要的 key 取出資料，例如只從 JSON 物件中取的某幾個 key 組成新的物件。
-        - `watch`: 監聽 ref 或 reactive 響應式資料發生變化時，觸發重新請求資料，適用於資料分頁、過濾結果或搜尋等情境。
-        - `initialCache`: 預設為 true，當第一次請求資料時，將會把有效的 payload 快取，之後的請求只要是相同的 key，都會直接回傳快取的結果。
+    - #### 參數說明
+      - `url` 可為 字串、Request、Ref 或函式
+      - `options` 可控制 HTTP 方法、查詢參數、body、headers 等。若呼叫的是內部 server API，Nuxt 會提供類型提示並直接呼叫處理函數以節省請求。
 
-    - #### useFetch() 的回傳值
+    - #### 回傳值
       - `data`: 傳入異步函數的回傳結果。
       - `pending`: 以 true 或 false 表示是否正在獲取資料。
-      - `refresh` / execute: 一個函數，可以用來重新執行 handler 函數，回傳新的資料，類似重新整理、重打一次 API 的概念。預設情況下 refresh() 執行完並回傳後才能再次執行。
+      - `refresh` / `execute`: 一個函數，可以用來重新執行 handler 函數，回傳新的資料，類似重新整理、重打一次 API 的概念。預設情況下 refresh() 執行完並回傳後才能再次執行。
       - `error`: 資料獲取失敗時回傳的物件。
 
-      舉個例子
+    - #### 攔截器
+      可傳入 `$fetch` 支援的回呼選項，如 `onRequest`（可設定 headers）、`onRequestError`、`onResponse`（可處理並回傳 response._data）、`onResponseError` 等，用於統一處理授權、錯誤或回應格式。
+
+      我們也可以透過 `$fetch` 提供的選項來設置攔截器。
+      ```js
+      const { data, pending, error, refresh } = await useFetch('/api/auth/login', {
+        onRequest({ request, options }) {
+          // 設定請求時夾帶的標頭
+          options.headers = options.headers || {}
+          options.headers.authorization = '...'
+        },
+        onRequestError({ request, options, error }) {
+          // 處理請求時發生的錯誤
+        },
+        onResponse({ request, response, options }) {
+          // 處理請求回應的資料
+          return response._data
+        },
+        onResponseError({ request, response, options }) {
+          // 處理請求回應發生的錯誤
+        }
+      })
+      ```
+
+    - #### 範例
+      建立 `/server/api/about.js` 回傳物件，在頁面以 `await useFetch('/api/about', { pick: ['name','counter'] })` 取得部分資料並展示請求狀態與錯誤處理，範例亦示範使用 `refresh` 重新取得。
 
       我們新增一個 Server API，`./server/api/about.js` 內容如下：
       ```js
@@ -246,36 +260,17 @@ title: Nuxt3 學習筆記 - Ryan
 
       ![nuxt3_15_03](./imgs/15/nuxt3_15_03.gif)
 
-    - #### 攔截器
-      我們也可以透過 `$fetch` 提供的選項來設置攔截器。
-      ```js
-      const { data, pending, error, refresh } = await useFetch('/api/auth/login', {
-        onRequest({ request, options }) {
-          // 設定請求時夾帶的標頭
-          options.headers = options.headers || {}
-          options.headers.authorization = '...'
-        },
-        onRequestError({ request, options, error }) {
-          // 處理請求時發生的錯誤
-        },
-        onResponse({ request, response, options }) {
-          // 處理請求回應的資料
-          return response._data
-        },
-        onResponseError({ request, response, options }) {
-          // 處理請求回應發生的錯誤
-        }
-      })
-      ```
 
-    - #### useLazyAsyncData
-      預設的情況下，`useAsyncData()` 的 `options.lazy` 為 `false`，意思是，預設得情況下，當進入路由後，會開始執行異步請求函數，並會阻止路由載入元件等，直到請求完成後才開始渲染頁面元件。
+  - ### useLazyAsyncData
+    為 `useAsyncData` 的 `lazy` 封裝，預設 `options.lazy = true`，即不會阻塞路由載入，元件先渲染，待資料回來再更新內容。
 
-      `useLazyAsyncData()` 則是 `options.lazy` 預設為 `true` 的封裝，也就是請求資料時它將不會阻塞，並讓頁面繼續渲染元件。
+    - #### 建議
+      搭配 `default option` 設定初始顯示值（提升使用者體驗），例如 `default: () => '-'`，在資料回來前可先顯示 `-`。
 
-      舉個例子
+    - #### 範例
+      `const { data } = useLazyAsyncData('count', () => $fetch('/api/count'))`，頁面會先顯示文字，稍後再填入資料。
 
-      我們新增一個 Server API，並稍微添加一下延遲，模擬 API 約需要處理 2 秒才回傳資料，`./server/api/count.js` 內容如下：
+      我們新增一個 `Server API`，並稍微添加一下延遲，模擬 API 約需要處理 2 秒才回傳資料，`./server/api/count.js` 內容如下：
       ```js
       let counter = 0
 
@@ -333,15 +328,16 @@ title: Nuxt3 學習筆記 - Ryan
       在 API 請求回來前，預設值會是 `-`。
       ![nuxt3_15_05](./imgs/15/nuxt3_15_05.gif)
 
-    - #### useLazyFetch
-      如同 `useLazyAsyncData` 所描述，`useLazyFetch` 則是 `useFetch` 的 `options.lazy` 選項預設為 `true` 的封裝。
+  - ### useLazyFetch
+    與 `useLazyAsyncData` 相同概念，但為 `useFetch` 的 `lazy` 封裝（預設不阻塞、延遲取得資料）。
 
   - ### 重新獲取資料
-    前面有提到我們可以使用 `refresh()` 來重新獲取具有不同查詢參數的資料。
+    - #### refresh()
+      針對單一 `useAsyncData` / `useFetch` 實例重新執行 `handler` 取得新資料（常用於變更查詢參數或重新整理）。
 
-    - #### refreshNuxtData
-      你也可以透過 `refreshNuxtData` 來使 `useAsyncData`、`useLazyAsyncData`、`useFetch` 與 `useLazyFetch` 的快取失效，再觸發刷新資料。
-
+    - #### refreshNuxtData(key?)
+      可使相關的 `useAsyncData` / `useLazyAsyncData` / `useFetch` / `useLazyFetch` 的快取失效並觸發刷新（範例展示如何在按鈕觸發時呼叫 `refreshNuxtData('count')）`。
+      
       ```xml
       <template>
         <div>
@@ -357,5 +353,12 @@ title: Nuxt3 學習筆記 - Ryan
       </script>
       ```
 
+## $fetch（由 Nuxt 提供的封裝）
+  - `$fetch` 基於 `ohmyfetch`，語法簡潔：`$fetch(url, options)`，回傳 `Promise`。
+  - 在 `SSR` 期間若呼叫內部 API（`./server` 下的路由），`Nuxt` 會直接呼叫後端函數而非發出外部 `HTTP`，此機制可降低不必要的網絡請求。
+  - `$fetch` 的 `options` 與攔截器功能可參照 [ohmyfetch](https://github.com/unjs/ohmyfetch) 文件；常與上面提到的 `composables` 結合使用以簡化資料獲取邏輯。
+  - 範例：`$fetch('/api/count')` 建立 GET 請求並取得回傳結果。
+
 ## 小結
-  `Nuxt` 已經為我們封裝好可以打 API 的組合函數，用起來也相當簡單方便，照著官網範例及 `ohmyfetch` 套件的說明，相信很快就能上手。
+  - `Nuxt` 內建 `$fetch` 與四種主要 `composables`（`useAsyncData`、`useFetch`、`useLazyAsyncData`、`useLazyFetch`），開發者通常不需額外安裝 `axios` 即可完成大部分資料獲取與 `SSR/CSR` 流程控制。
+  - 建議依場景選擇：若需阻塞路由等待資料用 `useAsyncData`；若需非阻塞顯示先渲染再填資料用 `lazy` 版本；若要簡易請求 `URL` 並享用 `$fetch` 功能可用 `useFetch`。

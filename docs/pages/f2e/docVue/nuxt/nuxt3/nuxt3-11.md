@@ -140,5 +140,17 @@ title: Nuxt3 學習筆記 - Ryan
       透過 `v-focus` 這個指令來控制元素聚焦的效果如下圖。
       ![nuxt3_11_03](./imgs/11/nuxt3_11_03.gif)
 
+  - ### 安裝與註冊第三方元件（元件註冊建議）
+    - 註冊元件時建議使用大駝峰式名稱以便在模板中同時支援 `<VueDragResize />` 與 `<vue-drag-resize />`：
+      ```js
+      nuxtApp.vueApp.component('VueDragResize', VueDragResize)
+      ```
+
+    - 若使用小寫 `kebab-case` 註冊，模板可能只支援一種命名方式。
+
 ## 小結
-  `Nuxt` 讓我們可以很輕鬆的建立插件並選擇配置於伺服器端或客戶端，對於使用 UI 框架或元件，更能在插件中直接取得實例來安裝 Vue 的插件與指令，不過呢，目前也有個 [RFC](https://github.com/nuxt/framework/discussions/1175) 正在徵求意見期待讓 `Nuxt` 使用 `Vue` 插件可以更方便容易。
+  - `plugins` 資料夾由 `Nuxt` 自動掃描與載入（最上層檔案與目錄下的 `index.js`）。
+  - 使用 `defineNuxtPlugin(nuxtApp => { ... })` 建立插件，透過 `nuxtApp.vueApp` 可操作 `Vue instance`（安裝插件、註冊元件或指令）。
+  - 插件載入順序、`composables` 及生命週期限制需注意。
+  - 可透過檔名後綴 `.client` / `.server` 控制執行環境。
+  - 可用 `provide` 回傳 `helper` 並以 `$` 前綴在元件中使用。
