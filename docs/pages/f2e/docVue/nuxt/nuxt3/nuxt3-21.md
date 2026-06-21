@@ -423,7 +423,7 @@ title: Nuxt3 學習筆記 - Ryan
         strategies: [
           {
             key: 'user',
-            storage: process.client ? localStorage : null
+            storage: import.meta.client ? localStorage : null
           }
         ]
       }
