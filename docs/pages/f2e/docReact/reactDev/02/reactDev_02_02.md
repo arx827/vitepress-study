@@ -1,5 +1,5 @@
 ---
-title: '[React官網] React 19.2 教學文件'
+title: '[React官網] React 19.2 教程'
 ---
 
 # 從零開始建立 React 應用

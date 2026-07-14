@@ -1,5 +1,5 @@
 ---
-title: '[React官網] React 19.2 教學文件'
+title: '[React官網] React 19.2 教程'
 ---
 
 # 把一系列 state 更新加入佇列

@@ -1,5 +1,5 @@
 ---
-title: '[React官網] React 19.2 教學文件'
+title: '[React官網] React 19.2 教程'
 ---
 
 # 將事件從 Effect 中分開

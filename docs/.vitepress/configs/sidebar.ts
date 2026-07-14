@@ -274,7 +274,7 @@ export const sidebar = {
   ],
   '/pages/f2e/docReact/reactDev/': [
     {
-      text: '[React官網] React 19.2 教學文件',
+      text: '[React官網] React 19.2 教程',
       link: 'https://zh-hans.react.dev/learn'
     },
     {

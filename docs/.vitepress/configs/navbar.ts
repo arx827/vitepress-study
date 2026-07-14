@@ -28,7 +28,7 @@ export const nav = [
         text: 'React',
         items: [
           {
-            text: '[React官網] React 19.2 教學文件',
+            text: '[React官網] React 19.2 教程',
             link: '/pages/f2e/docReact/reactDev/reactDev_01'
           },
           {
