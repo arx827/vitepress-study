@@ -1,6 +1,11 @@
 import DefaultTheme from 'vitepress/theme';
-import './custom.css'
+import HomeFeatures from './components/HomeFeatures.vue'
+
+// import './custom.css'
 
 export default {
   ...DefaultTheme,
+  enhanceApp({ app }) {
+    app.component('HomeFeatures', HomeFeatures)
+  }
 }

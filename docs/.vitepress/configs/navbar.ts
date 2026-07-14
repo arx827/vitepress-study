@@ -28,6 +28,10 @@ export const nav = [
         text: 'React',
         items: [
           {
+            text: '[React官網] React 19.2 教學文件',
+            link: '/pages/f2e/docReact/reactDev/reactDev_01'
+          },
+          {
             text: '[六角學院] React 實戰課',
             link: '/pages/f2e/docReact/react/hexschoolReact0'
           }

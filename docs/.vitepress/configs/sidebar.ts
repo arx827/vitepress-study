@@ -272,6 +272,258 @@ export const sidebar = {
       ]
     }
   ],
+  '/pages/f2e/docReact/reactDev/': [
+    {
+      text: '[React官網] React 19.2 教學文件',
+      link: 'https://zh-hans.react.dev/learn'
+    },
+    {
+      text: '起步',
+      items: [
+        {
+          text: '快速入門',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_01',
+          items: [
+            {
+              text: '教學：井字棋遊戲',
+              link: '/pages/f2e/docReact/reactDev/01/reactDev_01_01',
+            },
+            {
+              text: 'React 哲學',
+              link: '/pages/f2e/docReact/reactDev/01/reactDev_01_02',
+            }
+          ]
+        },
+        {
+          text: '安裝',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_02',
+          items: [
+            {
+              text: '創建一個 React 應用',
+              link: '/pages/f2e/docReact/reactDev/02/reactDev_02_01',
+            },
+            {
+              text: '從零構建一個 React 應用',
+              link: '/pages/f2e/docReact/reactDev/02/reactDev_02_02',
+            },
+            {
+              text: '將 React 添加到現有項目中',
+              link: '/pages/f2e/docReact/reactDev/02/reactDev_02_03',
+            }
+          ]
+        },
+        {
+          text: '配置',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_03',
+          items: [
+            {
+              text: '編輯器設置',
+              link: '/pages/f2e/docReact/reactDev/03/reactDev_03_01',
+            },
+            {
+              text: '使用 TypeScript',
+              link: '/pages/f2e/docReact/reactDev/03/reactDev_03_02',
+            },
+            {
+              text: 'React 開發者工具',
+              link: '/pages/f2e/docReact/reactDev/03/reactDev_03_03',
+            }
+          ]
+        },
+        {
+          text: 'React Compiler',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_04',
+          items: [
+            {
+              text: '介紹',
+              link: '/pages/f2e/docReact/reactDev/04/reactDev_04_01',
+            },
+            {
+              text: '安裝',
+              link: '/pages/f2e/docReact/reactDev/04/reactDev_04_02',
+            },
+            {
+              text: '逐步使用',
+              link: '/pages/f2e/docReact/reactDev/04/reactDev_04_03',
+            },
+            {
+              text: '調適和故障排除',
+              link: '/pages/f2e/docReact/reactDev/04/reactDev_04_04',
+            }
+          ]
+        },
+      ]
+    },
+    {
+      text: '學習 React',
+      items: [
+        {
+          text: '描述 UI',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_05',
+          items: [
+            {
+              text: '你的第一個組件',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_01',
+            },
+            {
+              text: '組建的導入與導出',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_02',
+            },
+            {
+              text: '使用 JSX 書寫標籤語言',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_03',
+            },
+            {
+              text: '在 JSX 中通過大括號使用 JavaScript',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_04',
+            },
+            {
+              text: '將 Props 傳遞給組件',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_05',
+            },
+            {
+              text: '條件渲染',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_06',
+            },
+            {
+              text: '渲染列表',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_07',
+            },
+            {
+              text: '保持組件純粹',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_08',
+            },
+            {
+              text: '將 UI 視為樹',
+              link: '/pages/f2e/docReact/reactDev/05/reactDev_05_09',
+            }
+          ]
+        },
+        {
+          text: '添加互動',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_06',
+          items: [
+            {
+              text: '響應事件',
+              link: '/pages/f2e/docReact/reactDev/06/reactDev_06_01',
+            },
+            {
+              text: 'state：組件的記憶',
+              link: '/pages/f2e/docReact/reactDev/06/reactDev_06_02',
+            },
+            {
+              text: '渲染和提交',
+              link: '/pages/f2e/docReact/reactDev/06/reactDev_06_03',
+            },
+            {
+              text: 'state 如同一張快照',
+              link: '/pages/f2e/docReact/reactDev/06/reactDev_06_04',
+            },
+            {
+              text: '把一系列 state 更新加入佇列',
+              link: '/pages/f2e/docReact/reactDev/06/reactDev_06_05',
+            },
+            {
+              text: '更新 state 中的物件',
+              link: '/pages/f2e/docReact/reactDev/06/reactDev_06_06',
+            },
+            {
+              text: '更新 state 中的陣列',
+              link: '/pages/f2e/docReact/reactDev/06/reactDev_06_07',
+            },
+          ]
+        },
+        {
+          text: '狀態管理',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_07',
+          items: [
+            {
+              text: '用 State 響應輸入',
+              link: '/pages/f2e/docReact/reactDev/07/reactDev_07_01',
+            },
+            {
+              text: '選擇 State 結構',
+              link: '/pages/f2e/docReact/reactDev/07/reactDev_07_02',
+            },
+            {
+              text: '在組件間共享狀態',
+              link: '/pages/f2e/docReact/reactDev/07/reactDev_07_03',
+            },
+            {
+              text: '對 State 進行保留和重置',
+              link: '/pages/f2e/docReact/reactDev/07/reactDev_07_04',
+            },
+            {
+              text: '遷移狀態邏輯至 Reducer 中',
+              link: '/pages/f2e/docReact/reactDev/07/reactDev_07_05',
+            },
+            {
+              text: '使用 Context 深層傳遞參數',
+              link: '/pages/f2e/docReact/reactDev/07/reactDev_07_06',
+            },
+            {
+              text: '使用 Reducer 和 Context 拓展你的應用',
+              link: '/pages/f2e/docReact/reactDev/07/reactDev_07_07',
+            },
+          ]
+        },
+        {
+          text: '脫圍機制',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/reactDev/reactDev_08',
+          items: [
+            {
+              text: '使用 ref 引用值',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_01',
+            },
+            {
+              text: '使用 ref 操作 DOM',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_02',
+            },
+            {
+              text: '使用 Effect 進行同步',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_03',
+            },
+            {
+              text: '你可能不需要 Effect',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_04',
+            },
+            {
+              text: '響應式 Effect 的生命週期',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_05',
+            },
+            {
+              text: '將事件從 Effect 中分開',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_06',
+            },
+            {
+              text: '移除 Effect 依賴',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_07',
+            },
+            {
+              text: '使用自訂義 Hook 複用邏輯',
+              link: '/pages/f2e/docReact/reactDev/08/reactDev_08_08',
+            },
+          ]
+        },
+      ]
+    }
+  ],
   '/pages/f2e/docVue/nuxt/nuxt3/': [
     {
       text: '[IT邦] - Nuxt3 學習筆記 - Ryan',

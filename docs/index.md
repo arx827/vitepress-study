@@ -15,10 +15,12 @@
     #   - theme: alt
     #     text: View on GitHub
     #     link: https://github.com/vuejs/vitepress
-  features:
-    - title: Nuxt3 學習筆記
-      details: 'Ryan'
-      link: /pages/f2e/docVue/nuxt/nuxt3/nuxt3-01
-    - title: CSS 學習筆記
-      link: /pages/f2e/docCSS/css_01
+  # features:
+  #   - title: Nuxt3 學習筆記
+  #     details: 'Ryan'
+  #     link: /pages/f2e/docVue/nuxt/nuxt3/nuxt3-01
+  #   - title: CSS 學習筆記
+  #     link: /pages/f2e/docCSS/css_01
 ---
+
+<HomeFeatures />
