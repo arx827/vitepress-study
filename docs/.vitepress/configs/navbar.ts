@@ -3,6 +3,27 @@ export const nav = [
     text: '前端',
     items: [
       {
+        text: 'React',
+        items: [
+          {
+            text: '[React官網] React 19.2 教程',
+            link: '/pages/f2e/docReact/reactDev/reactDev_01'
+          },
+          {
+            text: '[Next.js官網] Next.js 16.2 教程',
+            link: '/pages/f2e/docReact/nextDev/nextDev_01'
+          },
+          {
+            text: '[AI-Manus] React 手把手教學',
+            link: '/pages/f2e/docReact/reactTutorial/reactTutorial_01'
+          },
+          {
+            text: '[六角學院] React 實戰課',
+            link: '/pages/f2e/docReact/react/hexschoolReact0'
+          }
+        ]
+      },
+      {
         text: 'CSS',
         items: [
           {
@@ -21,19 +42,6 @@ export const nav = [
           {
             text: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !',
             link: '/pages/f2e/docTypeScript/it/partI/typeScript-1'
-          }
-        ]
-      },
-      {
-        text: 'React',
-        items: [
-          {
-            text: '[React官網] React 19.2 教程',
-            link: '/pages/f2e/docReact/reactDev/reactDev_01'
-          },
-          {
-            text: '[六角學院] React 實戰課',
-            link: '/pages/f2e/docReact/react/hexschoolReact0'
           }
         ]
       },

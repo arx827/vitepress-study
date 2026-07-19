@@ -524,6 +524,101 @@ export const sidebar = {
       ]
     }
   ],
+  '/pages/f2e/docReact/nextDev/': [
+    {
+      text: '[Next.js官網] Next.js 16.2 教程',
+      link: 'https://nextjs.org/learn',
+      items: [
+        {
+          text: 'App Router',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/nextDev/nextDev_01',
+          items: [
+            {
+              text: '入門起步',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_01',
+            },
+            {
+              text: 'CSS 樣式設計',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_02',
+            },
+            {
+              text: '字型與圖片最佳化',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_03',
+            },
+            {
+              text: '引言',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_04',
+            },
+            {
+              text: '引言',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_05',
+            },
+            {
+              text: '設定資料庫',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_06',
+            },
+          ]
+        },
+        {
+          text: 'Page Router',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/nextDev/nextDev_02',
+          items: []
+        },
+        {
+          text: 'React 基礎',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/nextDev/nextDev_03',
+          items: []
+        },
+        {
+          text: 'SEO',
+          collapsible: true,
+          collapsed: true,
+          link: '/pages/f2e/docReact/nextDev/nextDev_04',
+          items: []
+        },
+      ]
+    }
+  ],
+  '/pages/f2e/docReact/reactTutorial/': [
+    {
+      text: '[AI-Manus] React 手把手教學 '
+    },
+    {
+      text: 'React 從零到深入實作手把手教學：個人化任務與效能追蹤系統',
+      items: [
+        {
+          text: '1. 專案啟動與基礎環境建置',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_01',
+        },
+        {
+          text: '2. 核心 UI 組件與佈局',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_02',
+        },
+        {
+          text: '3. 路由管理與頁面建立',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_03',
+        },
+        {
+          text: '4. 任務管理功能實作',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_04',
+        },
+        {
+          text: '5. 筆記管理功能實作',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_05',
+        },
+        {
+          text: '6. 番茄鐘計時器與儀表板',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_06',
+        },
+      ]
+    }
+  ],
   '/pages/f2e/docVue/nuxt/nuxt3/': [
     {
       text: '[IT邦] - Nuxt3 學習筆記 - Ryan',

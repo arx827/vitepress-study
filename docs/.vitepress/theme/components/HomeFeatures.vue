@@ -72,6 +72,7 @@ const features = site.value.themeConfig.nav || []
       transition: border-color 0.25s, background-color 0.25s;
       color: var(--vp-c-text-base);
       text-decoration: none;
+      cursor: pointer;
       &:hover {
         border-color: var(--vp-c-brand-1);
       }
