@@ -18,8 +18,8 @@ title: 'React 從零到深入實作手把手教學：個人化任務與效能追
     ```tsx
     import { StrictMode } from 'react';
     import { createRoot } from 'react-dom/client';
-    import App from './App.tsx';
-    import './index.css';
+    import App from '@/App.tsx';
+    import '@/index.css';
     import { BrowserRouter } from 'react-router-dom';
 
     createRoot(document.getElementById('root')!).render(

@@ -377,7 +377,7 @@ title: 'React 從零到深入實作手把手教學：個人化任務與效能追
             </div>
 
             <main className="flex-1 py-6">
-              <div className="px-4 sm:px-6 lg:px-8">
+              <div className="px-4 sm:px-6 lg:px-8 h-full">
                 {children}
               </div>
             </main>

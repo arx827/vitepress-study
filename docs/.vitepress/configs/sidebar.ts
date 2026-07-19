@@ -616,6 +616,14 @@ export const sidebar = {
           text: '6. 番茄鐘計時器與儀表板',
           link: '/pages/f2e/docReact/reactTutorial/reactTutorial_06',
         },
+        {
+          text: '7. 使用者認證與進階議題',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_07',
+        },
+        {
+          text: '8. 部署與作品集呈現',
+          link: '/pages/f2e/docReact/reactTutorial/reactTutorial_08',
+        },
       ]
     }
   ],
