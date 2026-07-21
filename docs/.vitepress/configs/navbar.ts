@@ -24,6 +24,15 @@ export const nav = [
         ]
       },
       {
+        text: 'Vue',
+        items: [
+          {
+            text: '[IT邦] - Nuxt3 學習筆記 - Ryan',
+            link: '/pages/f2e/docVue/nuxt/nuxt3/nuxt3-01'
+          }
+        ]
+      },
+      {
         text: 'CSS',
         items: [
           {
@@ -42,15 +51,6 @@ export const nav = [
           {
             text: '[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !',
             link: '/pages/f2e/docTypeScript/it/partI/typeScript-1'
-          }
-        ]
-      },
-      {
-        text: 'Nuxt',
-        items: [
-          {
-            text: '[IT邦] - Nuxt3 學習筆記 - Ryan',
-            link: '/pages/f2e/docVue/nuxt/nuxt3/nuxt3-01'
           }
         ]
       },

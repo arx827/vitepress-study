@@ -548,16 +548,56 @@ export const sidebar = {
               link: '/pages/f2e/docReact/nextDev/01/nextDev_01_03',
             },
             {
-              text: '引言',
+              text: '建立版面配置與頁面',
               link: '/pages/f2e/docReact/nextDev/01/nextDev_01_04',
             },
             {
-              text: '引言',
+              text: '頁面之間的導覽',
               link: '/pages/f2e/docReact/nextDev/01/nextDev_01_05',
             },
             {
               text: '設定資料庫',
               link: '/pages/f2e/docReact/nextDev/01/nextDev_01_06',
+            },
+            {
+              text: '擷取資料',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_07',
+            },
+            {
+              text: '靜態與動態渲染',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_08',
+            },
+            {
+              text: '串流',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_09',
+            },
+            {
+              text: '加入搜尋與分頁',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_10',
+            },
+            {
+              text: '資料異動',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_11',
+            },
+            {
+              text: '處理錯誤',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_12',
+            },
+            {
+              text: '提升無障礙性',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_13',
+            },
+            {
+              text: '加入驗證機制',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_14',
+            },
+            {
+              text: '加入中繼資料',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_15',
+            },
+            {
+              text: '後續步驟',
+              link: '/pages/f2e/docReact/nextDev/01/nextDev_01_16',
             },
           ]
         },
