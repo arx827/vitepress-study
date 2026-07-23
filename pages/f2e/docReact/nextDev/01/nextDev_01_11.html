@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-TW" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>[Next.js官網] Next.js 16.2 教程 | Study</title>
+    <meta name="description" content="學習筆記">
+    <meta name="generator" content="VitePress v1.6.3">
+    <link rel="preload stylesheet" href="/vitepress-study/assets/style.jQ75uNvq.css" as="style">
+    <link rel="preload stylesheet" href="/vitepress-study/vp-icons.css" as="style">
+    
+    <script type="module" src="/vitepress-study/assets/app.DkJn6ewY.js"></script>
+    <link rel="preload" href="/vitepress-study/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/vitepress-study/assets/chunks/theme.D9sNzDWO.js">
+    <link rel="modulepreload" href="/vitepress-study/assets/chunks/framework.DgPozsi0.js">
+    <link rel="modulepreload" href="/vitepress-study/assets/pages_f2e_docReact_nextDev_01_nextDev_01_11.md.BEBu1b06.lean.js">
+    <link rel="icon" type="image/png" sizes="32x32" href="/vitepress-study/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/vitepress-study/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/vitepress-study/favicons/favicon.ico">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-5d98c3a5><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a><!--]--><!----><header class="VPNav" data-v-5d98c3a5 data-v-ae24b3ad><div class="VPNavBar" data-v-ae24b3ad data-v-6aa21345><div class="wrapper" data-v-6aa21345><div class="container" data-v-6aa21345><div class="title" data-v-6aa21345><div class="VPNavBarTitle has-sidebar" data-v-6aa21345 data-v-1168a8e4><a class="title" href="/vitepress-study/" data-v-1168a8e4><!--[--><!--]--><!--[--><img class="VPImage logo" src="/vitepress-study/apple-touch-icon.png" alt data-v-8426fc1a><!--]--><span data-v-1168a8e4>Study 學習筆記</span><!--[--><!--]--></a></div></div><div class="content" data-v-6aa21345><div class="content-body" data-v-6aa21345><!--[--><!--]--><div class="VPNavBarSearch search" data-v-6aa21345><!----></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-6aa21345 data-v-dc692963><span id="main-nav-aria-label" class="visually-hidden" data-v-dc692963> Main Navigation </span><!--[--><!--[--><div class="VPFlyout VPNavBarMenuGroup" data-v-dc692963 data-v-cf11d7a2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-cf11d7a2><span class="text" data-v-cf11d7a2><!----><span data-v-cf11d7a2>前端 學習筆記</span><span class="vpi-chevron-down text-icon" data-v-cf11d7a2></span></span></button><div class="menu" data-v-cf11d7a2><div class="VPMenu" data-v-cf11d7a2 data-v-b98bc113><div class="items" data-v-b98bc113><!--[--><!--[--><div class="VPMenuGroup" data-v-b98bc113 data-v-69e747b5><p class="title" data-v-69e747b5>React</p><!--[--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docReact/reactDev/reactDev_01.html" data-v-35975db6><!--[--><span data-v-35975db6>[React官網] React 19.2 教程</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docReact/nextDev/nextDev_01.html" data-v-35975db6><!--[--><span data-v-35975db6>[Next.js官網] Next.js 16.2 教程</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docReact/reactTutorial/reactTutorial_01.html" data-v-35975db6><!--[--><span data-v-35975db6>[AI-Manus] React 手把手教學</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docReact/react/hexschoolReact0.html" data-v-35975db6><!--[--><span data-v-35975db6>[六角學院] React 實戰課</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docReact/reactHooksNotes/reactHooksNotes_01.html" data-v-35975db6><!--[--><span data-v-35975db6>[IT邦] 從 Hooks 開始，讓你的網頁 React 起來</span><!--]--></a></div><!--]--><!--]--></div><!--]--><!--[--><div class="VPMenuGroup" data-v-b98bc113 data-v-69e747b5><p class="title" data-v-69e747b5>Vue</p><!--[--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docVue/nuxt/nuxt3/nuxt3-01.html" data-v-35975db6><!--[--><span data-v-35975db6>[IT邦] - Nuxt3 學習筆記 - Ryan</span><!--]--></a></div><!--]--><!--]--></div><!--]--><!--[--><div class="VPMenuGroup" data-v-b98bc113 data-v-69e747b5><p class="title" data-v-69e747b5>CSS</p><!--[--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docCSS/css_01.html" data-v-35975db6><!--[--><span data-v-35975db6>CSS 學習筆記</span><!--]--></a></div><!--]--><!--]--></div><!--]--><!--[--><div class="VPMenuGroup" data-v-b98bc113 data-v-69e747b5><p class="title" data-v-69e747b5>TypeScript</p><!--[--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docTypeScript/expert/typeScript-1.html" data-v-35975db6><!--[--><span data-v-35975db6>[旗標] TypeScript 邁向專家之路</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/f2e/docTypeScript/it/partI/typeScript-1.html" data-v-35975db6><!--[--><span data-v-35975db6>[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !</span><!--]--></a></div><!--]--><!--]--></div><!--]--><!--]--></div><!--[--><!--]--></div></div></div><!--]--><!--[--><div class="VPFlyout VPNavBarMenuGroup" data-v-dc692963 data-v-cf11d7a2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-cf11d7a2><span class="text" data-v-cf11d7a2><!----><span data-v-cf11d7a2>其他</span><span class="vpi-chevron-down text-icon" data-v-cf11d7a2></span></span></button><div class="menu" data-v-cf11d7a2><div class="VPMenu" data-v-cf11d7a2 data-v-b98bc113><div class="items" data-v-b98bc113><!--[--><!--[--><div class="VPMenuLink" data-v-b98bc113 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/other/hahow/mood.html" data-v-35975db6><!--[--><span data-v-35975db6>[Hahow] 學會情緒智商與壓力管理，做自己情緒的主人</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-b98bc113 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/other/hahow/devops/devops-0.html" data-v-35975db6><!--[--><span data-v-35975db6>[Hahow] 軟體開發的利器：技術人要懂的 DevOps 通識課</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuGroup" data-v-b98bc113 data-v-69e747b5><p class="title" data-v-69e747b5>Google 數位人才探索計畫</p><!--[--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/other/google/google_ads/google_ads_01-01.html" data-v-35975db6><!--[--><span data-v-35975db6>數位行銷學程</span><!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-69e747b5 data-v-35975db6><a class="VPLink link" href="/vitepress-study/pages/other/google/google_cloud/google_cloud_01.html" data-v-35975db6><!--[--><span data-v-35975db6>Google Cloud 學程</span><!--]--></a></div><!--]--><!--]--></div><!--]--><!--]--></div><!--[--><!--]--></div></div></div><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-6aa21345 data-v-6c893767><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-6c893767 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div><!----><div class="VPFlyout VPNavBarExtra extra" data-v-6aa21345 data-v-bb2aa2f0 data-v-cf11d7a2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-cf11d7a2><span class="vpi-more-horizontal icon" data-v-cf11d7a2></span></button><div class="menu" data-v-cf11d7a2><div class="VPMenu" data-v-cf11d7a2 data-v-b98bc113><!----><!--[--><!--[--><!----><div class="group" data-v-bb2aa2f0><div class="item appearance" data-v-bb2aa2f0><p class="label" data-v-bb2aa2f0>Appearance</p><div class="appearance-action" data-v-bb2aa2f0><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-bb2aa2f0 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div></div></div><!----><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-6aa21345 data-v-e5dd9c1c><span class="container" data-v-e5dd9c1c><span class="top" data-v-e5dd9c1c></span><span class="middle" data-v-e5dd9c1c></span><span class="bottom" data-v-e5dd9c1c></span></span></button></div></div></div></div><div class="divider" data-v-6aa21345><div class="divider-line" data-v-6aa21345></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-5d98c3a5 data-v-a6f0e41e><div class="container" data-v-a6f0e41e><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-a6f0e41e><span class="vpi-align-left menu-icon" data-v-a6f0e41e></span><span class="menu-text" data-v-a6f0e41e>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-a6f0e41e data-v-8a42e2b4><button data-v-8a42e2b4>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-5d98c3a5 data-v-319d5ca6><div class="curtain" data-v-319d5ca6></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-319d5ca6><span class="visually-hidden" id="sidebar-aria-label" data-v-319d5ca6> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-c40bc020><section class="VPSidebarItem level-0 is-link has-active" data-v-c40bc020 data-v-b3fd67f8><div class="item" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link vp-external-link-icon link" href="https://nextjs.org/learn" target="_blank" rel="noreferrer" data-v-b3fd67f8><!--[--><h2 class="text" data-v-b3fd67f8>[Next.js官網] Next.js 16.2 教程</h2><!--]--></a><!----></div><div class="items" data-v-b3fd67f8><!--[--><section class="VPSidebarItem level-1 collapsible collapsed is-link has-active" data-v-b3fd67f8><div class="item" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/nextDev_01.html" data-v-b3fd67f8><!--[--><h3 class="text" data-v-b3fd67f8>App Router</h3><!--]--></a><div class="caret" role="button" aria-label="toggle section" tabindex="0" data-v-b3fd67f8><span class="vpi-chevron-right caret-icon" data-v-b3fd67f8></span></div></div><div class="items" data-v-b3fd67f8><!--[--><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_01.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>入門起步</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_02.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>CSS 樣式設計</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_03.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>字型與圖片最佳化</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_04.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>建立版面配置與頁面</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_05.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>頁面之間的導覽</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_06.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>設定資料庫</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_07.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>擷取資料</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_08.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>靜態與動態渲染</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_09.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>串流</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_10.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>加入搜尋與分頁</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_11.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>資料異動</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_12.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>處理錯誤</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_13.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>提升無障礙性</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_14.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>加入驗證機制</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_15.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>加入中繼資料</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-2 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_16.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>後續步驟</p><!--]--></a><!----></div><!----></div><!--]--></div></section><div class="VPSidebarItem level-1 collapsible collapsed is-link" data-v-b3fd67f8><div class="item" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/nextDev_02.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>Page Router</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 collapsible collapsed is-link" data-v-b3fd67f8><div class="item" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/nextDev_03.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>React 基礎</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 collapsible collapsed is-link" data-v-b3fd67f8><div class="item" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/vitepress-study/pages/f2e/docReact/nextDev/nextDev_04.html" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>SEO</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-5d98c3a5 data-v-1428d186><div class="VPDoc has-sidebar has-aside" data-v-1428d186 data-v-39a288b8><!--[--><!--]--><div class="container" data-v-39a288b8><div class="aside" data-v-39a288b8><div class="aside-curtain" data-v-39a288b8></div><div class="aside-container" data-v-39a288b8><div class="aside-content" data-v-39a288b8><div class="VPDocAside" data-v-39a288b8 data-v-3f215769><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-3f215769 data-v-a5bbad30><div class="content" data-v-a5bbad30><div class="outline-marker" data-v-a5bbad30></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-a5bbad30>On this page</div><ul class="VPDocOutlineItem root" data-v-a5bbad30 data-v-b933a997><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-3f215769></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-39a288b8><div class="content-container" data-v-39a288b8><!--[--><!--]--><main class="main" data-v-39a288b8><div style="position:relative;" class="vp-doc _vitepress-study_pages_f2e_docReact_nextDev_01_nextDev_01_11" data-v-39a288b8><div><h1 id="資料異動" tabindex="-1">資料異動 <a class="header-anchor" href="#資料異動" aria-label="Permalink to &quot;資料異動&quot;">​</a></h1><p>在上一章中，你使用 URL 搜尋參數與 Next.js 的 API，實作了搜尋與分頁功能。讓我們繼續為發票頁面加入新增、更新與刪除發票的功能！</p><div class="language- vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>**本章內容**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>以下是本章將涵蓋的主題：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>什麼是 React Server Actions，以及如何使用它們來異動資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>如何搭配表單與伺服器端元件（Server Components）進行操作。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>處理原生 `FormData` 物件的最佳實務，包含型別驗證。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>如何使用 `revalidatePath` API 重新驗證用戶端快取。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>如何建立帶有特定 ID 的動態路由區段。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 什麼是 Server Actions？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>React Server Actions 讓你可以直接在伺服器端執行非同步程式碼，不再需要為了異動資料而額外建立 API 端點。取而代之的是，你可以撰寫在伺服器端執行的非同步函式，並可以從用戶端或伺服器端元件中呼叫這些函式。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>安全性對網頁應用程式來說是首要考量，因為應用程式可能容易受到各種威脅的攻擊。這正是 Server Actions 派上用場的地方。它們具備加密閉包（encrypted closures）、嚴格的輸入檢查、錯誤訊息雜湊處理、主機限制等功能，這些機制共同運作，能大幅提升你應用程式的安全性。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 搭配 Server Actions 使用表單</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在 React 中，你可以在 `&lt;form&gt;` 元素中使用 `action` 屬性來呼叫 actions。這個 action 會自動接收到原生的[FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)物件，其中包含使用者所輸入的資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>舉例來說：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Server Component</span></span>
+<span class="line"><span>export default function Page() {</span></span>
+<span class="line"><span>// Action</span></span>
+<span class="line"><span>async function create(formData: FormData) {</span></span>
+<span class="line"><span>&#39;use server&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Logic to mutate data...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Invoke the action using the &quot;action&quot; attribute</span></span>
+<span class="line"><span>return &lt;form action={create}&gt;...&lt;/form&gt;;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在 Server Component 中呼叫 Server Action 有一個好處，那就是漸進式增強（progressive enhancement）：即使用戶端尚未載入 JavaScript，表單依然可以正常運作。舉例來說，在網路連線較慢的情況下依然可行。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Next.js 與 Server Actions</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Server Actions 也與 Next.js 的[快取機制](https://nextjs.org/docs/app/building-your-application/caching)有深度整合。當表單透過 Server Action 送出時，你不僅可以使用該 action 來異動資料，還可以使用像 `revalidatePath` 與 `revalidateTag` 這類的 API，重新驗證相關的快取。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>讓我們來看看這一切是如何協同運作的！</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 建立發票</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>以下是你將用來建立新發票的步驟：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 建立一個表單，用來擷取使用者的輸入內容。</span></span>
+<span class="line"><span>2. 建立一個 Server Action，並從表單中呼叫它。</span></span>
+<span class="line"><span>3. 在你的 Server Action 內，從 `formData` 物件中擷取資料。</span></span>
+<span class="line"><span>4. 驗證資料並準備好，以便插入到資料庫中。</span></span>
+<span class="line"><span>5. 插入資料，並處理任何可能發生的錯誤。</span></span>
+<span class="line"><span>6. 重新驗證快取，並將使用者重新導向回發票頁面。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 一、建立新路由與表單</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>首先，在 `/invoices` 資料夾內，加入一個名為 `/create` 的新路由區段，並在其中建立一個 `page.tsx` 檔案：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>![發票資料夾中巢狀的 create 資料夾，其中包含一個 page.tsx 檔案](https://nextjs.org/_next/image?url=https%3A%2F%2Fh8DxKfmAPhn8O0p3.public.blob.vercel-storage.com%2Flearn%2Flight%2Fcreate-invoice-route.png&amp;w=3840&amp;q=75)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你將使用這個路由來建立新的發票。在你的 `page.tsx` 檔案中，貼上以下程式碼，並花點時間仔細研究一下：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/dashboard/invoices/create/page.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import Form from &#39;@/app/ui/invoices/create-form&#39;;</span></span>
+<span class="line"><span>import Breadcrumbs from &#39;@/app/ui/invoices/breadcrumbs&#39;;</span></span>
+<span class="line"><span>import { fetchCustomers } from &#39;@/app/lib/data&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default async function Page() {</span></span>
+<span class="line"><span>const customers = await fetchCustomers();</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>&lt;main&gt;</span></span>
+<span class="line"><span>&lt;Breadcrumbs</span></span>
+<span class="line"><span>breadcrumbs={[</span></span>
+<span class="line"><span>{ label: &#39;Invoices&#39;, href: &#39;/dashboard/invoices&#39; },</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>label: &#39;Create Invoice&#39;,</span></span>
+<span class="line"><span>href: &#39;/dashboard/invoices/create&#39;,</span></span>
+<span class="line"><span>active: true,</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>]}</span></span>
+<span class="line"><span>/&gt;</span></span>
+<span class="line"><span>&lt;Form customers={customers} /&gt;</span></span>
+<span class="line"><span>&lt;/main&gt;</span></span>
+<span class="line"><span>);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你的頁面是一個伺服器端元件（Server Component），它會擷取 `customers` 資料，並將其傳遞給 `&lt;Form&gt;` 元件。為了節省時間，我們已經事先為你建立好 `&lt;Form&gt;` 元件。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>前往 `&lt;Form&gt;` 元件，你會看到這個表單具備以下內容：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- 一個 `&lt;select&gt;`（下拉選單）元素，列出**客戶**清單。</span></span>
+<span class="line"><span>- 一個 `type=&quot;number&quot;` 的 `&lt;input&gt;` 元素，用來輸入**金額**。</span></span>
+<span class="line"><span>- 兩個 `type=&quot;radio&quot;` 的 `&lt;input&gt;` 元素，用來設定狀態。</span></span>
+<span class="line"><span>- 一個 `type=&quot;submit&quot;` 的按鈕。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在 `http://localhost:3000/dashboard/invoices/create` 頁面上，你應該會看到以下的 UI 畫面：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>![建立發票頁面，包含麵包屑導覽與表單](https://nextjs.org/_next/image?url=https%3A%2F%2Fh8DxKfmAPhn8O0p3.public.blob.vercel-storage.com%2Flearn%2Flight%2Fcreate-invoice-page.png&amp;w=1920&amp;q=75)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 二、建立 Server Action</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>很好，現在讓我們建立一個 Server Action，當表單被送出時就會呼叫它。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>前往你的 `lib/` 目錄，建立一個名為 `actions.ts` 的新檔案。在檔案最上方，加入 React 的[`use server`](https://react.dev/reference/react/use-server)指令：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#39;use server&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>透過加入 `&#39;use server&#39;`，你將這個檔案中所有匯出的函式都標記為 Server Actions。這些伺服器端函式接著就可以被匯入到用戶端與伺服器端元件中使用。這個檔案中任何**未被使用**的函式，都會在最終的應用程式打包過程中被自動移除。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你也可以透過在 action 內加入 `&quot;use server&quot;`，直接在伺服器端元件中撰寫 Server Actions。不過在這門課程中，我們會將所有的 actions 統一整理在一個獨立的檔案裡。我們建議你為 actions 建立一個獨立的檔案。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在你的 `actions.ts` 檔案中，建立一個接收 `formData` 的新非同步函式：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#39;use server&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>接著，在你的 `&lt;Form&gt;` 元件中，從 `actions.ts` 檔案匯入 `createInvoice`。在 `&lt;form&gt;` 元素上加入 `action` 屬性，並呼叫 `createInvoice` 這個 action。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/ui/invoices/create-form.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import { CustomerField } from &#39;@/app/lib/definitions&#39;;</span></span>
+<span class="line"><span>import Link from &#39;next/link&#39;;</span></span>
+<span class="line"><span>import {</span></span>
+<span class="line"><span>CheckIcon,</span></span>
+<span class="line"><span>ClockIcon,</span></span>
+<span class="line"><span>CurrencyDollarIcon,</span></span>
+<span class="line"><span>UserCircleIcon,</span></span>
+<span class="line"><span>} from &#39;@heroicons/react/24/outline&#39;;</span></span>
+<span class="line"><span>import { Button } from &#39;@/app/ui/button&#39;;</span></span>
+<span class="line"><span>import { createInvoice } from &#39;@/app/lib/actions&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default function Form({</span></span>
+<span class="line"><span>customers,</span></span>
+<span class="line"><span>}: {</span></span>
+<span class="line"><span>customers: CustomerField[];</span></span>
+<span class="line"><span>}) {</span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>&lt;form action={createInvoice}&gt;</span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&gt; **小知識：**</span></span>
+<span class="line"><span>&gt; 在 HTML 中，你會將一個 URL 傳入 `action` 屬性，這個 URL 會是表單資料要送出的目的地（通常是一個 API 端點）。</span></span>
+<span class="line"><span>&gt;</span></span>
+<span class="line"><span>&gt; 然而，在 React 中，`action` 屬性被視為一個特殊的 prop，這代表 React 在這個基礎上進行了擴充，讓 actions 可以被呼叫。</span></span>
+<span class="line"><span>&gt;</span></span>
+<span class="line"><span>&gt; 在幕後，Server Actions 會自動建立一個 `POST` API 端點。這也是為什麼在使用 Server Actions 時，你不需要手動建立 API 端點的原因。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 三、從 `formData` 中擷取資料</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>回到你的 `actions.ts` 檔案，你需要擷取 `formData` 的值，這裡有[幾種方法](https://developer.mozilla.org/en-US/docs/Web/API/FormData)可以使用。在這個範例中，讓我們使用[`.get(name)`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/get)這個方法。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#39;use server&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>const rawFormData = {</span></span>
+<span class="line"><span>customerId: formData.get(&#39;customerId&#39;),</span></span>
+<span class="line"><span>amount: formData.get(&#39;amount&#39;),</span></span>
+<span class="line"><span>status: formData.get(&#39;status&#39;),</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span>// Test it out:</span></span>
+<span class="line"><span>console.log(rawFormData);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&gt; **提示：** 如果你正在處理擁有許多欄位的表單，可以考慮搭配 JavaScript 的[`Object.fromEntries()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)，使用[`entries()`](https://developer.mozilla.org/en-US/docs/Web/API/FormData/entries)這個方法。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>為了確認所有東西都正確連結在一起，試著操作一下表單。送出表單後，你應該會在你的**終端機**（而不是瀏覽器）中，看到你剛剛輸入到表單中的資料被記錄下來。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>現在你的資料已經是物件的形式，處理起來會方便許多。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 四、驗證並準備資料</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在將表單資料送到資料庫之前，你需要確保資料的格式與型別都正確無誤。如果你還記得課程稍早提到的內容，你的發票資料表預期的資料格式如下：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/definitions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export type Invoice = {</span></span>
+<span class="line"><span>id: string; // Will be created on the database</span></span>
+<span class="line"><span>customer_id: string;</span></span>
+<span class="line"><span>amount: number; // Stored in cents</span></span>
+<span class="line"><span>status: &#39;pending&#39; | &#39;paid&#39;;</span></span>
+<span class="line"><span>date: string;</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>到目前為止，你只從表單中取得了 `customer_id`、`amount` 與 `status` 這幾項資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#### 型別驗證與型別轉換</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>驗證表單資料是否符合資料庫預期的型別，是很重要的一件事。舉例來說，如果你在你的 action 內加入一段 `console.log`：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>console.log(typeof rawFormData.amount);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你會注意到 `amount` 的型別是 `string`，而不是 `number`。這是因為 `type=&quot;number&quot;` 的 `input` 元素，實際上回傳的其實是字串，而不是數字！</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>要處理型別驗證，你有幾種選擇。雖然你可以手動驗證型別，但使用型別驗證函式庫可以幫你省下不少時間與心力。在這個範例中，我們會使用[Zod](https://zod.dev/)，這是一個以 TypeScript 為優先設計理念的驗證函式庫，可以幫你簡化這項工作。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在你的 `actions.ts` 檔案中，匯入 Zod，並定義一個與表單物件結構相符的 schema。這個 schema 會在資料儲存到資料庫之前，先對 `formData` 進行驗證。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#39;use server&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import { z } from &#39;zod&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const FormSchema = z.object({</span></span>
+<span class="line"><span>id: z.string(),</span></span>
+<span class="line"><span>customerId: z.string(),</span></span>
+<span class="line"><span>amount: z.coerce.number(),</span></span>
+<span class="line"><span>status: z.enum([&#39;pending&#39;, &#39;paid&#39;]),</span></span>
+<span class="line"><span>date: z.string(),</span></span>
+<span class="line"><span>});</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const CreateInvoice = FormSchema.omit({ id: true, date: true });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>`amount` 這個欄位被特別設定為強制轉換（coerce），將字串轉換成數字，同時也會驗證其型別。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>接著，你可以將 `rawFormData` 傳入 `CreateInvoice`，以驗證資料的型別：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>const { customerId, amount, status } = CreateInvoice.parse({</span></span>
+<span class="line"><span>customerId: formData.get(&#39;customerId&#39;),</span></span>
+<span class="line"><span>amount: formData.get(&#39;amount&#39;),</span></span>
+<span class="line"><span>status: formData.get(&#39;status&#39;),</span></span>
+<span class="line"><span>});</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#### 以分為單位儲存金額</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>通常來說，將金額以「分」為單位儲存在資料庫中會是比較好的做法，這樣可以避免 JavaScript 浮點數運算的誤差，並確保更高的精確度。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>讓我們將金額轉換成以分為單位：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>const { customerId, amount, status } = CreateInvoice.parse({</span></span>
+<span class="line"><span>customerId: formData.get(&#39;customerId&#39;),</span></span>
+<span class="line"><span>amount: formData.get(&#39;amount&#39;),</span></span>
+<span class="line"><span>status: formData.get(&#39;status&#39;),</span></span>
+<span class="line"><span>});</span></span>
+<span class="line"><span>const amountInCents = amount * 100;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>#### 建立新的日期資料</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>最後，讓我們以「YYYY-MM-DD」的格式，建立一個代表發票建立日期的新日期資料：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>const { customerId, amount, status } = CreateInvoice.parse({</span></span>
+<span class="line"><span>customerId: formData.get(&#39;customerId&#39;),</span></span>
+<span class="line"><span>amount: formData.get(&#39;amount&#39;),</span></span>
+<span class="line"><span>status: formData.get(&#39;status&#39;),</span></span>
+<span class="line"><span>});</span></span>
+<span class="line"><span>const amountInCents = amount * 100;</span></span>
+<span class="line"><span>const date = new Date().toISOString().split(&#39;T&#39;)[0];</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 五、將資料插入資料庫</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>現在你已經準備好所有資料庫所需要的資料，你可以撰寫一個 SQL 查詢，將新的發票插入資料庫，並傳入這些變數：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import { z } from &#39;zod&#39;;</span></span>
+<span class="line"><span>import postgres from &#39;postgres&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const sql = postgres(process.env.POSTGRES_URL!, { ssl: &#39;require&#39; });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>const { customerId, amount, status } = CreateInvoice.parse({</span></span>
+<span class="line"><span>customerId: formData.get(&#39;customerId&#39;),</span></span>
+<span class="line"><span>amount: formData.get(&#39;amount&#39;),</span></span>
+<span class="line"><span>status: formData.get(&#39;status&#39;),</span></span>
+<span class="line"><span>});</span></span>
+<span class="line"><span>const amountInCents = amount * 100;</span></span>
+<span class="line"><span>const date = new Date().toISOString().split(&#39;T&#39;)[0];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>await sql    INSERT INTO invoices (customer_id, amount, status, date)     VALUES (${customerId}, ${amountInCents}, ${status}, ${date})  ;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>目前，我們還沒有處理任何錯誤，我們會在下一章討論這個部分。現在，讓我們繼續進行下一個步驟。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 六、重新驗證並重新導向</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Next.js 具備一個用戶端路由快取（client-side router cache），會在使用者的瀏覽器中，將路由區段暫存一段時間。搭配[預先擷取（prefetching）](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#1-prefetching)機制，這個快取能確保使用者可以在路由之間快速切換，同時減少向伺服器發出的請求數量。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>由於你正在更新發票路由中顯示的資料，你會希望清除這個快取，並觸發一個新的伺服器請求。你可以使用 Next.js 的[`revalidatePath`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath)函式來做到這一點：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#39;use server&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import { z } from &#39;zod&#39;;</span></span>
+<span class="line"><span>import { revalidatePath } from &#39;next/cache&#39;;</span></span>
+<span class="line"><span>import postgres from &#39;postgres&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const sql = postgres(process.env.POSTGRES_URL!, { ssl: &#39;require&#39; });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>const { customerId, amount, status } = CreateInvoice.parse({</span></span>
+<span class="line"><span>customerId: formData.get(&#39;customerId&#39;),</span></span>
+<span class="line"><span>amount: formData.get(&#39;amount&#39;),</span></span>
+<span class="line"><span>status: formData.get(&#39;status&#39;),</span></span>
+<span class="line"><span>});</span></span>
+<span class="line"><span>const amountInCents = amount * 100;</span></span>
+<span class="line"><span>const date = new Date().toISOString().split(&#39;T&#39;)[0];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>await sql    INSERT INTO invoices (customer_id, amount, status, date)     VALUES (${customerId}, ${amountInCents}, ${status}, ${date})  ;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>revalidatePath(&#39;/dashboard/invoices&#39;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>一旦資料庫更新完成，`/dashboard/invoices` 這個路徑就會被重新驗證，並從伺服器擷取最新的資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>此時，你還會想把使用者重新導向回 `/dashboard/invoices` 頁面。你可以使用 Next.js 的[`redirect`](https://nextjs.org/docs/app/api-reference/functions/redirect)函式來達成：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#39;use server&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import { z } from &#39;zod&#39;;</span></span>
+<span class="line"><span>import { revalidatePath } from &#39;next/cache&#39;;</span></span>
+<span class="line"><span>import { redirect } from &#39;next/navigation&#39;;</span></span>
+<span class="line"><span>import postgres from &#39;postgres&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const sql = postgres(process.env.POSTGRES_URL!, { ssl: &#39;require&#39; });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function createInvoice(formData: FormData) {</span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>revalidatePath(&#39;/dashboard/invoices&#39;);</span></span>
+<span class="line"><span>redirect(&#39;/dashboard/invoices&#39;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>恭喜！你剛剛完成了你的第一個 Server Action。試著新增一筆發票來測試看看，如果一切運作正常：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 送出表單後，你應該會被重新導向到 `/dashboard/invoices` 路由。</span></span>
+<span class="line"><span>2. 你應該會在資料表最上方看到剛剛新增的發票。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 更新發票</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>更新發票的表單與建立發票的表單類似，只不過你需要傳入發票的 `id`，才能更新資料庫中對應的紀錄。讓我們來看看該如何取得並傳遞發票的 `id`。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>以下是你將用來更新發票的步驟：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 建立一個帶有發票 `id` 的新動態路由區段。</span></span>
+<span class="line"><span>2. 從頁面的 params 中讀取發票的 `id`。</span></span>
+<span class="line"><span>3. 從資料庫中擷取特定的發票資料。</span></span>
+<span class="line"><span>4. 為表單預先帶入該發票的資料。</span></span>
+<span class="line"><span>5. 更新資料庫中的發票資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 一、建立帶有發票 `id` 的動態路由區段</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>當你不確定確切的路由區段名稱，並想根據資料建立對應的路由時，Next.js 讓你可以建立[動態路由區段（Dynamic Route Segments）](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)。這可能會用在部落格文章標題、商品頁面等情境。你可以將資料夾名稱用方括號包起來，藉此建立動態路由區段，例如 `[id]`、`[post]` 或 `[slug]`。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在你的 `/invoices` 資料夾中，建立一個名為 `[id]` 的新動態路由，接著在其中建立一個名為 `edit` 的新路由，並加入一個 `page.tsx` 檔案。你的檔案結構應該會像這樣：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>![發票資料夾中巢狀的 [id] 資料夾，其中包含一個 edit 資料夾](https://nextjs.org/_next/image?url=https%3A%2F%2Fh8DxKfmAPhn8O0p3.public.blob.vercel-storage.com%2Flearn%2Flight%2Fedit-invoice-route.png&amp;w=3840&amp;q=75)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在你的 `&lt;Table&gt;` 元件中，你會注意到有一個 `&lt;UpdateInvoice /&gt;` 按鈕，它會從資料表紀錄中接收發票的 `id`。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/ui/invoices/table.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default async function InvoicesTable({</span></span>
+<span class="line"><span>query,</span></span>
+<span class="line"><span>currentPage,</span></span>
+<span class="line"><span>}: {</span></span>
+<span class="line"><span>query: string;</span></span>
+<span class="line"><span>currentPage: number;</span></span>
+<span class="line"><span>}) {</span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>&lt;td className=&quot;flex justify-end gap-2 whitespace-nowrap px-6 py-4 text-sm&quot;&gt;</span></span>
+<span class="line"><span>&lt;UpdateInvoice id={invoice.id} /&gt;</span></span>
+<span class="line"><span>&lt;DeleteInvoice id={invoice.id} /&gt;</span></span>
+<span class="line"><span>&lt;/td&gt;</span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>前往你的 `&lt;UpdateInvoice /&gt;` 元件，將 `Link` 的 `href` 更新為接收 `id` 這個 prop。你可以使用樣板字面值（template literals）來連結到動態路由區段：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/ui/invoices/buttons.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import { PencilIcon, PlusIcon, TrashIcon } from &#39;@heroicons/react/24/outline&#39;;</span></span>
+<span class="line"><span>import Link from &#39;next/link&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export function UpdateInvoice({ id }: { id: string }) {</span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>&lt;Link</span></span>
+<span class="line"><span>href={/dashboard/invoices/${id}/edit}</span></span>
+<span class="line"><span>className=&quot;rounded-md border p-2 hover:bg-gray-100&quot;</span></span>
+<span class="line"><span>&gt;</span></span>
+<span class="line"><span>&lt;PencilIcon className=&quot;w-5&quot; /&gt;</span></span>
+<span class="line"><span>&lt;/Link&gt;</span></span>
+<span class="line"><span>);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 二、從頁面的 `params` 讀取發票的 `id`</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>回到你的 `&lt;Page&gt;` 元件，貼上以下程式碼：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/dashboard/invoices/[id]/edit/page.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import Form from &#39;@/app/ui/invoices/edit-form&#39;;</span></span>
+<span class="line"><span>import Breadcrumbs from &#39;@/app/ui/invoices/breadcrumbs&#39;;</span></span>
+<span class="line"><span>import { fetchCustomers } from &#39;@/app/lib/data&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default async function Page() {</span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>&lt;main&gt;</span></span>
+<span class="line"><span>&lt;Breadcrumbs</span></span>
+<span class="line"><span>breadcrumbs={[</span></span>
+<span class="line"><span>{ label: &#39;Invoices&#39;, href: &#39;/dashboard/invoices&#39; },</span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>label: &#39;Edit Invoice&#39;,</span></span>
+<span class="line"><span>href: /dashboard/invoices/${id}/edit,</span></span>
+<span class="line"><span>active: true,</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>]}</span></span>
+<span class="line"><span>/&gt;</span></span>
+<span class="line"><span>&lt;Form invoice={invoice} customers={customers} /&gt;</span></span>
+<span class="line"><span>&lt;/main&gt;</span></span>
+<span class="line"><span>);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你會發現這與你的 `/create` 發票頁面很相似，只是它匯入了另一個不同的表單（來自 `edit-form.tsx` 檔案）。這個表單應該要**預先帶入**客戶名稱、發票金額與狀態的 `defaultValue`。要預先帶入表單欄位，你需要使用 `id` 來擷取特定的發票資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>除了 `searchParams` 之外，頁面元件也可以接收一個名為 `params` 的 prop，你可以用它來存取 `id`。更新你的 `&lt;Page&gt;` 元件，讓它可以接收這個 prop：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/dashboard/invoices/[id]/edit/page.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import Form from &#39;@/app/ui/invoices/edit-form&#39;;</span></span>
+<span class="line"><span>import Breadcrumbs from &#39;@/app/ui/invoices/breadcrumbs&#39;;</span></span>
+<span class="line"><span>import { fetchCustomers } from &#39;@/app/lib/data&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default async function Page(props: { params: Promise&lt;{ id: string }&gt; }) {</span></span>
+<span class="line"><span>const params = await props.params;</span></span>
+<span class="line"><span>const id = params.id;</span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 三、擷取特定的發票資料</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>接著：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- 匯入一個名為 `fetchInvoiceById` 的新函式，並將 `id` 作為引數傳入。</span></span>
+<span class="line"><span>- 匯入 `fetchCustomers`，用來擷取下拉選單中所需的客戶名稱資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你可以使用 `Promise.all`，以平行的方式同時擷取發票與客戶資料：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/dashboard/invoices/[id]/edit/page.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import Form from &#39;@/app/ui/invoices/edit-form&#39;;</span></span>
+<span class="line"><span>import Breadcrumbs from &#39;@/app/ui/invoices/breadcrumbs&#39;;</span></span>
+<span class="line"><span>import { fetchInvoiceById, fetchCustomers } from &#39;@/app/lib/data&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default async function Page(props: { params: Promise&lt;{ id: string }&gt; }) {</span></span>
+<span class="line"><span>const params = await props.params;</span></span>
+<span class="line"><span>const id = params.id;</span></span>
+<span class="line"><span>const [invoice, customers] = await Promise.all([</span></span>
+<span class="line"><span>fetchInvoiceById(id),</span></span>
+<span class="line"><span>fetchCustomers(),</span></span>
+<span class="line"><span>]);</span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你會在終端機中看到一個暫時性的 TypeScript 錯誤，出現在 `invoice` 這個 prop 上，因為 `invoice` 有可能是 `undefined`。現在先不用擔心這個問題，你會在下一章加入錯誤處理機制時解決它。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>太好了！現在，測試一下確認所有東西都正確串接起來。造訪 `http://localhost:3000/dashboard/invoices`，點擊鉛筆圖示來編輯一筆發票。切換頁面後，你應該會看到一個已經預先帶入發票詳細資料的表單：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>![編輯發票頁面，包含麵包屑導覽與表單](https://nextjs.org/_next/image?url=https%3A%2F%2Fh8DxKfmAPhn8O0p3.public.blob.vercel-storage.com%2Flearn%2Flight%2Fedit-invoice-page.png&amp;w=1920&amp;q=75)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>URL 也應該會更新，並帶有 `id`，格式如下：`http://localhost:3000/dashboard/invoice/uuid/edit`</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&gt; **UUID 與自動遞增鍵值的比較**</span></span>
+<span class="line"><span>&gt;</span></span>
+<span class="line"><span>&gt; 我們使用 UUID，而不是使用像 1、2、3 這樣遞增的鍵值。這會讓 URL 變得比較長，然而，UUID 消除了 ID 發生碰撞的風險，具有全域唯一性，並降低了列舉攻擊（enumeration attacks）的風險，因此非常適合用於大型資料庫。</span></span>
+<span class="line"><span>&gt;</span></span>
+<span class="line"><span>&gt; 不過，如果你偏好比較簡潔的 URL，你可能會更傾向於使用自動遞增鍵值。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 四、將 `id` 傳入 Server Action</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>最後，你需要將 `id` 傳入 Server Action，才能更新資料庫中正確的紀錄。你**不能**像這樣直接將 `id` 當作引數傳入：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/ui/invoices/edit-form.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Passing an id as argument won&#39;t work</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;form action={updateInvoice(id)}&gt; ```</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>取而代之，你可以使用 JS 的 bind，將 id 傳入 Server Action。這樣可以確保傳入 Server Action 的所有數值都會經過編碼處理。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/ui/invoices/edit-form.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span>import { updateInvoice } from &#39;@/app/lib/actions&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default function EditInvoiceForm({</span></span>
+<span class="line"><span>  invoice,</span></span>
+<span class="line"><span>  customers,</span></span>
+<span class="line"><span>}: {</span></span>
+<span class="line"><span>  invoice: InvoiceForm;</span></span>
+<span class="line"><span>  customers: CustomerField[];</span></span>
+<span class="line"><span>}) {</span></span>
+<span class="line"><span>  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return &lt;form action={updateInvoiceWithId}&gt;{/* ... */}&lt;/form&gt;;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>注意： 在表單中使用隱藏的 input 欄位也是可行的做法（例如 &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value={invoice.id} /&gt;）。不過，這些數值會以完整文字的形式出現在 HTML 原始碼中，對於較敏感的資料來說並不理想。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>接著，在你的 actions.ts 檔案中，建立一個新的 action，命名為 updateInvoice：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Use Zod to update the expected types</span></span>
+<span class="line"><span>const UpdateInvoice = FormSchema.omit({ id: true, date: true });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function updateInvoice(id: string, formData: FormData) {</span></span>
+<span class="line"><span>  const { customerId, amount, status } = UpdateInvoice.parse({</span></span>
+<span class="line"><span>    customerId: formData.get(&#39;customerId&#39;),</span></span>
+<span class="line"><span>    amount: formData.get(&#39;amount&#39;),</span></span>
+<span class="line"><span>    status: formData.get(&#39;status&#39;),</span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  const amountInCents = amount * 100;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  await sql`</span></span>
+<span class="line"><span>    UPDATE invoices</span></span>
+<span class="line"><span>    SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}</span></span>
+<span class="line"><span>    WHERE id = ${id}</span></span>
+<span class="line"><span>  `;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  revalidatePath(&#39;/dashboard/invoices&#39;);</span></span>
+<span class="line"><span>  redirect(&#39;/dashboard/invoices&#39;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>與 createInvoice 這個 action 類似，在這裡你做了以下事情：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>從 formData 中擷取資料。</span></span>
+<span class="line"><span>使用 Zod 驗證資料型別。</span></span>
+<span class="line"><span>將金額轉換成以分為單位。</span></span>
+<span class="line"><span>將這些變數傳入 SQL 查詢中。</span></span>
+<span class="line"><span>呼叫 revalidatePath，清除用戶端快取，並發出一個新的伺服器請求。</span></span>
+<span class="line"><span>呼叫 redirect，將使用者重新導向到發票頁面。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>編輯一筆發票，測試看看效果。送出表單後，你應該會被重新導向到發票頁面，且該筆發票的資料應該已經更新完成。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>刪除發票</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>要使用 Server Action 刪除一筆發票，請將刪除按鈕包裹在一個 &lt;form&gt; 元素中，並使用 bind 將 id 傳入 Server Action：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/ui/invoices/buttons.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import { deleteInvoice } from &#39;@/app/lib/actions&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export function DeleteInvoice({ id }: { id: string }) {</span></span>
+<span class="line"><span>  const deleteInvoiceWithId = deleteInvoice.bind(null, id);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return (</span></span>
+<span class="line"><span>    &lt;form action={deleteInvoiceWithId}&gt;</span></span>
+<span class="line"><span>      &lt;button type=&quot;submit&quot; className=&quot;rounded-md border p-2 hover:bg-gray-100&quot;&gt;</span></span>
+<span class="line"><span>        &lt;span className=&quot;sr-only&quot;&gt;Delete&lt;/span&gt;</span></span>
+<span class="line"><span>        &lt;TrashIcon className=&quot;w-4&quot; /&gt;</span></span>
+<span class="line"><span>      &lt;/button&gt;</span></span>
+<span class="line"><span>    &lt;/form&gt;</span></span>
+<span class="line"><span>  );</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在你的 actions.ts 檔案中，建立一個名為 deleteInvoice 的新 action。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/app/lib/actions.ts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function deleteInvoice(id: string) {</span></span>
+<span class="line"><span>  await sql`DELETE FROM invoices WHERE id = ${id}`;</span></span>
+<span class="line"><span>  revalidatePath(&#39;/dashboard/invoices&#39;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>由於這個 action 是在 /dashboard/invoices 路徑中被呼叫的，你並不需要呼叫 redirect。呼叫 revalidatePath 就會觸發一個新的伺服器請求，並重新渲染資料表。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>延伸閱讀</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>在這一章中，你學到了如何使用 Server Actions 來異動資料。你也學到了如何使用 revalidatePath API 重新驗證 Next.js 的快取，以及如何使用 redirect 將使用者重新導向到新的頁面。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你也可以進一步閱讀關於Server Actions 安全性的相關內容，作為額外的學習資源。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你已完成第十一章</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>恭喜！你已經學會如何使用表單與 React Server Actions 來異動資料。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>下一步</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>12：處理錯誤（Handling Errors）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>讓我們一起探索使用表單異動資料的最佳實務，包括錯誤處理與無障礙設計。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>開始第十二章</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br><span class="line-number">402</span><br><span class="line-number">403</span><br><span class="line-number">404</span><br><span class="line-number">405</span><br><span class="line-number">406</span><br><span class="line-number">407</span><br><span class="line-number">408</span><br><span class="line-number">409</span><br><span class="line-number">410</span><br><span class="line-number">411</span><br><span class="line-number">412</span><br><span class="line-number">413</span><br><span class="line-number">414</span><br><span class="line-number">415</span><br><span class="line-number">416</span><br><span class="line-number">417</span><br><span class="line-number">418</span><br><span class="line-number">419</span><br><span class="line-number">420</span><br><span class="line-number">421</span><br><span class="line-number">422</span><br><span class="line-number">423</span><br><span class="line-number">424</span><br><span class="line-number">425</span><br><span class="line-number">426</span><br><span class="line-number">427</span><br><span class="line-number">428</span><br><span class="line-number">429</span><br><span class="line-number">430</span><br><span class="line-number">431</span><br><span class="line-number">432</span><br><span class="line-number">433</span><br><span class="line-number">434</span><br><span class="line-number">435</span><br><span class="line-number">436</span><br><span class="line-number">437</span><br><span class="line-number">438</span><br><span class="line-number">439</span><br><span class="line-number">440</span><br><span class="line-number">441</span><br><span class="line-number">442</span><br><span class="line-number">443</span><br><span class="line-number">444</span><br><span class="line-number">445</span><br><span class="line-number">446</span><br><span class="line-number">447</span><br><span class="line-number">448</span><br><span class="line-number">449</span><br><span class="line-number">450</span><br><span class="line-number">451</span><br><span class="line-number">452</span><br><span class="line-number">453</span><br><span class="line-number">454</span><br><span class="line-number">455</span><br><span class="line-number">456</span><br><span class="line-number">457</span><br><span class="line-number">458</span><br><span class="line-number">459</span><br><span class="line-number">460</span><br><span class="line-number">461</span><br><span class="line-number">462</span><br><span class="line-number">463</span><br><span class="line-number">464</span><br><span class="line-number">465</span><br><span class="line-number">466</span><br><span class="line-number">467</span><br><span class="line-number">468</span><br><span class="line-number">469</span><br><span class="line-number">470</span><br><span class="line-number">471</span><br><span class="line-number">472</span><br><span class="line-number">473</span><br><span class="line-number">474</span><br><span class="line-number">475</span><br><span class="line-number">476</span><br><span class="line-number">477</span><br><span class="line-number">478</span><br><span class="line-number">479</span><br><span class="line-number">480</span><br><span class="line-number">481</span><br><span class="line-number">482</span><br><span class="line-number">483</span><br><span class="line-number">484</span><br><span class="line-number">485</span><br><span class="line-number">486</span><br><span class="line-number">487</span><br><span class="line-number">488</span><br><span class="line-number">489</span><br><span class="line-number">490</span><br><span class="line-number">491</span><br><span class="line-number">492</span><br><span class="line-number">493</span><br><span class="line-number">494</span><br><span class="line-number">495</span><br><span class="line-number">496</span><br><span class="line-number">497</span><br><span class="line-number">498</span><br><span class="line-number">499</span><br><span class="line-number">500</span><br><span class="line-number">501</span><br><span class="line-number">502</span><br><span class="line-number">503</span><br><span class="line-number">504</span><br><span class="line-number">505</span><br><span class="line-number">506</span><br><span class="line-number">507</span><br><span class="line-number">508</span><br><span class="line-number">509</span><br><span class="line-number">510</span><br><span class="line-number">511</span><br><span class="line-number">512</span><br><span class="line-number">513</span><br><span class="line-number">514</span><br><span class="line-number">515</span><br><span class="line-number">516</span><br><span class="line-number">517</span><br><span class="line-number">518</span><br><span class="line-number">519</span><br><span class="line-number">520</span><br><span class="line-number">521</span><br><span class="line-number">522</span><br><span class="line-number">523</span><br><span class="line-number">524</span><br><span class="line-number">525</span><br><span class="line-number">526</span><br><span class="line-number">527</span><br><span class="line-number">528</span><br><span class="line-number">529</span><br><span class="line-number">530</span><br><span class="line-number">531</span><br><span class="line-number">532</span><br><span class="line-number">533</span><br><span class="line-number">534</span><br><span class="line-number">535</span><br><span class="line-number">536</span><br><span class="line-number">537</span><br><span class="line-number">538</span><br><span class="line-number">539</span><br><span class="line-number">540</span><br><span class="line-number">541</span><br><span class="line-number">542</span><br><span class="line-number">543</span><br><span class="line-number">544</span><br><span class="line-number">545</span><br><span class="line-number">546</span><br><span class="line-number">547</span><br><span class="line-number">548</span><br><span class="line-number">549</span><br><span class="line-number">550</span><br><span class="line-number">551</span><br><span class="line-number">552</span><br><span class="line-number">553</span><br><span class="line-number">554</span><br><span class="line-number">555</span><br><span class="line-number">556</span><br><span class="line-number">557</span><br><span class="line-number">558</span><br><span class="line-number">559</span><br><span class="line-number">560</span><br><span class="line-number">561</span><br><span class="line-number">562</span><br><span class="line-number">563</span><br><span class="line-number">564</span><br><span class="line-number">565</span><br><span class="line-number">566</span><br><span class="line-number">567</span><br><span class="line-number">568</span><br><span class="line-number">569</span><br><span class="line-number">570</span><br><span class="line-number">571</span><br><span class="line-number">572</span><br><span class="line-number">573</span><br><span class="line-number">574</span><br><span class="line-number">575</span><br><span class="line-number">576</span><br><span class="line-number">577</span><br><span class="line-number">578</span><br><span class="line-number">579</span><br><span class="line-number">580</span><br><span class="line-number">581</span><br><span class="line-number">582</span><br><span class="line-number">583</span><br><span class="line-number">584</span><br><span class="line-number">585</span><br><span class="line-number">586</span><br><span class="line-number">587</span><br><span class="line-number">588</span><br><span class="line-number">589</span><br><span class="line-number">590</span><br><span class="line-number">591</span><br><span class="line-number">592</span><br><span class="line-number">593</span><br><span class="line-number">594</span><br><span class="line-number">595</span><br><span class="line-number">596</span><br><span class="line-number">597</span><br><span class="line-number">598</span><br><span class="line-number">599</span><br><span class="line-number">600</span><br><span class="line-number">601</span><br><span class="line-number">602</span><br><span class="line-number">603</span><br><span class="line-number">604</span><br><span class="line-number">605</span><br><span class="line-number">606</span><br><span class="line-number">607</span><br><span class="line-number">608</span><br><span class="line-number">609</span><br><span class="line-number">610</span><br><span class="line-number">611</span><br><span class="line-number">612</span><br><span class="line-number">613</span><br><span class="line-number">614</span><br><span class="line-number">615</span><br><span class="line-number">616</span><br><span class="line-number">617</span><br><span class="line-number">618</span><br><span class="line-number">619</span><br><span class="line-number">620</span><br><span class="line-number">621</span><br><span class="line-number">622</span><br><span class="line-number">623</span><br><span class="line-number">624</span><br><span class="line-number">625</span><br><span class="line-number">626</span><br><span class="line-number">627</span><br><span class="line-number">628</span><br><span class="line-number">629</span><br><span class="line-number">630</span><br><span class="line-number">631</span><br><span class="line-number">632</span><br><span class="line-number">633</span><br><span class="line-number">634</span><br><span class="line-number">635</span><br><span class="line-number">636</span><br><span class="line-number">637</span><br><span class="line-number">638</span><br><span class="line-number">639</span><br><span class="line-number">640</span><br><span class="line-number">641</span><br><span class="line-number">642</span><br><span class="line-number">643</span><br><span class="line-number">644</span><br><span class="line-number">645</span><br><span class="line-number">646</span><br><span class="line-number">647</span><br><span class="line-number">648</span><br><span class="line-number">649</span><br><span class="line-number">650</span><br><span class="line-number">651</span><br><span class="line-number">652</span><br><span class="line-number">653</span><br><span class="line-number">654</span><br><span class="line-number">655</span><br><span class="line-number">656</span><br></div></div></div></div></main><footer class="VPDocFooter" data-v-39a288b8 data-v-e257564d><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d><span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d>Pager</span><div class="pager" data-v-e257564d><a class="VPLink link pager-link prev" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_10.html" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>Previous page</span><span class="title" data-v-e257564d>加入搜尋與分頁</span><!--]--></a></div><div class="pager" data-v-e257564d><a class="VPLink link pager-link next" href="/vitepress-study/pages/f2e/docReact/nextDev/01/nextDev_01_12.html" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>Next page</span><span class="title" data-v-e257564d>處理錯誤</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-5d98c3a5 data-v-e315a0ad><div class="container" data-v-e315a0ad><!----><p class="copyright" data-v-e315a0ad>MIT Lincensed | Copyright © 2024-present Eason</p></div></footer><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"index.md\":\"Daf_aWid\",\"pages_f2e_doccss_css_01.md\":\"CLB35Zi0\",\"pages_f2e_doccss_css_02.md\":\"BWpAQNkf\",\"pages_f2e_doccss_css_03.md\":\"BliRUTg6\",\"pages_f2e_doccss_css_04.md\":\"IKTq8mek\",\"pages_f2e_doccss_css_05.md\":\"BkkjHmfA\",\"pages_f2e_doccss_css_06.md\":\"DsPVZ35u\",\"pages_f2e_doccss_css_07.md\":\"BCMsE7hX\",\"pages_f2e_docreact_nextdev_01_nextdev_01_01.md\":\"BkVFuPXI\",\"pages_f2e_docreact_nextdev_01_nextdev_01_02.md\":\"WCYX5jAE\",\"pages_f2e_docreact_nextdev_01_nextdev_01_03.md\":\"DX4jjKv4\",\"pages_f2e_docreact_nextdev_01_nextdev_01_04.md\":\"CSY_bIz7\",\"pages_f2e_docreact_nextdev_01_nextdev_01_05.md\":\"BatNVT_E\",\"pages_f2e_docreact_nextdev_01_nextdev_01_06.md\":\"A_eiImCE\",\"pages_f2e_docreact_nextdev_01_nextdev_01_07.md\":\"BKi3OdoS\",\"pages_f2e_docreact_nextdev_01_nextdev_01_08.md\":\"Dc9jX5ZF\",\"pages_f2e_docreact_nextdev_01_nextdev_01_09.md\":\"9YN69Hqo\",\"pages_f2e_docreact_nextdev_01_nextdev_01_10.md\":\"ODUBBQgU\",\"pages_f2e_docreact_nextdev_01_nextdev_01_11.md\":\"BEBu1b06\",\"pages_f2e_docreact_nextdev_01_nextdev_01_12.md\":\"DSy2OGmq\",\"pages_f2e_docreact_nextdev_01_nextdev_01_13.md\":\"D-erzve4\",\"pages_f2e_docreact_nextdev_01_nextdev_01_14.md\":\"CFIePDq3\",\"pages_f2e_docreact_nextdev_01_nextdev_01_15.md\":\"CcjQx4Up\",\"pages_f2e_docreact_nextdev_01_nextdev_01_16.md\":\"CWow4_ao\",\"pages_f2e_docreact_nextdev_nextdev_01.md\":\"CjmdI8wK\",\"pages_f2e_docreact_nextdev_nextdev_02.md\":\"BQG13v8e\",\"pages_f2e_docreact_nextdev_nextdev_03.md\":\"Ci1vLyfh\",\"pages_f2e_docreact_nextdev_nextdev_04.md\":\"DSCcJ2DF\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-1.md\":\"BKtS1Pfi\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-10.md\":\"DNOUjbSh\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-11.md\":\"Co74Ze-t\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-12.md\":\"D9QtGUJI\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-13.md\":\"D0rtUIJk\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-14.md\":\"Bgek48c2\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-2.md\":\"CcLf0TIf\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-3.md\":\"CPCWloc0\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-4.md\":\"DA1ebKs1\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-5.md\":\"iOOpfigI\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-6.md\":\"CeoYXNtp\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-7.md\":\"B3HBoefi\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-8.md\":\"BbkBWoza\",\"pages_f2e_docreact_react_1_hexschoolreact1-1-9.md\":\"Z6F5aRKO\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-1.md\":\"BH8MFDgN\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-10.md\":\"C2gMP-xy\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-11.md\":\"eSfhbCYH\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-2.md\":\"CrR3TBj4\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-3.md\":\"BTB8MA21\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-4.md\":\"DfOhkHEa\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-5.md\":\"DHxl5FCp\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-6.md\":\"PoYtp6bV\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-7.md\":\"3jx430-z\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-8.md\":\"B2KoFk_L\",\"pages_f2e_docreact_react_1_hexschoolreact1-2-9.md\":\"B5PGJElX\",\"pages_f2e_docreact_react_2_hexschoolreact2-1-1.md\":\"DbrNEEyd\",\"pages_f2e_docreact_react_2_hexschoolreact2-1-2.md\":\"MVCDyRmf\",\"pages_f2e_docreact_react_hexschoolreact0.md\":\"DRQDekQt\",\"pages_f2e_docreact_reactdev_01_reactdev_01_01.md\":\"DpOqP1gQ\",\"pages_f2e_docreact_reactdev_01_reactdev_01_02.md\":\"BBncEAcc\",\"pages_f2e_docreact_reactdev_02_reactdev_02_01.md\":\"DgVjml0_\",\"pages_f2e_docreact_reactdev_02_reactdev_02_02.md\":\"CTOzzb9x\",\"pages_f2e_docreact_reactdev_02_reactdev_02_03.md\":\"_DAhnHPE\",\"pages_f2e_docreact_reactdev_03_reactdev_03_01.md\":\"CZQUikDf\",\"pages_f2e_docreact_reactdev_03_reactdev_03_02.md\":\"BeebT28K\",\"pages_f2e_docreact_reactdev_03_reactdev_03_03.md\":\"BQyUped1\",\"pages_f2e_docreact_reactdev_04_reactdev_04_01.md\":\"BTuCvMjk\",\"pages_f2e_docreact_reactdev_04_reactdev_04_02.md\":\"GkqJSe4P\",\"pages_f2e_docreact_reactdev_04_reactdev_04_03.md\":\"BqZsXEGL\",\"pages_f2e_docreact_reactdev_04_reactdev_04_04.md\":\"OyebzQDL\",\"pages_f2e_docreact_reactdev_05_reactdev_05_01.md\":\"C2nVf6j-\",\"pages_f2e_docreact_reactdev_05_reactdev_05_02.md\":\"CmaHYpie\",\"pages_f2e_docreact_reactdev_05_reactdev_05_03.md\":\"hetYirUw\",\"pages_f2e_docreact_reactdev_05_reactdev_05_04.md\":\"CLgioF4d\",\"pages_f2e_docreact_reactdev_05_reactdev_05_05.md\":\"C_4sdaF_\",\"pages_f2e_docreact_reactdev_05_reactdev_05_06.md\":\"tHI27SGN\",\"pages_f2e_docreact_reactdev_05_reactdev_05_07.md\":\"Cn1zmmaf\",\"pages_f2e_docreact_reactdev_05_reactdev_05_08.md\":\"dvqIQeU2\",\"pages_f2e_docreact_reactdev_05_reactdev_05_09.md\":\"BJKbPB2K\",\"pages_f2e_docreact_reactdev_06_reactdev_06_01.md\":\"DDcIfaNE\",\"pages_f2e_docreact_reactdev_06_reactdev_06_02.md\":\"jkuw5PMU\",\"pages_f2e_docreact_reactdev_06_reactdev_06_03.md\":\"sHeV7fNN\",\"pages_f2e_docreact_reactdev_06_reactdev_06_04.md\":\"BsXm62PJ\",\"pages_f2e_docreact_reactdev_06_reactdev_06_05.md\":\"p3ZGHG_K\",\"pages_f2e_docreact_reactdev_06_reactdev_06_06.md\":\"CLJzJ-FZ\",\"pages_f2e_docreact_reactdev_06_reactdev_06_07.md\":\"fd0PjTE4\",\"pages_f2e_docreact_reactdev_07_reactdev_07_01.md\":\"C_l5MLfu\",\"pages_f2e_docreact_reactdev_07_reactdev_07_02.md\":\"BHqAm8KN\",\"pages_f2e_docreact_reactdev_07_reactdev_07_03.md\":\"BG0itwSl\",\"pages_f2e_docreact_reactdev_07_reactdev_07_04.md\":\"C7A2oCrz\",\"pages_f2e_docreact_reactdev_07_reactdev_07_05.md\":\"wIZWNdjU\",\"pages_f2e_docreact_reactdev_07_reactdev_07_06.md\":\"BdyEiFcq\",\"pages_f2e_docreact_reactdev_07_reactdev_07_07.md\":\"C-iwi6Xm\",\"pages_f2e_docreact_reactdev_08_reactdev_08_01.md\":\"BMQH12pT\",\"pages_f2e_docreact_reactdev_08_reactdev_08_02.md\":\"yVxRo8ff\",\"pages_f2e_docreact_reactdev_08_reactdev_08_03.md\":\"YqIfIRr7\",\"pages_f2e_docreact_reactdev_08_reactdev_08_04.md\":\"BjRBh3Y3\",\"pages_f2e_docreact_reactdev_08_reactdev_08_05.md\":\"DLrfZhBS\",\"pages_f2e_docreact_reactdev_08_reactdev_08_06.md\":\"Dkj1L1KZ\",\"pages_f2e_docreact_reactdev_08_reactdev_08_07.md\":\"Bsq9LjMq\",\"pages_f2e_docreact_reactdev_08_reactdev_08_08.md\":\"CpQoLKdg\",\"pages_f2e_docreact_reactdev_reactdev_01.md\":\"Btrc4Thp\",\"pages_f2e_docreact_reactdev_reactdev_02.md\":\"DrvubGd7\",\"pages_f2e_docreact_reactdev_reactdev_03.md\":\"DmKYLoY7\",\"pages_f2e_docreact_reactdev_reactdev_04.md\":\"BRuPTNPx\",\"pages_f2e_docreact_reactdev_reactdev_05.md\":\"ZFwbnrpf\",\"pages_f2e_docreact_reactdev_reactdev_06.md\":\"BraImxdM\",\"pages_f2e_docreact_reactdev_reactdev_07.md\":\"C8-YjvCv\",\"pages_f2e_docreact_reactdev_reactdev_08.md\":\"I0vnXCuv\",\"pages_f2e_docreact_reacthooksnotes_reacthooksnotes_01.md\":\"B9WhvimC\",\"pages_f2e_docreact_reacttutorial_reacttutorial_01.md\":\"l6LdzTM3\",\"pages_f2e_docreact_reacttutorial_reacttutorial_02.md\":\"CUfOJv8T\",\"pages_f2e_docreact_reacttutorial_reacttutorial_03.md\":\"DelmGgLy\",\"pages_f2e_docreact_reacttutorial_reacttutorial_04.md\":\"CBFJKewf\",\"pages_f2e_docreact_reacttutorial_reacttutorial_05.md\":\"B1w6Z5nc\",\"pages_f2e_docreact_reacttutorial_reacttutorial_06.md\":\"Cxh1hDkZ\",\"pages_f2e_docreact_reacttutorial_reacttutorial_07.md\":\"Dk2ZhlTK\",\"pages_f2e_docreact_reacttutorial_reacttutorial_08.md\":\"DZ5qz4Hf\",\"pages_f2e_doctypescript_expert_typescript-1.md\":\"CkVbgB4P\",\"pages_f2e_doctypescript_expert_typescript-10.md\":\"RxHb2R3k\",\"pages_f2e_doctypescript_expert_typescript-11.md\":\"CcnqPWcs\",\"pages_f2e_doctypescript_expert_typescript-12.md\":\"2OgkODWg\",\"pages_f2e_doctypescript_expert_typescript-13.md\":\"CUEF6eXa\",\"pages_f2e_doctypescript_expert_typescript-14.md\":\"Cu6Sb3ij\",\"pages_f2e_doctypescript_expert_typescript-15.md\":\"DaYBPPZP\",\"pages_f2e_doctypescript_expert_typescript-16.md\":\"XE6jSoqN\",\"pages_f2e_doctypescript_expert_typescript-17.md\":\"np0x3gen\",\"pages_f2e_doctypescript_expert_typescript-18.md\":\"CSa2Cta1\",\"pages_f2e_doctypescript_expert_typescript-19.md\":\"CuU7PmaD\",\"pages_f2e_doctypescript_expert_typescript-2.md\":\"gjy7Xuuj\",\"pages_f2e_doctypescript_expert_typescript-20.md\":\"BoBmoqjq\",\"pages_f2e_doctypescript_expert_typescript-21.md\":\"zMc0ad3H\",\"pages_f2e_doctypescript_expert_typescript-22.md\":\"CrpjZA1Z\",\"pages_f2e_doctypescript_expert_typescript-3.md\":\"DBlYfJS2\",\"pages_f2e_doctypescript_expert_typescript-4.md\":\"BabMw86G\",\"pages_f2e_doctypescript_expert_typescript-5.md\":\"CHv_C2Vh\",\"pages_f2e_doctypescript_expert_typescript-6.md\":\"CmdlV9xJ\",\"pages_f2e_doctypescript_expert_typescript-7.md\":\"w551pDjf\",\"pages_f2e_doctypescript_expert_typescript-8.md\":\"CC0IEXdl\",\"pages_f2e_doctypescript_expert_typescript-9.md\":\"DoqIQxeY\",\"pages_f2e_doctypescript_expert_typescript-e-book.md\":\"CDeLH-2K\",\"pages_f2e_doctypescript_it_a_typescript-a.md\":\"Bx7onbCD\",\"pages_f2e_doctypescript_it_parti_typescript-1.md\":\"CQ6RC_XL\",\"pages_f2e_doctypescript_it_parti_typescript-2.md\":\"CuW1M4nV\",\"pages_f2e_doctypescript_it_parti_typescript-3.md\":\"BGZ67h0K\",\"pages_f2e_doctypescript_it_parti_typescript-4.md\":\"Bvv9hBKU\",\"pages_f2e_doctypescript_it_parti_typescript-5.md\":\"Ce13q7He\",\"pages_f2e_doctypescript_it_parti_typescript-6.md\":\"DNt76B-B\",\"pages_f2e_doctypescript_it_parti_typescript-7.md\":\"Dn87RLeY\",\"pages_f2e_doctypescript_it_parti_typescript-8.md\":\"sB5Y0OpI\",\"pages_f2e_doctypescript_it_partii_typescript-10.md\":\"DzbjF1Ye\",\"pages_f2e_doctypescript_it_partii_typescript-11.md\":\"ZtskoFt0\",\"pages_f2e_doctypescript_it_partii_typescript-12.md\":\"BWgEW1je\",\"pages_f2e_doctypescript_it_partii_typescript-9.md\":\"C1iBx4Zu\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-01.md\":\"nevz-QD-\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-02.md\":\"DUaD9rQE\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-03.md\":\"CWB5zO66\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-04.md\":\"D-f8zIfx\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-05.md\":\"CcBPglrF\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-06.md\":\"cUXCalfK\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-07.md\":\"DyhT785Q\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-08.md\":\"CLoQgV86\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-09.md\":\"D9Y_IDll\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-10.md\":\"pAvZPbyR\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-11.md\":\"CjG5_Sae\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-12.md\":\"4Apf4Uuc\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-13.md\":\"BueWg9GS\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-14.md\":\"BB0W8fkj\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-15.md\":\"5VxZw_CA\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-16.md\":\"CjRIsPzu\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-17.md\":\"BVHZnPgY\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-18.md\":\"DFn619vJ\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-19.md\":\"QKml6Gol\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-20.md\":\"BwAJAlGJ\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-21.md\":\"Epu5cT98\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-22.md\":\"BVa1Cbie\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-23.md\":\"kvbzgMEu\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-24.md\":\"Drs5zXii\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-25.md\":\"AlHQIrpp\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-26.md\":\"Xwo59Tae\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-27.md\":\"GxZZaRHO\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-28.md\":\"DWvB3iMV\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-29.md\":\"RN9TYuJc\",\"pages_f2e_docvue_nuxt_nuxt3_nuxt3-30.md\":\"CEAAmWo-\",\"pages_other_google_google_ads_google_ads_01-01.md\":\"scj_OsZL\",\"pages_other_google_google_ads_google_ads_01-02.md\":\"Dr_x5SH8\",\"pages_other_google_google_ads_google_ads_01-03.md\":\"C_KDq_TY\",\"pages_other_google_google_ads_google_ads_01-04.md\":\"WEmYrE5g\",\"pages_other_google_google_ads_google_ads_01-05.md\":\"B4vTXzaV\",\"pages_other_google_google_ads_google_ads_01-06.md\":\"D4JrzI-I\",\"pages_other_google_google_ads_google_ads_01-07.md\":\"C8RXxkrU\",\"pages_other_google_google_cloud_google_cloud_01.md\":\"CgBNwLgK\",\"pages_other_hahow_devops_devops-0.md\":\"CTUNp35k\",\"pages_other_hahow_devops_devops-1.md\":\"DIDwdtxG\",\"pages_other_hahow_devops_devops-2.md\":\"BifmpIp3\",\"pages_other_hahow_devops_devops-3.md\":\"BZHZB3Y3\",\"pages_other_hahow_devops_devops-4.md\":\"Bm2xqMhw\",\"pages_other_hahow_devops_devops-exam.md\":\"B2tl_xn4\",\"pages_other_hahow_mood.md\":\"CiXC7xde\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"zh-TW\",\"dir\":\"ltr\",\"title\":\"Study\",\"description\":\"學習筆記\",\"base\":\"/vitepress-study/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"logo\":\"/apple-touch-icon.png\",\"siteTitle\":\"Study 學習筆記\",\"outline\":[2,3],\"nav\":[{\"text\":\"前端 學習筆記\",\"items\":[{\"text\":\"React\",\"items\":[{\"text\":\"[React官網] React 19.2 教程\",\"link\":\"/pages/f2e/docReact/reactDev/reactDev_01\"},{\"text\":\"[Next.js官網] Next.js 16.2 教程\",\"link\":\"/pages/f2e/docReact/nextDev/nextDev_01\"},{\"text\":\"[AI-Manus] React 手把手教學\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_01\"},{\"text\":\"[六角學院] React 實戰課\",\"link\":\"/pages/f2e/docReact/react/hexschoolReact0\"},{\"text\":\"[IT邦] 從 Hooks 開始，讓你的網頁 React 起來\",\"link\":\"/pages/f2e/docReact/reactHooksNotes/reactHooksNotes_01\"}]},{\"text\":\"Vue\",\"items\":[{\"text\":\"[IT邦] - Nuxt3 學習筆記 - Ryan\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-01\"}]},{\"text\":\"CSS\",\"items\":[{\"text\":\"CSS 學習筆記\",\"link\":\"/pages/f2e/docCSS/css_01\"}]},{\"text\":\"TypeScript\",\"items\":[{\"text\":\"[旗標] TypeScript 邁向專家之路\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-1\"},{\"text\":\"[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-1\"}]}]},{\"text\":\"其他\",\"items\":[{\"text\":\"[Hahow] 學會情緒智商與壓力管理，做自己情緒的主人\",\"link\":\"/pages/other/hahow/mood\"},{\"text\":\"[Hahow] 軟體開發的利器：技術人要懂的 DevOps 通識課\",\"link\":\"/pages/other/hahow/devops/devops-0\"},{\"text\":\"Google 數位人才探索計畫\",\"items\":[{\"text\":\"數位行銷學程\",\"link\":\"/pages/other/google/google_ads/google_ads_01-01\"},{\"text\":\"Google Cloud 學程\",\"link\":\"/pages/other/google/google_cloud/google_cloud_01\"}]}]}],\"sidebar\":{\"/pages/f2e/docCSS\":[{\"text\":\"CSS 學習筆記\",\"items\":[{\"text\":\"CSS\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"第一階段：CSS 基礎（語法、選擇器、排版）\",\"link\":\"/pages/f2e/docCSS/css_01\"},{\"text\":\"第二階段：進階排版與布局\",\"link\":\"/pages/f2e/docCSS/css_02\"},{\"text\":\"第三階段：美化與互動\",\"link\":\"/pages/f2e/docCSS/css_03\"},{\"text\":\"第四階段：CSS 架構與實戰\",\"link\":\"/pages/f2e/docCSS/css_04\"},{\"text\":\"第五階段：Tailwind CSS 與 Utility-First 思維\",\"link\":\"/pages/f2e/docCSS/css_05\"},{\"text\":\"第六階段：高階實戰與架構優化\",\"link\":\"/pages/f2e/docCSS/css_06\"},{\"text\":\"實作建議\",\"link\":\"/pages/f2e/docCSS/css_07\"}]}]}],\"/pages/f2e/docTypeScript/expert\":[{\"text\":\"[旗標] TypeScript 邁向專家之路\",\"items\":[{\"text\":\"第一篇 TypeScript 入門準備\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"01 你的第一個 TypeScript 應用程式\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-1\"},{\"text\":\"02 認識 TypeScript 及 本書內容\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-2\"},{\"text\":\"03 JavaScript 快速入門(上)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-3\"},{\"text\":\"04 JavaScript 快速入門(下)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-4\"},{\"text\":\"05 使用 TypeScript 編譯器\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-5\"},{\"text\":\"06 TypeScript 程式的測試與除錯\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-6\"}]},{\"text\":\"第二篇 TypeScript 徹底解析\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"07 了解 TypeScript 的靜態型別\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-7\"},{\"text\":\"08 在 TypeScript 使用函式\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-8\"},{\"text\":\"09 在 TypeScript 使用陣列、tuple 與列舉\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-9\"},{\"text\":\"10 在 TypeScript 運用物件\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-10\"},{\"text\":\"11 在 TypeScript 使用類別與介面\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-11\"},{\"text\":\"12 在 TypeScript 使用泛型\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-12\"},{\"text\":\"13 TypeScript 的進階泛型功能\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-13\"},{\"text\":\"14 在 TypeScript 專案中混用 JavaScript\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-14\"}]},{\"text\":\"第三篇 TypeScript 實戰攻略\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"15 打造獨立網路應用程式(上)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-15\"},{\"text\":\"16 打造獨立網路應用程式(下)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-16\"},{\"text\":\"17 打造 Angular 網路應用程式(上)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-17\"},{\"text\":\"18 打造 Angular 網路應用程式(下)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-18\"},{\"text\":\"19 打造 React 網路應用程式(上)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-19\"},{\"text\":\"20 打造 React 網路應用程式(下)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-20\"},{\"text\":\"21 打造 Vue.js 網路應用程式(上)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-21\"},{\"text\":\"22 打造 Vue.js 網路應用程式(下)\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-22\"}]},{\"text\":\"電子書\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"打造 Svelte 網路應用程式\",\"link\":\"/pages/f2e/docTypeScript/expert/typeScript-e-book\"}]}]}],\"/pages/f2e/docTypeScript/it\":[{\"text\":\"[博碩] IT邦 - 讓 TypeScript 成為你全端開發的 ACE !\",\"items\":[{\"text\":\"Part I TypeScript 基礎篇\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"1 TypeScript 的發展與概論\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-1\"},{\"text\":\"2 型別系統概論\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-2\"},{\"text\":\"3 深入型別系統 I 基礎篇\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-3\"},{\"text\":\"4 深入型別系統 II 進階篇\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-4\"},{\"text\":\"5 TypeScript 類別基礎\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-5\"},{\"text\":\"6 TypeScript 介面\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-6\"},{\"text\":\"7 深入型別系統 III 泛用型別\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-7\"},{\"text\":\"8 TypeScript 模組系統\",\"link\":\"/pages/f2e/docTypeScript/it/partI/typeScript-8\"}]},{\"text\":\"Part II TypeScript 應用篇\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"9 物件導向進階篇章\",\"link\":\"/pages/f2e/docTypeScript/it/partII/typeScript-9\"},{\"text\":\"10 常用 ECMAScript 標準語法\",\"link\":\"/pages/f2e/docTypeScript/it/partII/typeScript-10\"},{\"text\":\"11 常用 ECMAScript 標準語法 非同步程式設計篇\",\"link\":\"/pages/f2e/docTypeScript/it/partII/typeScript-11\"},{\"text\":\"12 TypeScript 裝飾子\",\"link\":\"/pages/f2e/docTypeScript/it/partII/typeScript-12\"}]},{\"text\":\"A 解答篇\",\"link\":\"/pages/f2e/docTypeScript/it/A/typeScript-A\"}]}],\"/pages/f2e/docReact/react/\":[{\"text\":\"React 實戰影音課\",\"items\":[{\"text\":\"前言\",\"link\":\"/pages/f2e/docReact/react/hexschoolReact0\"},{\"text\":\"1. 認識 React\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"1. 認識 React\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"1. 課程介紹\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-1\"},{\"text\":\"2. 課程使用的文字編輯器\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-2\"},{\"text\":\"3. 建立 React 環境\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-3\"},{\"text\":\"4. 資料驅動 React - 建立版型\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-4\"},{\"text\":\"5. 資料驅動 React - 資料抽離練習\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-5\"},{\"text\":\"6. 什麼是 JavaScript 表達式 (運算式、expression)\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-6\"},{\"text\":\"7. 表達式與 React 的關係\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-7\"},{\"text\":\"8. JS型別與JSX\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-8\"},{\"text\":\"9. JSX 是如何運作的\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-9\"},{\"text\":\"10. JSX 與 HTML 的標籤屬性\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-10\"},{\"text\":\"11. React 行內樣式\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-11\"},{\"text\":\"12. JSX 開發中常見的錯誤\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-12\"},{\"text\":\"13. JSX 章節回顧作業 (上)\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-13\"},{\"text\":\"14. JSX 章節回顧作業 (下)\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-1-14\"}]},{\"text\":\"2. JavaScript 必學觀念\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"1. JavaScript 常見縮寫\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-1\"},{\"text\":\"2. 解構\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-2\"},{\"text\":\"3. 箭頭函式\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-3\"},{\"text\":\"4. 陣列迴圈處理手法\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-4\"},{\"text\":\"5. JSX 章節作業優化\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-5\"},{\"text\":\"6. 物件傳參考特性\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-6\"},{\"text\":\"7. 非同步與 Promise\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-7\"},{\"text\":\"8. Promise 實戰運用\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-8\"},{\"text\":\"9. Async function 與 await\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-9\"},{\"text\":\"10. Async function 實戰運用\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-10\"},{\"text\":\"11. 模組化 JavaScript：ESModule\",\"link\":\"/pages/f2e/docReact/react/1/hexschoolReact1-2-11\"}]}]},{\"text\":\"2. React元件 與 Hooks入門\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"1. 元件基礎\",\"collapsible\":true,\"collapsed\":true,\"items\":[{\"text\":\"1. 元件介紹\",\"link\":\"/pages/f2e/docReact/react/2/hexschoolReact2-1-1\"},{\"text\":\"2. 元件基礎練習\",\"link\":\"/pages/f2e/docReact/react/2/hexschoolReact2-1-2\"}]}]}]}],\"/pages/f2e/docReact/reactDev/\":[{\"text\":\"[React官網] React 19.2 教程\",\"link\":\"https://zh-hans.react.dev/learn\"},{\"text\":\"起步\",\"items\":[{\"text\":\"快速入門\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_01\",\"items\":[{\"text\":\"教學：井字棋遊戲\",\"link\":\"/pages/f2e/docReact/reactDev/01/reactDev_01_01\"},{\"text\":\"React 哲學\",\"link\":\"/pages/f2e/docReact/reactDev/01/reactDev_01_02\"}]},{\"text\":\"安裝\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_02\",\"items\":[{\"text\":\"創建一個 React 應用\",\"link\":\"/pages/f2e/docReact/reactDev/02/reactDev_02_01\"},{\"text\":\"從零構建一個 React 應用\",\"link\":\"/pages/f2e/docReact/reactDev/02/reactDev_02_02\"},{\"text\":\"將 React 添加到現有項目中\",\"link\":\"/pages/f2e/docReact/reactDev/02/reactDev_02_03\"}]},{\"text\":\"配置\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_03\",\"items\":[{\"text\":\"編輯器設置\",\"link\":\"/pages/f2e/docReact/reactDev/03/reactDev_03_01\"},{\"text\":\"使用 TypeScript\",\"link\":\"/pages/f2e/docReact/reactDev/03/reactDev_03_02\"},{\"text\":\"React 開發者工具\",\"link\":\"/pages/f2e/docReact/reactDev/03/reactDev_03_03\"}]},{\"text\":\"React Compiler\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_04\",\"items\":[{\"text\":\"介紹\",\"link\":\"/pages/f2e/docReact/reactDev/04/reactDev_04_01\"},{\"text\":\"安裝\",\"link\":\"/pages/f2e/docReact/reactDev/04/reactDev_04_02\"},{\"text\":\"逐步使用\",\"link\":\"/pages/f2e/docReact/reactDev/04/reactDev_04_03\"},{\"text\":\"調適和故障排除\",\"link\":\"/pages/f2e/docReact/reactDev/04/reactDev_04_04\"}]}]},{\"text\":\"學習 React\",\"items\":[{\"text\":\"描述 UI\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_05\",\"items\":[{\"text\":\"你的第一個組件\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_01\"},{\"text\":\"組建的導入與導出\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_02\"},{\"text\":\"使用 JSX 書寫標籤語言\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_03\"},{\"text\":\"在 JSX 中通過大括號使用 JavaScript\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_04\"},{\"text\":\"將 Props 傳遞給組件\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_05\"},{\"text\":\"條件渲染\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_06\"},{\"text\":\"渲染列表\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_07\"},{\"text\":\"保持組件純粹\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_08\"},{\"text\":\"將 UI 視為樹\",\"link\":\"/pages/f2e/docReact/reactDev/05/reactDev_05_09\"}]},{\"text\":\"添加互動\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_06\",\"items\":[{\"text\":\"響應事件\",\"link\":\"/pages/f2e/docReact/reactDev/06/reactDev_06_01\"},{\"text\":\"state：組件的記憶\",\"link\":\"/pages/f2e/docReact/reactDev/06/reactDev_06_02\"},{\"text\":\"渲染和提交\",\"link\":\"/pages/f2e/docReact/reactDev/06/reactDev_06_03\"},{\"text\":\"state 如同一張快照\",\"link\":\"/pages/f2e/docReact/reactDev/06/reactDev_06_04\"},{\"text\":\"把一系列 state 更新加入佇列\",\"link\":\"/pages/f2e/docReact/reactDev/06/reactDev_06_05\"},{\"text\":\"更新 state 中的物件\",\"link\":\"/pages/f2e/docReact/reactDev/06/reactDev_06_06\"},{\"text\":\"更新 state 中的陣列\",\"link\":\"/pages/f2e/docReact/reactDev/06/reactDev_06_07\"}]},{\"text\":\"狀態管理\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_07\",\"items\":[{\"text\":\"用 State 響應輸入\",\"link\":\"/pages/f2e/docReact/reactDev/07/reactDev_07_01\"},{\"text\":\"選擇 State 結構\",\"link\":\"/pages/f2e/docReact/reactDev/07/reactDev_07_02\"},{\"text\":\"在組件間共享狀態\",\"link\":\"/pages/f2e/docReact/reactDev/07/reactDev_07_03\"},{\"text\":\"對 State 進行保留和重置\",\"link\":\"/pages/f2e/docReact/reactDev/07/reactDev_07_04\"},{\"text\":\"遷移狀態邏輯至 Reducer 中\",\"link\":\"/pages/f2e/docReact/reactDev/07/reactDev_07_05\"},{\"text\":\"使用 Context 深層傳遞參數\",\"link\":\"/pages/f2e/docReact/reactDev/07/reactDev_07_06\"},{\"text\":\"使用 Reducer 和 Context 拓展你的應用\",\"link\":\"/pages/f2e/docReact/reactDev/07/reactDev_07_07\"}]},{\"text\":\"脫圍機制\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/reactDev/reactDev_08\",\"items\":[{\"text\":\"使用 ref 引用值\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_01\"},{\"text\":\"使用 ref 操作 DOM\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_02\"},{\"text\":\"使用 Effect 進行同步\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_03\"},{\"text\":\"你可能不需要 Effect\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_04\"},{\"text\":\"響應式 Effect 的生命週期\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_05\"},{\"text\":\"將事件從 Effect 中分開\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_06\"},{\"text\":\"移除 Effect 依賴\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_07\"},{\"text\":\"使用自訂義 Hook 複用邏輯\",\"link\":\"/pages/f2e/docReact/reactDev/08/reactDev_08_08\"}]}]}],\"/pages/f2e/docReact/reactHooksNotes/\":[{\"text\":\"[IT邦] 從 Hooks 開始，讓你的網頁 React 起來 - pjchender\",\"link\":\"https://ithelp.ithome.com.tw/users/20103315/ironman/2668\"}],\"/pages/f2e/docReact/nextDev/\":[{\"text\":\"[Next.js官網] Next.js 16.2 教程\",\"link\":\"https://nextjs.org/learn\",\"items\":[{\"text\":\"App Router\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/nextDev/nextDev_01\",\"items\":[{\"text\":\"入門起步\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_01\"},{\"text\":\"CSS 樣式設計\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_02\"},{\"text\":\"字型與圖片最佳化\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_03\"},{\"text\":\"建立版面配置與頁面\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_04\"},{\"text\":\"頁面之間的導覽\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_05\"},{\"text\":\"設定資料庫\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_06\"},{\"text\":\"擷取資料\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_07\"},{\"text\":\"靜態與動態渲染\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_08\"},{\"text\":\"串流\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_09\"},{\"text\":\"加入搜尋與分頁\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_10\"},{\"text\":\"資料異動\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_11\"},{\"text\":\"處理錯誤\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_12\"},{\"text\":\"提升無障礙性\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_13\"},{\"text\":\"加入驗證機制\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_14\"},{\"text\":\"加入中繼資料\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_15\"},{\"text\":\"後續步驟\",\"link\":\"/pages/f2e/docReact/nextDev/01/nextDev_01_16\"}]},{\"text\":\"Page Router\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/nextDev/nextDev_02\",\"items\":[]},{\"text\":\"React 基礎\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/nextDev/nextDev_03\",\"items\":[]},{\"text\":\"SEO\",\"collapsible\":true,\"collapsed\":true,\"link\":\"/pages/f2e/docReact/nextDev/nextDev_04\",\"items\":[]}]}],\"/pages/f2e/docReact/reactTutorial/\":[{\"text\":\"[AI-Manus] React 手把手教學 \"},{\"text\":\"React 從零到深入實作手把手教學：個人化任務與效能追蹤系統\",\"items\":[{\"text\":\"1. 專案啟動與基礎環境建置\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_01\"},{\"text\":\"2. 核心 UI 組件與佈局\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_02\"},{\"text\":\"3. 路由管理與頁面建立\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_03\"},{\"text\":\"4. 任務管理功能實作\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_04\"},{\"text\":\"5. 筆記管理功能實作\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_05\"},{\"text\":\"6. 番茄鐘計時器與儀表板\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_06\"},{\"text\":\"7. 使用者認證與進階議題\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_07\"},{\"text\":\"8. 部署與作品集呈現\",\"link\":\"/pages/f2e/docReact/reactTutorial/reactTutorial_08\"}]}],\"/pages/f2e/docVue/nuxt/nuxt3/\":[{\"text\":\"[IT邦] - Nuxt3 學習筆記 - Ryan\",\"items\":[{\"text\":\"來源 - IT邦 - Ryan\",\"link\":\"https://ithelp.ithome.com.tw/users/20152617/ironman/5934\"},{\"text\":\"1. 淺談 CSR、SSR 與 SSG\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-01\"},{\"text\":\"2. Nuxt 3 介紹\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-02\"},{\"text\":\"3. 使用 nuxi 建立第一個專案\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-03\"},{\"text\":\"4. Nuxt 3 + TypeScript + ESLint + Prettier 環境建置\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-04\"},{\"text\":\"5. 如何使用 Tailwind CSS\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-05\"},{\"text\":\"6. 目錄結構與自動載入 (Auto Imports)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-06\"},{\"text\":\"7. 頁面 (Pages) 與路由 (Routing)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-07\"},{\"text\":\"8. 布局模板 (Layouts)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-08\"},{\"text\":\"9. 元件 (Components)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-09\"},{\"text\":\"10. 組合式函式\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-10\"},{\"text\":\"11. 插件 (Plugins)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-11\"},{\"text\":\"12. 模組 (Modules)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-12\"},{\"text\":\"13. 中間件目錄 (Middleware Directory)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-13\"},{\"text\":\"14. Server API 與 Nitro Engine\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-14\"},{\"text\":\"15. 資料獲取 (Data Fetching)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-15\"},{\"text\":\"16. 狀態管理 (State Management)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-16\"},{\"text\":\"17. 狀態管理 - Store & Pinia\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-17\"},{\"text\":\"18. Runtime Config & App Config\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-18\"},{\"text\":\"19. 串接 Google OAuth 登入\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-19\"},{\"text\":\"20. Cookie 的設置與 JWT 的搭配\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-20\"},{\"text\":\"21. 實作部落格 - 資料庫與會員系統\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-21\"},{\"text\":\"22. 實作部落格 - 導覽列模板與新增文章\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-22\"},{\"text\":\"23. 實作部落格 - 頁面的導航守衛與切換效果\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-23\"},{\"text\":\"24. 搜尋引擎最佳化 (SEO) 與 HTML Meta Tag\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-24\"},{\"text\":\"25. 邁向國際化 - 使用 Nuxt I18n 實作多國語系\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-25\"},{\"text\":\"26. Public 與 Assets 資源目錄\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-26\"},{\"text\":\"27. 測試 (Testing) 與錯誤處理 (Error handling)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-27\"},{\"text\":\"28. 渲染模式 (Rendering modes) 與網站使用體驗核心指標 (Core Web Vitals)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-28\"},{\"text\":\"29. 發布網站前的建構打包 (Build) 與靜態網站生成 (Static Site Generation)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-29\"},{\"text\":\"30. 就剩最後一步了 - 部署 (Deployment)\",\"link\":\"/pages/f2e/docVue/nuxt/nuxt3/nuxt3-30\"}]}],\"/pages/other/hahow/devops\":[{\"text\":\"[Hahow] 軟體開發的利器：技術人要懂的 DevOps 通識課\",\"items\":[{\"text\":\"前言\",\"link\":\"/pages/other/hahow/devops/devops-0\"},{\"text\":\"1. DevOps 是什麼？\",\"link\":\"/pages/other/hahow/devops/devops-1\"},{\"text\":\"2. 三步工作法\",\"link\":\"/pages/other/hahow/devops/devops-2\"},{\"text\":\"3. 如何開始 DevOps ?\",\"link\":\"/pages/other/hahow/devops/devops-3\"},{\"text\":\"4. DevOps 的技術實踐\",\"link\":\"/pages/other/hahow/devops/devops-4\"},{\"text\":\"測驗題\",\"link\":\"/pages/other/hahow/devops/devops-exam\"}]}],\"/pages/other/google/google_ads\":[{\"text\":\"Google - 數位行銷學程\",\"items\":[{\"text\":\"1. Google Ads 搜尋廣告認證\",\"items\":[{\"text\":\"1. 開始使用 AI 技術輔助搜尋廣告活動\",\"link\":\"/pages/other/google/google_ads/google_ads_01-01\"},{\"text\":\"2. 瞭解 Google Ads 競價\",\"link\":\"/pages/other/google/google_ads/google_ads_01-02\"},{\"text\":\"3. 以 AI 技術輔助搜尋廣告吸引使用者\",\"link\":\"/pages/other/google/google_ads/google_ads_01-03\"},{\"text\":\"4. 透過回應式搜尋廣告觸及使用者\",\"link\":\"/pages/other/google/google_ads/google_ads_01-04\"},{\"text\":\"5. 探索 AI 技術輔助搜尋廣告出價策略\",\"link\":\"/pages/other/google/google_ads/google_ads_01-05\"},{\"text\":\"6. 運用工具拓展業務\",\"link\":\"/pages/other/google/google_ads/google_ads_01-06\"},{\"text\":\"7. 依據業務目標改進 AI 技術輔助搜尋廣告活動\",\"link\":\"/pages/other/google/google_ads/google_ads_01-07\"}]}]}],\"/pages/other/google/google_cloud\":[{\"text\":\"Google - Google Cloud 學程\",\"items\":[{\"text\":\"1. 課程介紹\",\"link\":\"/pages/other/google/google_cloud/google_cloud_01\"}]}]},\"footer\":{\"copyright\":\"MIT Lincensed | Copyright © 2024-present Eason\"}},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
+    
+  </body>
+</html>
