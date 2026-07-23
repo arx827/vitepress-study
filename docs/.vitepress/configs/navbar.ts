@@ -1,6 +1,6 @@
 export const nav = [
   {
-    text: '前端',
+    text: '前端 學習筆記',
     items: [
       {
         text: 'React',
@@ -20,6 +20,10 @@ export const nav = [
           {
             text: '[六角學院] React 實戰課',
             link: '/pages/f2e/docReact/react/hexschoolReact0'
+          },
+          {
+            text: '[IT邦] 從 Hooks 開始，讓你的網頁 React 起來',
+            link: '/pages/f2e/docReact/reactHooksNotes/reactHooksNotes_01'
           }
         ]
       },

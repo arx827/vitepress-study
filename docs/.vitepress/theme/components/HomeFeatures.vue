@@ -2,11 +2,9 @@
   <section class="customFeaturesWrap" v-for="(f, i) in features" :key="i">
     <h2 class="home_title">{{ f.text }}</h2>
     <div class="featuresItemsWrap">
-
-
-      <section v-for="(h) in f.items">
+      <section class="featuresItems" v-for="(h) in f.items">
         <template v-if="h.items && h.items.length > 0" :key="h.text">
-          <h3>{{ h.text }}</h3>
+          <h3 class="section_title">{{ h.text }}</h3>
           <section class="items">
             <div class="item" v-for="(i) in h.items">
               <a class="VPFeature" :href="`${useData().site.value.base.slice(0, -1)}${i.link}`">
@@ -55,14 +53,23 @@ const features = site.value.themeConfig.nav || []
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  h3 {
-    margin: 1rem 0 1rem;
+    .featuresItems {
+      padding-left: 1rem;
+    }
+    .section_title {
+      padding: 0 1rem;
+      margin: 0 0 1rem;
+      border-color: #a8b1ff;
+      border-width: 0;
+      border-style: solid;
+      border-left-width: 5px;
+    }
   }
   .items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(30%, 300px), 1fr));
     gap: 1rem;
+    margin-left: 1rem;
     .VPFeature {
       display: block;
       border: 1px solid var(--vp-c-bg-soft);

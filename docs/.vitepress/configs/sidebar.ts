@@ -116,6 +116,8 @@ export const sidebar = {
       ]
     }
   ],
+
+  // React
   '/pages/f2e/docReact/react/': [
     {
       text: 'React 實戰影音課',
@@ -524,6 +526,13 @@ export const sidebar = {
       ]
     }
   ],
+  '/pages/f2e/docReact/reactHooksNotes/': [
+    {
+      text: '[IT邦] 從 Hooks 開始，讓你的網頁 React 起來 - pjchender',
+      link: 'https://ithelp.ithome.com.tw/users/20103315/ironman/2668'
+    }
+  ],
+  
   '/pages/f2e/docReact/nextDev/': [
     {
       text: '[Next.js官網] Next.js 16.2 教程',
@@ -667,6 +676,8 @@ export const sidebar = {
       ]
     }
   ],
+
+  // Vue
   '/pages/f2e/docVue/nuxt/nuxt3/': [
     {
       text: '[IT邦] - Nuxt3 學習筆記 - Ryan',
